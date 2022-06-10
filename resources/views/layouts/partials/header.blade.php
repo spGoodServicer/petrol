@@ -54,8 +54,8 @@ $help_desk_url = App\System::getProperty('helpdesk_system_url') ?? '#';
       <span class="logo-lg">{{ Session::get('business.name') }}</span>
     </a-->
 
-    <!-- Header Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-dark" role="navigation" style="background: {{ $top_belt_bg}};">
+    <!-- Header Navbar  style="background: {{ $top_belt_bg}};"-->
+    <nav class="main-header navbar navbar-expand navbar-dark" role="navigation">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
         <i class="fa fa-bars"></i>
