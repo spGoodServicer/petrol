@@ -4,7 +4,7 @@
 @section('content')
 
 <!-- Content Header (Page header) -->
-<section class="content-header">
+<section class="content-header">sssssssssssssssssss
     <h1>{{ __('home.welcome_message', ['name' => Session::get('user.surname') . ' '. Session::get('user.first_name'). ' '. Session::get('user.last_name')]) }}
     </h1>
 </section>

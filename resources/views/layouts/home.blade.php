@@ -91,7 +91,7 @@
         </style>
     </head>
 
-    <body>ddddddddddddddd
+    <body>
         @include('layouts.partials.home_header')
         <div class="container">
             <div class="content">
