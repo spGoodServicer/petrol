@@ -17,7 +17,7 @@
 
 		<li class="nav-item {{ $request->segment(2) == 'business' ? 'active active-sub' : '' }}">
 			<a href="{{action('\Modules\Superadmin\Http\Controllers\BusinessController@index')}}">
-				<i class="fa fa-university"></i>
+				<i class="fa fa-university nav-icon"></i>
 				<p class="title">
 					@lang('superadmin::lang.all_business')
 				</p>

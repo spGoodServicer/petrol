@@ -294,24 +294,21 @@
 				@if(auth()->user()->can('crm.view'))
 					@if($enable_crm == 1)
 						<li class="treeview {{ in_array($request->segment(1), ['crm']) ? 'active active-sub' : '' }}">
-							<a href="#">
-								<i class="fa fa-connectdevelop"></i>
-								<span class="title">@lang('lang_v1.crm')</span>
-								<span class="pull-right-container">
-									<i class="fa fa-angle-left pull-right"></i>
-								</span>
+							<a href="#" class="nav-link">
+								<i class="fab fa-connectdevelop nav-icon"></i>
+								<span class="title">@lang('lang_v1.crm') <i class="fa fa-angle-left pull-right"></i></span>
 							</a>
-							<ul class="treeview-menu">
+							<ul class="nav nav-treeview">
 								@can('crm.view')
-								<li class="{{ $request->segment(1) == 'crm' && $request->input('type') == 'customer' ? 'active' : '' }}">
-									<a href="{{action('CRMController@index')}}"><i class="fa fa-star"></i>2 @lang('lang_v1.crm')</a>
+								<li class="nav-item {{ $request->segment(1) == 'crm' && $request->input('type') == 'customer' ? 'active' : '' }}">
+									<a href="{{action('CRMController@index')}}" class="nav-link"><i class="fa fa-star nav-icon"></i> @lang('lang_v1.crm')</a>
 								</li>
-								<li class="{{ $request->segment(1) == 'crmgroups' ? 'active' : '' }}">
-									<a href="{{action('CrmGroupController@index')}}"><i class="fa fa-object-group"></i> @lang('lang_v1.crm_group')</a>
+								<li class="nav-item {{ $request->segment(1) == 'crmgroups' ? 'active' : '' }}">
+									<a href="{{action('CrmGroupController@index')}}" class="nav-link"><i class="fa fa-object-group nav-icon"></i> @lang('lang_v1.crm_group')</a>
 								</li>
 								@endcan
-								<li class="{{ $request->segment(1) == 'crm-activity' ? 'active' : '' }}">
-									<a href="{{action('CRMActivityController@index')}}"><i class="fa fa-object-group"></i> @lang('lang_v1.crm_activity')</a>
+								<li class="nav-item {{ $request->segment(1) == 'crm-activity' ? 'active' : '' }}">
+									<a href="{{action('CRMActivityController@index')}}" class="nav-link"><i class="fa fa-object-group nav-icon"></i> @lang('lang_v1.crm_activity')</a>
 								</li>
 							</ul>
 						</li>
@@ -336,11 +333,11 @@
 						<ul class="treeview-menu">
 							@if($contact_supplier) @can('supplier.view')
 							<li class="{{ $request->input('type') == 'supplier' ? 'active' : '' }}">
-								<a href="{{action('ContactController@index', ['type' => 'supplier'])}}"><i class="fa fa-star"></i>1 @lang('report.supplier')</a>
+								<a href="{{action('ContactController@index', ['type' => 'supplier'])}}"><i class="fa fa-star"></i> @lang('report.supplier')</a>
 							</li>
 							@endcan @endif @can('customer.view') @if($contact_customer) {{-- @if(!$property_module)--}}
 							<li class="{{ $request->input('type') == 'customer' ? 'active' : '' }}">
-								<a href="{{action('ContactController@index', ['type' => 'customer'])}}"><i class="fa fa-star"></i>1 @lang('report.customer')</a>
+								<a href="{{action('ContactController@index', ['type' => 'customer'])}}"><i class="fa fa-star"></i> @lang('report.customer')</a>
 							</li>
 							{{-- @endif--}} @endif @if($contact_group_customer)
 							<li class="{{ $request->segment(1) == 'contact-group' ? 'active' : '' }}">
