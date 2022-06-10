@@ -81,30 +81,36 @@ $help_desk_url = App\System::getProperty('helpdesk_system_url') ?? '#';
         @endif
       </li>
       <li class="nav-item">
-        <div class="navbar-custom-menu">
-
-          @if(Module::has('Essentials'))
+        @if(Module::has('Essentials'))
             @includeIf('essentials::layouts.partials.header_part')
-          @endif
-          <a target="_blank" href="{{$help_desk_url}}" title="@lang('lang_v1.back_to_superadmin')" type="button" class="btn btn-success btn-flat pull-left m-8 hidden-xs btn-sm mt-10" >
-            <strong>@lang('superadmin::lang.help_desk')</strong>
-          </a>
-          @if(request()->session()->get('superadmin-logged-in') && !request()->session()->get('user.is_pump_operator'))
+         @endif
+      </li>
+      <li class="nav-item">
+        <a target="_blank" href="{{$help_desk_url}}" title="@lang('lang_v1.back_to_superadmin')" type="button" class="btn btn-success btn-flat pull-left m-8 hidden-xs btn-sm mt-10" >
+          <strong>@lang('superadmin::lang.help_desk')</strong>
+        </a>
+      </li>
+      <li class="nav-item">
+        @if(request()->session()->get('superadmin-logged-in') && !request()->session()->get('user.is_pump_operator'))
           <a href="{{action('\Modules\Superadmin\Http\Controllers\BusinessController@backToSuperadmin')}}" title="@lang('lang_v1.back_to_superadmin')" type="button" class="btn btn-danger btn-flat pull-left m-8 hidden-xs btn-sm mt-10" >
               <strong><i class="fa fa-arrow-left fa-lg" aria-hidden="true"></i></strong>
           </a>
           @endif
-          @if(!request()->session()->get('user.is_pump_operator'))
+      </li>
+      <li class="nav-item">
+        @if(!request()->session()->get('user.is_pump_operator'))
           <button id="btnLock" title="@lang('lang_v1.lock_screen')" type="button" class="btn btn-success btn-flat pull-left m-8 hidden-xs btn-sm mt-10 popover-default" data-placement="bottom">
             <strong><i class="fa fa-lock fa-lg" aria-hidden="true"></i></strong>
           </button>
           @endif
-  
-          <button id="btnCalculator" title="@lang('lang_v1.calculator')" type="button" class="btn btn-success btn-flat pull-left m-8 hidden-xs btn-sm mt-10 popover-default" tabindex="-1" data-toggle="click" data-trigger="click" data-content='@include("layouts.partials.calculator")' data-html="true" data-placement="bottom">
-              <strong><i class="fa fa-calculator fa-lg" aria-hidden="true"></i></strong>
-          </button>
-          
-          @if($request->segment(1) == 'pos')
+      </li>
+      <li class="nav-item">
+        <button id="btnCalculator" title="@lang('lang_v1.calculator')" type="button" class="btn btn-success btn-flat pull-left m-8 hidden-xs btn-sm mt-10 popover-default" tabindex="-1" data-toggle="click" data-trigger="click" data-content='@include("layouts.partials.calculator")' data-html="true" data-placement="bottom">
+          <strong><i class="fa fa-calculator fa-lg" aria-hidden="true"></i></strong>
+        </button>
+      </li>
+      <li class="nav-item">
+        @if($request->segment(1) == 'pos')
             <button type="button" id="register_details" title="{{ __('cash_register.register_details') }}" data-toggle="tooltip" data-placement="bottom" class="btn btn-success btn-flat pull-left m-8 hidden-xs btn-sm mt-10 btn-modal" data-container=".register_details_modal" 
             data-href="{{ action('CashRegisterController@getRegisterDetails')}}">
               <strong><i class="fa fa-briefcase fa-lg" aria-hidden="true"></i></strong>
@@ -114,8 +120,9 @@ $help_desk_url = App\System::getProperty('helpdesk_system_url') ?? '#';
               <strong><i class="fa fa-window-close fa-lg"></i></strong>
             </button>
           @endif
-  
-          @if(!request()->session()->get('business.is_patient') && !request()->session()->get('business.is_hospital') && !request()->session()->get('business.is_pharmacy') && !request()->session()->get('business.is_laboratory'))
+      </li>
+      <li class="nav-item">
+        @if(!request()->session()->get('business.is_patient') && !request()->session()->get('business.is_hospital') && !request()->session()->get('business.is_pharmacy') && !request()->session()->get('business.is_laboratory'))
             @if($day_end_enable == 1)
               @can('day_end.view')
                 <a href="{{action('BusinessController@dayEnd')}}" title="Day End" data-toggle="tooltip" data-placement="bottom" class="btn @if($day_end == 0) btn-success @else btn-danger @endif btn-flat pull-left m-8 hidden-xs btn-sm mt-10">
@@ -152,56 +159,57 @@ $help_desk_url = App\System::getProperty('helpdesk_system_url') ?? '#';
             @endif
             @endif
           @endif
-  
-          <div class="m-8 pull-left mt-15 hidden-xs" style="color: #fff;"><strong>{{ @format_date('now') }}</strong></div>
-  
-          <ul class="nav navbar-nav">
-            @include('layouts.partials.header-notifications')
-            <!-- User Account Menu -->
-            <li class="dropdown user user-menu">
-              <!-- Menu Toggle Button -->
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <!-- The user image in the navbar-->
-                @php
-                  $profile_photo = auth()->user()->media;
-                @endphp
-                @if(!empty($profile_photo))
-                  <img src="{{$profile_photo->display_url}}" class="user-image" alt="User Image">
+      </li>
+      <li class="nav-item">
+        <div class="m-8 pull-left mt-15 hidden-xs" style="color: #fff;"><strong>{{ @format_date('now') }}</strong></div>
+      </li>
+      <li class="nav-item">
+        <ul class="nav navbar-nav">
+          @include('layouts.partials.header-notifications')
+          <!-- User Account Menu -->
+          <li class="dropdown user user-menu">
+            <!-- Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- The user image in the navbar-->
+              @php
+                $profile_photo = auth()->user()->media;
+              @endphp
+              @if(!empty($profile_photo))
+                <img src="{{$profile_photo->display_url}}" class="user-image" alt="User Image">
+              @endif
+              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+              <span>{{ Auth::User()->first_name }} {{ Auth::User()->last_name }}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- The user image in the menu -->
+              <li class="user-header">
+                @if(!empty(Session::get('business.logo')))
+                  <img src="{{ url( 'public/uploads/business_logos/' . Session::get('business.logo') ) }}" alt="Logo"></span>
                 @endif
-                <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                <span>{{ Auth::User()->first_name }} {{ Auth::User()->last_name }}</span>
-              </a>
-              <ul class="dropdown-menu">
-                <!-- The user image in the menu -->
-                <li class="user-header">
-                  @if(!empty(Session::get('business.logo')))
-                    <img src="{{ url( 'public/uploads/business_logos/' . Session::get('business.logo') ) }}" alt="Logo"></span>
+                <p>
+                  {{ Auth::User()->first_name }} {{ Auth::User()->last_name }}
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="{{action('UserController@getProfile')}}" class="btn btn-default btn-flat">@lang('lang_v1.profile')</a>
+                </div>
+                <div class="pull-right">
+                  @if(auth()->user()->is_pump_operator)
+                  <a href="{{action('Auth\PumpOperatorLoginController@logout')}}" class="btn btn-default btn-flat">@lang('lang_v1.sign_out')</a>
+                  @elseif(auth()->user()->is_property_user)
+                  <a href="{{action('Auth\PropertyUserLoginController@logout')}}?id={{request()->session()->get('business.company_number')}}" class="btn btn-default btn-flat">@lang('lang_v1.sign_out')</a>
+                  @else
+                  <a href="{{action('Auth\LoginController@logout')}}?id={{request()->session()->get('business.company_number')}}" class="btn btn-default btn-flat">@lang('lang_v1.sign_out')</a>
                   @endif
-                  <p>
-                    {{ Auth::User()->first_name }} {{ Auth::User()->last_name }}
-                  </p>
-                </li>
-                <!-- Menu Body -->
-                <!-- Menu Footer-->
-                <li class="user-footer">
-                  <div class="pull-left">
-                    <a href="{{action('UserController@getProfile')}}" class="btn btn-default btn-flat">@lang('lang_v1.profile')</a>
-                  </div>
-                  <div class="pull-right">
-                    @if(auth()->user()->is_pump_operator)
-                    <a href="{{action('Auth\PumpOperatorLoginController@logout')}}" class="btn btn-default btn-flat">@lang('lang_v1.sign_out')</a>
-                    @elseif(auth()->user()->is_property_user)
-                    <a href="{{action('Auth\PropertyUserLoginController@logout')}}?id={{request()->session()->get('business.company_number')}}" class="btn btn-default btn-flat">@lang('lang_v1.sign_out')</a>
-                    @else
-                    <a href="{{action('Auth\LoginController@logout')}}?id={{request()->session()->get('business.company_number')}}" class="btn btn-default btn-flat">@lang('lang_v1.sign_out')</a>
-                    @endif
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <!-- Control Sidebar Toggle Button -->
-          </ul>
-        </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+        </ul>
       </li>
     </ul>
   </nav>
