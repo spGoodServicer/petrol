@@ -271,7 +271,7 @@
         </ul>
         @else
         <!-- The main POS System Menu -->
-        <ul class="sidebar-menu">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Call superadmin module if defined -->
             @if(Module::has('Superadmin')) @includeIf('superadmin::layouts.partials.sidebar') @endif
             <!-- Call ecommerce module if defined -->
