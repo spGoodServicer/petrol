@@ -6,18 +6,27 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js?v=$asset_v"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js?v=$asset_v"></script>
 <![endif]-->
+<!-- jQuery -->
+
+<script src="{{ asset('AdminLTE/plugins/jquery/jquery.min.js?v=' . $asset_v) }}"></script>
+<!-- Bootstrap -->
+<script src="{{ asset('AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js?v=' . $asset_v) }}"></script>
+<!-- overlayScrollbars -->
+<script src="{{ asset('AdminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js?v=' . $asset_v) }}"></script>
+<!-- AdminLTE App -->
+<script src="{{ asset('AdminLTE/js/adminlte.js?v=' . $asset_v) }}"></script>
 
 <!-- jQuery 2.2.3 -->
-<script src="{{ asset('AdminLTE/plugins/jQuery/jquery-2.2.3.min.js?v=' . $asset_v) }}"></script>
-<script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js?v=' . $asset_v) }}"></script>
+
+{{-- <script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js?v=' . $asset_v) }}"></script> --}}
 <!-- Bootstrap 3.3.6 -->
-<script src="{{ asset('bootstrap/js/bootstrap.min.js?v=' . $asset_v) }}"></script>
+{{-- <script src="{{ asset('bootstrap/js/bootstrap.min.js?v=' . $asset_v) }}"></script> --}}
 <!-- iCheck -->
-<script src="{{ asset('AdminLTE/plugins/iCheck/icheck.min.js?v=' . $asset_v) }}"></script>
+{{-- <script src="{{ asset('AdminLTE/plugins/iCheck/icheck.min.js?v=' . $asset_v) }}"></script> --}}
 <!-- jQuery Step -->
-<script src="{{ asset('plugins/jquery.steps/jquery.steps.min.js?v=' . $asset_v) }}"></script>
+{{-- <script src="{{ asset('plugins/jquery.steps/jquery.steps.min.js?v=' . $asset_v) }}"></script> --}}
 <!-- Select2 -->
-<script src="{{ asset('AdminLTE/plugins/select2/select2.full.min.js?v=' . $asset_v) }}"></script>
+{{-- <script src="{{ asset('AdminLTE/plugins/select2/select2.full.min.js?v=' . $asset_v) }}"></script> --}}
 <!-- Add language file for select2 -->
 @if(file_exists(public_path('AdminLTE/plugins/select2/lang/' . session()->get('user.language', config('app.locale')) .
 '.js')))
