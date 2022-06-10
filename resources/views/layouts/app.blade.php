@@ -30,7 +30,9 @@
 
     <title>@yield('title') - {{ Session::get('business.name') }}</title>
     <link rel="shortcut icon" type="image/x-icon" href="{{url($settings->uploadFileFicon)}}" />
-    
+    <!--salvap overlayScrollbars -->
+    <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.min.css?v='.$asset_v) }}">
+    <!--salvap Theme style -->
     <link rel="stylesheet" href="{{ asset('AdminLTE/css/adminlte.min.css?v='.$asset_v) }}">
     @include('layouts.partials.css')
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
