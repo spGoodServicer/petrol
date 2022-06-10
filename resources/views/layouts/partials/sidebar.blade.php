@@ -296,19 +296,19 @@
 						<li class="treeview {{ in_array($request->segment(1), ['crm']) ? 'active active-sub' : '' }}">
 							<a href="#" class="nav-link">
 								<i class="fab fa-connectdevelop nav-icon"></i>
-								<span class="title">@lang('lang_v1.crm') <i class="right fas fa-angle-left"></i></span>
+								<p class="title">@lang('lang_v1.crm') <i class="right fas fa-angle-left"></i></p>
 							</a>
 							<ul class="nav nav-treeview">
 								@can('crm.view')
 								<li class="nav-item {{ $request->segment(1) == 'crm' && $request->input('type') == 'customer' ? 'active' : '' }}">
-									<a href="{{action('CRMController@index')}}" class="nav-link"><i class="fa fa-star nav-icon"></i> @lang('lang_v1.crm')</a>
+									<a href="{{action('CRMController@index')}}" class="nav-link"><i class="fa fa-star nav-icon"></i> <p>@lang('lang_v1.crm')</p></a>
 								</li>
 								<li class="nav-item {{ $request->segment(1) == 'crmgroups' ? 'active' : '' }}">
-									<a href="{{action('CrmGroupController@index')}}" class="nav-link"><i class="fa fa-object-group nav-icon"></i> @lang('lang_v1.crm_group')</a>
+									<a href="{{action('CrmGroupController@index')}}" class="nav-link"><i class="fa fa-object-group nav-icon"></i> <p>@lang('lang_v1.crm_group')</p></a>
 								</li>
 								@endcan
 								<li class="nav-item {{ $request->segment(1) == 'crm-activity' ? 'active' : '' }}">
-									<a href="{{action('CRMActivityController@index')}}" class="nav-link"><i class="fa fa-object-group nav-icon"></i> @lang('lang_v1.crm_activity')</a>
+									<a href="{{action('CRMActivityController@index')}}" class="nav-link"><i class="fa fa-object-group nav-icon"></i> <p>@lang('lang_v1.crm_activity')</p></a>
 								</li>
 							</ul>
 						</li>
