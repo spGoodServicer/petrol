@@ -1,14 +1,13 @@
 <li class="nav-item treeview {{ in_array($request->segment(1), ['leads']) ? 'active active-sub' : '' }}">
-    <a href="#" class="nav-link"><i class="fa fa-lg fa-lightbulb-o nav-icon"></i> <p>@lang('leads::lang.leads') <i class="right fas fa-angle-left"></i></p>
-        
+    <a href="#" class="nav-link">
+        <i class="fal fa-lightbulb-on nav-icon"></i> <p>@lang('leads::lang.leads') <i class="right fas fa-angle-left"></i></p>
     </a>
     <ul class="nav nav-treeview">
         @if($leads)
         @if(auth()->user()->can('leads.view') || auth()->user()->can('leads.edit') ||
         auth()->user()->can('leads.destory')|| auth()->user()->can('leads.create'))
         <li class="nav-item {{ $request->segment(1) == 'leads' && $request->segment(2) == 'leads'? 'active' : '' }}">
-            <a href="{{action('\Modules\Leads\Http\Controllers\LeadsController@index')}}" class="nav-link"><i
-                    class="fa fa-lightbulb-o nav-icon"></i> <p>@lang('leads::lang.leads')</p></a>
+            <a href="{{action('\Modules\Leads\Http\Controllers\LeadsController@index')}}" class="nav-link"><i class="fal fa-lightbulb-on nav-icon"></i> <p>@lang('leads::lang.leads')</p></a>
         </li>
         @endcan
         @endif

@@ -323,21 +323,18 @@
 			@endif
 			@if($contact_module)
 				@if(auth()->user()->can('supplier.view') || auth()->user()->can('customer.view') )
-					<li class="treeview {{ in_array($request->segment(1), ['contacts', 'customer-group', 'contact-group', 'customer-reference', 'customer-statement', 'outstanding-received-report']) ? 'active active-sub' : '' }}" id="tour_step4">
-						<a href="#" id="tour_step4_menu">
-							<i class="fa fa-address-book"></i> <span>@lang('contact.contacts')</span>
-							<span class="pull-right-container">
-								<i class="right fas fa-angle-left"></i>
-							</span>
+					<li class="nav-item treeview {{ in_array($request->segment(1), ['contacts', 'customer-group', 'contact-group', 'customer-reference', 'customer-statement', 'outstanding-received-report']) ? 'active active-sub' : '' }}" id="tour_step4">
+						<a href="#" id="tour_step4_menu" class="nav-link">
+							<i class="fa fa-address-book nav-icon"></i> <p>@lang('contact.contacts') <i class="right fas fa-angle-left"></i></p>
 						</a>
-						<ul class="treeview-menu">
+						<ul class="nav nav-treeview">
 							@if($contact_supplier) @can('supplier.view')
-							<li class="{{ $request->input('type') == 'supplier' ? 'active' : '' }}">
-								<a href="{{action('ContactController@index', ['type' => 'supplier'])}}"><i class="fa fa-star"></i> @lang('report.supplier')</a>
+							<li class="nav-item {{ $request->input('type') == 'supplier' ? 'active' : '' }}">
+								<a href="{{action('ContactController@index', ['type' => 'supplier'])}}" class="nav-link"><i class="fa fa-star nav-icon"></i> <p>@lang('report.supplier')</p></a>
 							</li>
 							@endcan @endif @can('customer.view') @if($contact_customer) {{-- @if(!$property_module)--}}
 							<li class="{{ $request->input('type') == 'customer' ? 'active' : '' }}">
-								<a href="{{action('ContactController@index', ['type' => 'customer'])}}"><i class="fa fa-star"></i> @lang('report.customer')</a>
+								<a href="{{action('ContactController@index', ['type' => 'customer'])}}" class="nav-link"><i class="fa fa-star nav-icon"></i> <p>@lang('report.customer')</p></a>
 							</li>
 							{{-- @endif--}} @endif @if($contact_group_customer)
 							<li class="{{ $request->segment(1) == 'contact-group' ? 'active' : '' }}">
