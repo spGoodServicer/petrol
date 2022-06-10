@@ -48,14 +48,14 @@ if (auth()->user()->can('superadmin')) {
 $help_desk_url = App\System::getProperty('helpdesk_system_url') ?? '#';
 @endphp
 <!-- Main Header -->
-  <header class="main-header no-print">
-    <a href="{{route('home')}}" class="logo" style="background: {{ $top_belt_bg}};">
+  {{-- <header class="main-header no-print"> --}}
+    <!--a href="{{route('home')}}" class="logo" style="background: {{ $top_belt_bg}};">
       
       <span class="logo-lg">{{ Session::get('business.name') }}</span>
-    </a>
+    </a-->
 
     <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top" role="navigation" style="background: {{ $top_belt_bg}};">
+    <nav class="main-header navbar navbar-expand navbar-dark" role="navigation" style="background: {{ $top_belt_bg}};">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
         <i class="fa fa-bars"></i>
@@ -194,4 +194,4 @@ $help_desk_url = App\System::getProperty('helpdesk_system_url') ?? '#';
         </ul>
       </div>
     </nav>
-  </header>
+  {{-- </header> --}}
