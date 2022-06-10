@@ -8,7 +8,7 @@
 @section('content')
 
 <!-- Content Header (Page header) -->
-<section class="content-header">
+<section class="content-header">ttttt
     <h1>{{ __('home.welcome_message', ['name' => Auth::user()->first_name. ' '. Auth::user()->last_name]) }}
     </h1>
 </section>
