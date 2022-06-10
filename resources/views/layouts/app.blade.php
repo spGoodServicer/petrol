@@ -30,6 +30,8 @@
 
     <title>@yield('title') - {{ Session::get('business.name') }}</title>
     <link rel="shortcut icon" type="image/x-icon" href="{{url($settings->uploadFileFicon)}}" />
+    
+    <link rel="stylesheet" href="{{ asset('AdminLTE/css/adminlte.min.css?v='.$asset_v) }}">
     @include('layouts.partials.css')
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
