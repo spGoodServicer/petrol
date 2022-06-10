@@ -1,7 +1,7 @@
 @can('superadmin')
 <li class="nav-item menu-open bg-red treeview {{ in_array($request->segment(1), ['superadmin', 'sample-medical-product-import', 'site-settings', 'pay-online']) ? 'active active-sub' : '' }}">
 	<a href="#" class="nav-link">
-		<i class="fa fa-bank nav-icon"></i>
+		<i class="fa fa-university nav-icon"></i>
 		<p class="title">@lang('superadmin::lang.superadmin')</p>
 		<p class="pull-right-container">
 			<i class="fa fa-angle-left pull-right"></i>
@@ -10,7 +10,7 @@
 	<ul class="nav nav-treeview">
 		<li class="nav-item {{ empty($request->segment(2)) && $request->segment(1) != 'site-settings' ? 'active active-sub' : '' }}">
 			<a href="{{action('\Modules\Superadmin\Http\Controllers\SuperadminController@index')}}" class="nav-link">
-				<i class="fa fa-bank nav-icon"></i>
+				<i class="fa fa-university nav-icon"></i>
 				<p class="title">
 					@lang('superadmin::lang.superadmin')
 				</p>
@@ -19,7 +19,7 @@
 
 		<li class="nav-item {{ $request->segment(2) == 'business' ? 'active active-sub' : '' }}">
 			<a href="{{action('\Modules\Superadmin\Http\Controllers\BusinessController@index')}}">
-				<i class="fa fa-bank"></i>
+				<i class="fa fa-university"></i>
 				<p class="title">
 					@lang('superadmin::lang.all_business')
 				</p>
@@ -28,7 +28,7 @@
 		<!-- superadmin subscription -->
 		<li class="nav-item {{ $request->segment(2) == 'superadmin-subscription' ? 'active active-sub' : '' }}">
 			<a href="{{action('\Modules\Superadmin\Http\Controllers\SuperadminSubscriptionsController@index')}}"><i
-					class="fa fa-refresh"></i>
+					class="fa fa-retweet nav-icon"></i>
 				<p class="title">@lang('superadmin::lang.subscription')</p>
 			</a>
 		</li>
