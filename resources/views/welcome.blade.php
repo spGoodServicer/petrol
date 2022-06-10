@@ -18,7 +18,7 @@
                 text-align: center;
             }
     </style>
-    <div class="title flex-center" style="font-weight: 600 !important;">
+    <div class="title flex-center" style="font-weight: 600 !important;">ddddddddddddddddddddddddddddddd
         {{ config('app.name', 'ultimatePOS') }}
     </div>
     <p class="tagline">
