@@ -293,7 +293,7 @@
 			@if(auth()->user()->is_customer == 0)
 				@if(auth()->user()->can('crm.view'))
 					@if($enable_crm == 1)
-						<li class="treeview {{ in_array($request->segment(1), ['crm']) ? 'active active-sub' : '' }}">
+						<li class="nav-item treeview {{ in_array($request->segment(1), ['crm']) ? 'active active-sub' : '' }}">
 							<a href="#" class="nav-link">
 								<i class="fab fa-connectdevelop nav-icon"></i>
 								<p class="title">@lang('lang_v1.crm') <i class="right fas fa-angle-left"></i></p>
