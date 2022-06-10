@@ -28,7 +28,7 @@
     <script data-ad-client="ca-pub-1123727429633739" async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-    <title>@yield('title') - {{ Session::get('business.name') }}</title>
+    <title>@yield('title') - {{ Session::get('business.name') }}ddddddddddddddddddddddd</title>
     <link rel="shortcut icon" type="image/x-icon" href="{{url($settings->uploadFileFicon)}}" />
     @include('layouts.partials.css')
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
