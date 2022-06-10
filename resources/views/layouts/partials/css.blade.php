@@ -1,12 +1,12 @@
 {{-- <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/pace/pace.css?v='.$asset_v) }}"> --}}
 
 <!-- Font Awesome -->
-<link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/font-awesome.min.css?v='.$asset_v) }}">
+{{-- <link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/font-awesome.min.css?v='.$asset_v) }}"> --}}
 <link rel="stylesheet" href="{{ asset('css/combine.css') }}">
 <!-- Styles -->
-<link rel="stylesheet" href="{{ asset('plugins/jquery-ui/jquery-ui.min.css?v='.$asset_v) }}">
+{{-- <link rel="stylesheet" href="{{ asset('plugins/jquery-ui/jquery-ui.min.css?v='.$asset_v) }}"> --}}
 <!-- Bootstrap 3.3.6 -->
-<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css?v='.$asset_v) }}">
+{{-- <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css?v='.$asset_v) }}"> --}}
 
 @if( in_array(session()->get('user.language', config('app.locale')), config('constants.langs_rtl')) )
 	<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.rtl.min.css?v='.$asset_v) }}">
