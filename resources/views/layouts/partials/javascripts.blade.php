@@ -22,9 +22,9 @@
 <!-- Bootstrap 3.3.6 -->
 {{-- <script src="{{ asset('bootstrap/js/bootstrap.min.js?v=' . $asset_v) }}"></script> --}}
 <!-- iCheck -->
-{{-- <script src="{{ asset('AdminLTE/plugins/iCheck/icheck.min.js?v=' . $asset_v) }}"></script> --}}
+<script src="{{ asset('AdminLTE/plugins/iCheck/icheck.min.js?v=' . $asset_v) }}"></script>
 <!-- jQuery Step -->
-{{-- <script src="{{ asset('plugins/jquery.steps/jquery.steps.min.js?v=' . $asset_v) }}"></script> --}}
+<script src="{{ asset('plugins/jquery.steps/jquery.steps.min.js?v=' . $asset_v) }}"></script>
 <!-- Select2 -->
 <script src="{{ asset('AdminLTE/plugins/select2/select2.full.min.js?v=' . $asset_v) }}"></script>
 <!-- Add language file for select2 -->
