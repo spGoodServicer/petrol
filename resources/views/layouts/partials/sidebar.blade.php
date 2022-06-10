@@ -228,15 +228,15 @@
         @if(session()->get('business.is_patient'))
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             @if(session()->get('business.is_patient'))
-            <li class="{{ $request->segment(1) == 'patient' ? 'active' : '' }}">
+            <li class="nav-item  {{ $request->segment(1) == 'patient' ? 'active' : '' }}">
                 <a href="{{action('PatientController@index')}}"> <i class="fa fa-dashboard"></i> <span> @lang('home.home')</span> </a>
             </li>
             @endif @if(session()->get('business.is_hospital'))
-            <li class="{{ $request->segment(1) == 'patient' ? 'active' : '' }}">
+            <li class="nav-item  {{ $request->segment(1) == 'patient' ? 'active' : '' }}">
                 <a href="{{action('HospitalController@index')}}"> <i class="fa fa-dashboard"></i> <span> @lang('home.home')</span> </a>
             </li>
             @endif
-            <li class="{{ $request->segment(1) == 'reports' ? 'active' : '' }}">
+            <li class="nav-item  {{ $request->segment(1) == 'reports' ? 'active' : '' }}">
                 <a href="{{action('ReportController@getUserActivityReport')}}">
 					<i class="fa fa-eercast"></i>
 					<span class="title">@lang('report.user_activity')</span>
@@ -251,13 +251,13 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="{{ $request->segment(1) == 'family-member' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'family-member' ? 'active' : '' }}">
                         <a href="{{action('FamilyController@index')}}"><i class="fa fa-users"></i> @lang('patient.family_member')</a>
                     </li>
-                    <li class="{{ $request->segment(2) == 'family-subscription' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(2) == 'family-subscription' ? 'active' : '' }}">
                         <a href="{{action('\Modules\Superadmin\Http\Controllers\FamilySubscriptionController@index')}}"><i class="fa fa-users"></i> @lang('patient.family_subscription')</a>
                     </li>
-                    <li class="{{ $request->segment(1) == 'pay-online' && $request->segment(2) == 'create' ? 'active active-sub' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'pay-online' && $request->segment(2) == 'create' ? 'active active-sub' : '' }}">
                         <a href="{{action('\Modules\Superadmin\Http\Controllers\PayOnlineController@create')}}">
                             <i class="fa fa-money"></i>
                             <span class="title">
@@ -278,15 +278,15 @@
             @if(Module::has('Ecommerce')) @includeIf('ecommerce::layouts.partials.sidebar') @endif
             <!-- <li class="header">HEADER</li> -->
             @if($home_dashboard) @if(auth()->user()->can('dashboard.data') && !auth()->user()->is_pump_operator && !auth()->user()->is_property_user)
-            <li class="{{ $request->segment(1) == 'home' ? 'active' : '' }}">
+            <li class="nav-item  {{ $request->segment(1) == 'home' ? 'active' : '' }}">
                 <a href="{{action('HomeController@index')}}"> <i class="fa fa-dashboard"></i> <span> @lang('home.home')</span> </a>
             </li>
             @endif @endif @if(auth()->user()->is_pump_operator) @if(auth()->user()->can('pump_operator.dashboard'))
-            <li class="{{ $request->segment(1) == 'petro' && $request->segment(2) == 'pump-operators' && $request->segment(3) == 'dashboard' ? 'active' : '' }}">
+            <li class="nav-item  {{ $request->segment(1) == 'petro' && $request->segment(2) == 'pump-operators' && $request->segment(3) == 'dashboard' ? 'active' : '' }}">
                 <a href="{{action('\Modules\Petro\Http\Controllers\PumpOperatorController@dashboard')}}"><i class="fa fa-tachometer"></i> <span>@lang('petro::lang.dashboard')</span></a>
             </li>
             @endif
-            <li class="{{ $request->segment(1) == 'petro' && $request->segment(2) == 'pump-operators' && $request->segment(3) == 'pumper-day-entries' ? 'active' : '' }}">
+            <li class="nav-item  {{ $request->segment(1) == 'petro' && $request->segment(2) == 'pump-operators' && $request->segment(3) == 'pumper-day-entries' ? 'active' : '' }}">
                 <a href="{{action('\Modules\Petro\Http\Controllers\PumperDayEntryController@index')}}"><i class="fa fa-calculator"></i> <span>@lang('petro::lang.pumper_day_entries')</span></a>
             </li>
             @endif
@@ -330,39 +330,39 @@
 						<ul class="nav nav-treeview">
 							@if($contact_supplier) @can('supplier.view')
 							<li class="nav-item {{ $request->input('type') == 'supplier' ? 'active' : '' }}">
-								<a href="{{action('ContactController@index', ['type' => 'supplier'])}}" class="nav-link"><i class="fa fa-star nav-icon"></i> <p>@lang('report.supplier')</p></a>
+								<a href="{{action('ContactController@index', ['type' => 'supplier'])}}" class="nav-link"><i class="fa fa-star nav-icon nav-icon"></i> <p>@lang('report.supplier')</p></a>
 							</li>
 							@endcan @endif @can('customer.view') @if($contact_customer) {{-- @if(!$property_module)--}}
-							<li class="{{ $request->input('type') == 'customer' ? 'active' : '' }}">
-								<a href="{{action('ContactController@index', ['type' => 'customer'])}}" class="nav-link"><i class="fa fa-star nav-icon"></i> <p>@lang('report.customer')</p></a>
+							<li class="nav-item {{ $request->input('type') == 'customer' ? 'active' : '' }}">
+								<a href="{{action('ContactController@index', ['type' => 'customer'])}}" class="nav-link"><i class="fa fa-star nav-icon nav-icon"></i> <p>@lang('report.customer')</p></a>
 							</li>
 							{{-- @endif--}} @endif @if($contact_group_customer)
-							<li class="{{ $request->segment(1) == 'contact-group' ? 'active' : '' }}">
-								<a href="{{action('ContactGroupController@index')}}"><i class="fa fa-users"></i> @lang('lang_v1.contact_groups')</a>
+							<li class="nav-item {{ $request->segment(1) == 'contact-group' ? 'active' : '' }}">
+								<a href="{{action('ContactGroupController@index')}}" class="nav-link"><i class="fa fa-users"></i> <p>@lang('lang_v1.contact_groups')</p></a>
 							</li>
 							@endif @endcan @if($import_contact) @if(!$property_module && $contact_customer) @if(auth()->user()->can('supplier.create') || auth()->user()->can('customer.create') )
-							<li class="{{ $request->segment(1) == 'contacts' && $request->segment(2) == 'import' ? 'active' : '' }}">
-								<a href="{{action('ContactController@getImportContacts')}}"><i class="fa fa-download"></i> @lang('lang_v1.import_contacts')</a>
+							<li class="nav-item {{ $request->segment(1) == 'contacts' && $request->segment(2) == 'import' ? 'active' : '' }}">
+								<a href="{{action('ContactController@getImportContacts')}}" class="nav-link"><i class="fa fa-download nav-icon"></i> <p>@lang('lang_v1.import_contacts')</p></a>
 							</li>
 							@endcan @endif @endif @if($customer_reference) @if($enable_petro_module && $contact_customer && !$property_module)
-							<li class="{{ $request->segment(1) == 'customer-reference' ? 'active' : '' }}">
-								<a href="{{action('CustomerReferenceController@index')}}"><i class="fa fa-link"></i> @lang('lang_v1.customer_reference')</a>
+							<li class="nav-item {{ $request->segment(1) == 'customer-reference' ? 'active' : '' }}">
+								<a href="{{action('CustomerReferenceController@index')}}" class="nav-link"><i class="fa fa-link nav-icon"></i> <p>@lang('lang_v1.customer_reference')</p></a>
 							</li>
 							@endif @endif @if($contact_customer) @if($customer_statement)
-							<li class="{{ $request->segment(1) == 'customer-statement' ? 'active' : '' }}">
-								<a href="{{action('CustomerStatementController@index')}}"><i class="fa fa-paperclip"></i> @lang('contact.customer_statements')</a>
+							<li class="nav-item {{ $request->segment(1) == 'customer-statement' ? 'active' : '' }}">
+								<a href="{{action('CustomerStatementController@index')}}" class="nav-link"><i class="fa fa-paperclip nav-icon"></i> <p>@lang('contact.customer_statements')</p></a>
 							</li>
 							@endif @if($customer_payment)
-							<li class="{{ $request->segment(1) == 'customer-payment-simple' ? 'active' : '' }}">
-								<a href="{{action('CustomerPaymentController@index')}}"><i class="fa fa-money"></i> @lang('lang_v1.customer_payments')</a>
+							<li class="nav-item {{ $request->segment(1) == 'customer-payment-simple' ? 'active' : '' }}">
+								<a href="{{action('CustomerPaymentController@index')}}" class="nav-link"><i class="fa fa-money nav-icon"></i> <p>@lang('lang_v1.customer_payments')</p></a>
 							</li>
 							@endif @if($outstanding_received)
-							<li class="{{ $request->segment(1) == 'outstanding-received-report' ? 'active' : '' }}">
-								<a href="{{action('ContactController@getOutstandingReceivedReport')}}"><i class="fa fa-arrow-right"></i> @lang('lang_v1.outstanding_received')</a>
+							<li class="nav-item  {{ $request->segment(1) == 'outstanding-received-report' ? 'active' : '' }}">
+								<a href="{{action('ContactController@getOutstandingReceivedReport')}}" class="nav-link"><i class="fa fa-arrow-right nav-icon"></i> <p>@lang('lang_v1.outstanding_received')</p></a>
 							</li>
 							@endif @endif @if($contact_supplier) @if($issue_payment_detail)
-							<li class="{{ $request->segment(1) == 'issued-payment-details' ? 'active' : '' }}">
-								<a href="{{action('ContactController@getIssuedPaymentDetails')}}"><i class="fa fa-arrow-left"></i> @lang('lang_v1.issued_payment_details')</a>
+							<li class="nav-item  {{ $request->segment(1) == 'issued-payment-details' ? 'active' : '' }}">
+								<a href="{{action('ContactController@getIssuedPaymentDetails')}}" class="nav-link"><i class="fa fa-arrow-left nav-icon"></i> <p>@lang('lang_v1.issued_payment_details')</p></a>
 							</li>
 							@endif @endif
 						</ul>
@@ -384,58 +384,58 @@
 						</a>
 						<ul class="treeview-menu">
 							@can('product.view')
-							<li class="{{ $request->segment(1) == 'products' && $request->segment(2) == '' ? 'active' : '' }}">
+							<li class="nav-item  {{ $request->segment(1) == 'products' && $request->segment(2) == '' ? 'active' : '' }}">
 								<a href="{{action('ProductController@index')}}"><i class="fa fa-list"></i>@lang('lang_v1.list_products')</a>
 							</li>
 							@endcan @can('product.create')
-							<li class="{{ $request->segment(1) == 'products' && $request->segment(2) == 'create' ? 'active' : '' }}">
+							<li class="nav-item  {{ $request->segment(1) == 'products' && $request->segment(2) == 'create' ? 'active' : '' }}">
 								<a href="{{action('ProductController@create')}}"><i class="fa fa-plus-circle"></i>@lang('product.add_product')</a>
 							</li>
 							@endcan @can('product.view')
-							<li class="{{ $request->segment(1) == 'labels' && $request->segment(2) == 'show' ? 'active' : '' }}">
+							<li class="nav-item  {{ $request->segment(1) == 'labels' && $request->segment(2) == 'show' ? 'active' : '' }}">
 								<a href="{{action('LabelsController@show')}}"><i class="fa fa-barcode"></i>@lang('barcode.print_labels')</a>
 							</li>
 							@endcan @can('product.create')
-							<li class="{{ $request->segment(1) == 'variation-templates' ? 'active' : '' }}">
+							<li class="nav-item  {{ $request->segment(1) == 'variation-templates' ? 'active' : '' }}">
 								<a href="{{action('VariationTemplateController@index')}}"><i class="fa fa-circle-o"></i><span>@lang('product.variations')</span></a>
 							</li>
 							@endcan @can('product.create')
-							<li class="{{ $request->segment(1) == 'import-products' ? 'active' : '' }}">
+							<li class="nav-item  {{ $request->segment(1) == 'import-products' ? 'active' : '' }}">
 								<a href="{{action('ImportProductsController@index')}}"><i class="fa fa-download"></i><span>@lang('product.import_products')</span></a>
 							</li>
 							@endcan @if(session()->get('business.is_pharmacy'))
-							<li class="{{ $request->segment(1) == 'sample-medical-product-list' ? 'active' : '' }}">
+							<li class="nav-item  {{ $request->segment(1) == 'sample-medical-product-list' ? 'active' : '' }}">
 								<a href="{{action('SampleMedicalProductController@index')}}"><i class="fa fa-download"></i><span>@lang('lang_v1.sample_medical_product_list')</span></a>
 							</li>
 							@endif @can('product.opening_stock')
-							<li class="{{ $request->segment(1) == 'import-opening-stock' ? 'active' : '' }}">
+							<li class="nav-item  {{ $request->segment(1) == 'import-opening-stock' ? 'active' : '' }}">
 								<a href="{{action('ImportOpeningStockController@index')}}"><i class="fa fa-download"></i><span>@lang('lang_v1.import_opening_stock')</span></a>
 							</li>
 							@endcan @can('product.create')
-							<li class="{{ $request->segment(1) == 'selling-price-group' ? 'active' : '' }}">
+							<li class="nav-item  {{ $request->segment(1) == 'selling-price-group' ? 'active' : '' }}">
 								<a href="{{action('SellingPriceGroupController@index')}}"><i class="fa fa-circle-o"></i><span>@lang('lang_v1.selling_price_group')</span></a>
 							</li>
 							@endcan @if(auth()->user()->can('unit.view') || auth()->user()->can('unit.create'))
-							<li class="{{ $request->segment(1) == 'units' ? 'active' : '' }}">
+							<li class="nav-item  {{ $request->segment(1) == 'units' ? 'active' : '' }}">
 								<a href="{{action('UnitController@index')}}"><i class="fa fa-balance-scale"></i> <span>@lang('unit.units')</span></a>
 							</li>
 							@endif @if(auth()->user()->can('category.view') || auth()->user()->can('category.create'))
-							<li class="{{ $request->segment(1) == 'categories' ? 'active' : '' }}">
+							<li class="nav-item  {{ $request->segment(1) == 'categories' ? 'active' : '' }}">
 								<a href="{{action('CategoryController@index')}}"><i class="fa fa-tags"></i> <span>@lang('category.categories') </span></a>
 							</li>
 							@endif @if(auth()->user()->can('brand.view') || auth()->user()->can('brand.create'))
-							<li class="{{ $request->segment(1) == 'brands' ? 'active' : '' }}">
+							<li class="nav-item  {{ $request->segment(1) == 'brands' ? 'active' : '' }}">
 								<a href="{{action('BrandController@index')}}"><i class="fa fa-diamond"></i> <span>@lang('brand.brands')</span></a>
 							</li>
 							@endif
-							<li class="{{ $request->segment(1) == 'warranties' ? 'active active-sub' : '' }}">
+							<li class="nav-item  {{ $request->segment(1) == 'warranties' ? 'active active-sub' : '' }}">
 								<a href="{{action('WarrantyController@index')}}">
 									<i class="fa fa-shield"></i>
 									<span class="title">@lang('lang_v1.warranties')</span>
 								</a>
 							</li>
 							@if($enable_petro_module) @if($merge_sub_category)
-							<li class="{{ $request->segment(1) == 'merged-sub-categories' ? 'active active-sub' : '' }}">
+							<li class="nav-item  {{ $request->segment(1) == 'merged-sub-categories' ? 'active active-sub' : '' }}">
 								<a href="{{action('MergedSubCategoryController@index')}}">
 									<i class="fa fa-compress"></i>
 									<span class="title">@lang('lang_v1.merged_sub_categories')</span>
@@ -477,27 +477,27 @@
                             </a>
                             <ul class="treeview-menu">
                                 @if($all_purchase)
-                                <li class="{{ $request->segment(1) == 'purchases' && $request->segment(2) == null ? 'active' : '' }}">
+                                <li class="nav-item  {{ $request->segment(1) == 'purchases' && $request->segment(2) == null ? 'active' : '' }}">
                                     <a href="{{action('PurchaseController@index')}}"><i class="fa fa-list"></i>@lang('purchase.list_purchase')</a>
                                 </li>
                                 @endif
                                 @if($add_bulk_purchase)
-                                <li class="{{ $request->segment(1) == 'purchases' && $request->segment(2) == 'add-purchase-bulk' ? 'active' : '' }}">
+                                <li class="nav-item  {{ $request->segment(1) == 'purchases' && $request->segment(2) == 'add-purchase-bulk' ? 'active' : '' }}">
                                     <a href="{{action('PurchaseController@addPurchaseBulk')}}"><i class="fa fa-stack-exchange"></i> @lang('purchase.add_purchase_bulk')</a>
                                 </li>
                                 @endif
                                 @if($add_purchase)
-                                <li class="{{ $request->segment(1) == 'purchases' && $request->segment(2) == 'create' ? 'active' : '' }}">
+                                <li class="nav-item  {{ $request->segment(1) == 'purchases' && $request->segment(2) == 'create' ? 'active' : '' }}">
                                     <a href="{{action('PurchaseController@create')}}"><i class="fa fa-plus-circle"></i> @lang('purchase.add_purchase')</a>
                                 </li>
                                 @endif
                                 @if($purchase_return)
-                                <li class="{{ $request->segment(1) == 'purchase-return' ? 'active' : '' }}">
+                                <li class="nav-item  {{ $request->segment(1) == 'purchase-return' ? 'active' : '' }}">
                                     <a href="{{action('PurchaseReturnController@index')}}"><i class="fa fa-undo"></i> @lang('lang_v1.list_purchase_return')</a>
                                 </li>
                                 @endif
                                 @if($import_purchase)
-                                <li class="{{ $request->segment(1) == 'import-purchases'? 'active' : '' }}">
+                                <li class="nav-item  {{ $request->segment(1) == 'import-purchases'? 'active' : '' }}">
                                     <a href="{{action('ImportPurchasesController@index')}}"><i class="fa fa-recycle"></i>@lang('lang_v1.import_purchases')</a>
                                 </li>
                                 @endif
@@ -517,72 +517,72 @@
                 </a>
                 <ul class="treeview-menu">
                     @if($all_sales) @if(auth()->user()->can('direct_sell.access') || auth()->user()->can('view_own_sell_only'))
-                    <li class="{{ $request->segment(1) == 'sales' && $request->segment(2) == null ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'sales' && $request->segment(2) == null ? 'active' : '' }}">
                         <a href="{{action('SellController@index')}}"><i class="fa fa-list"></i>@lang('lang_v1.all_sales')</a>
                     </li>
                     @endif @endif
                     <!-- Call superadmin module if defined -->
                     @if(Module::has('Ecommerce')) @includeIf('ecommerce::layouts.partials.sell_sidebar') @endif @if($add_sale) @can('direct_sell.access')
-                    <li class="{{ $request->segment(1) == 'sales' && $request->segment(2) == 'create' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'sales' && $request->segment(2) == 'create' ? 'active' : '' }}">
                         <a href="{{action('SellController@create')}}"><i class="fa fa-plus-circle"></i>@lang('sale.add_sale')</a>
                     </li>
                     @endcan @endif @if($list_pos) @can('sell.view')
-                    <li class="{{ $request->segment(1) == 'pos' && $request->segment(2) == null ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'pos' && $request->segment(2) == null ? 'active' : '' }}">
                         <a href="{{action('SellPosController@index')}}"><i class="fa fa-list"></i>@lang('sale.list_pos')</a>
                 </li>
                     @endcan @endif @if(in_array('pos_sale', $enabled_modules)) @can('sell.create')
-                    <li class="{{ $request->segment(1) == 'pos' && $request->segment(2) == 'create' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'pos' && $request->segment(2) == 'create' ? 'active' : '' }}">
                         <a href="{{action('SellPosController@create')}}"><i class="fa fa-plus-circle"></i>@lang('sale.pos_sale')</a>
                     </li>
                     @endcan @endif @if($list_draft) @can('list_drafts')
-                    <li class="{{ $request->segment(1) == 'sales' && $request->segment(2) == 'drafts' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'sales' && $request->segment(2) == 'drafts' ? 'active' : '' }}">
                         <a href="{{action('SellController@getDrafts')}}"><i class="fa fa-pencil-square" aria-hidden="true"></i>@lang('lang_v1.list_drafts')</a>
                     </li>
                     @endcan @endif @if($list_quotation) @can('list_quotations')
-                    <li class="{{ $request->segment(1) == 'sales' && $request->segment(2) == 'quotations' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'sales' && $request->segment(2) == 'quotations' ? 'active' : '' }}">
                         <a href="{{action('SellController@getQuotations')}}"><i class="fa fa-pencil-square" aria-hidden="true"></i>@lang('lang_v1.list_quotations')</a>
                     </li>
                     @endcan @endif @if($customer_order_own_customer == 1 || $customer_order_general_customer == 1) @if($list_orders)
-                    <li class="{{ $request->segment(1) == 'sales' && $request->segment(2) == 'customer-orders' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'sales' && $request->segment(2) == 'customer-orders' ? 'active' : '' }}">
                         <a href="{{action('SellController@getCustomerOrders')}}"><i class="fa fa-pencil-square" aria-hidden="true"></i>@lang('lang_v1.list_orders')</a>
                     </li>
                     @endif @if($upload_orders)
-                    <li class="{{ $request->segment(1) == 'sales' && $request->segment(2) == 'customer-orders' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'sales' && $request->segment(2) == 'customer-orders' ? 'active' : '' }}">
                         <a href="{{action('SellController@getCustomerUploadedOrders')}}"><i class="fa fa-upload" aria-hidden="true"></i>@lang('customer.uploaded_orders')</a>
                     </li>
                     @endif @endif @if($list_sell_return) @can('sell.view')
-                    <li class="{{ $request->segment(1) == 'sell-return' && $request->segment(2) == null ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'sell-return' && $request->segment(2) == null ? 'active' : '' }}">
                         <a href="{{action('SellReturnController@index')}}"><i class="fa fa-undo"></i>@lang('lang_v1.list_sell_return')</a>
                     </li>
                     @endcan @endif @if($shipment) @can('access_shipping')
-                    <li class="{{ $request->segment(1) == 'shipments' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'shipments' ? 'active' : '' }}">
                         <a href="{{action('SellController@shipments')}}"><i class="fa fa-truck"></i>@lang('lang_v1.shipments')</a>
                     </li>
                     @endcan @endif @if($discount) @can('discount.access')
-                    <li class="{{ $request->segment(1) == 'discount' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'discount' ? 'active' : '' }}">
                         <a href="{{action('DiscountController@index')}}"><i class="fa fa-percent"></i>@lang('lang_v1.discounts')</a>
                     </li>
                     @endcan @endif @if($subcriptions) @if(in_array('subscription', $enabled_modules) && auth()->user()->can('direct_sell.access'))
-                    <li class="{{ $request->segment(1) == 'subscriptions'? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'subscriptions'? 'active' : '' }}">
                         <a href="{{action('SellPosController@listSubscriptions')}}"><i class="fa fa-recycle"></i>@lang('lang_v1.subscriptions')</a>
                     </li>
                     @endif @endif @if($import_sale)
-                    <li class="{{ $request->segment(1) == 'import-sales'? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'import-sales'? 'active' : '' }}">
                         <a href="{{action('ImportSalesController@index')}}"><i class="fa fa-recycle"></i>@lang('lang_v1.import_sales')</a>
                     </li>
                     @endif @if($reserved_stock)
-                    <li class="{{ $request->segment(1) == 'reserved-stocks'? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'reserved-stocks'? 'active' : '' }}">
                         <a href="{{action('ReservedStocksController@index')}}"><i class="fa fa-recycle"></i>@lang('lang_v1.reserved_stocks')</a>
                     </li>
                     @endif @if($customer_settings) @if($over_limit_sales)
-                    <li class="{{ $request->segment(1) == 'sales' && $request->segment(2) == 'over-limit-sales' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'sales' && $request->segment(2) == 'over-limit-sales' ? 'active' : '' }}">
                         <a href="{{action('SellController@overLimitSales')}}"><i class="fa fa-plus-circle"></i>@lang('sale.over_limit_sales')</a>
                     </li>
                     @endif @endif
                 </ul>
             </li>
             @endif @endif @endif @if(Module::has('Repair')) @if($repair_module) @if(auth()->user()->can('repair.access'))
-            <li class="{{ $request->segment(1) == 'repair' ? 'active' : '' }}">
+            <li class="nav-item  {{ $request->segment(1) == 'repair' ? 'active' : '' }}">
                 <a href="{{action('\Modules\Repair\Http\Controllers\DashboardController@index')}}"><i class="fa fa-wrench"></i><span>@lang('lang_v1.repair')</span></a>
             </li>
             @endif @endif @endif @if($stock_transfer) @if(in_array('stock_transfer', $enabled_modules)) @if(auth()->user()->can('purchase.view') || auth()->user()->can('purchase.create') )
@@ -595,15 +595,15 @@
                 </a>
                 <ul class="treeview-menu">
                     @can('purchase.view')
-                    <li class="{{ $request->segment(1) == 'stock-transfers' && $request->segment(2) == null ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'stock-transfers' && $request->segment(2) == null ? 'active' : '' }}">
                         <a href="{{action('StockTransferController@index')}}"><i class="fa fa-list"></i>@lang('lang_v1.list_stock_transfers')</a>
                     </li>
                     @endcan @can('purchase.create')
-                    <li class="{{ $request->segment(1) == 'stock-transfers' && $request->segment(2) == 'create' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'stock-transfers' && $request->segment(2) == 'create' ? 'active' : '' }}">
                         <a href="{{action('StockTransferController@create')}}"><i class="fa fa-plus-circle"></i>@lang('lang_v1.add_stock_transfer')</a>
                     </li>
                     @endcan {{-- @can('purchase.create') --}}
-                    <li class="{{ $request->segment(1) == 'stock-transfers-request' && $request->segment(2) == null ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'stock-transfers-request' && $request->segment(2) == null ? 'active' : '' }}">
                         <a href="{{action('StockTransferRequestController@index')}}"><i class="fa fa-question-circle"></i>@lang('lang_v1.stock_transfer_request')</a>
                     </li>
                     {{-- @endcan --}}
@@ -624,11 +624,11 @@
                 </a>
                 <ul class="treeview-menu">
                     @can('purchase.view')
-                    <li class="{{ $request->segment(1) == 'stock-adjustments' && $request->segment(2) == null ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'stock-adjustments' && $request->segment(2) == null ? 'active' : '' }}">
                         <a href="{{action('StockAdjustmentController@index')}}"><i class="fa fa-list"></i>@lang('stock_adjustment.list')</a>
                     </li>
                     @endcan @can('purchase.create')
-                    <li class="{{ $request->segment(1) == 'stock-adjustments' && $request->segment(2) == 'create' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'stock-adjustments' && $request->segment(2) == 'create' ? 'active' : '' }}">
                         <a href="{{action('StockAdjustmentController@create')}}"><i class="fa fa-plus-circle"></i>@lang('stock_adjustment.add')</a>
                     </li>
                     @endcan
@@ -643,13 +643,13 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="{{ $request->segment(1) == 'expenses' && empty($request->segment(2)) ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'expenses' && empty($request->segment(2)) ? 'active' : '' }}">
                         <a href="{{action('ExpenseController@index')}}"><i class="fa fa-list"></i>@lang('lang_v1.list_expenses')</a>
                     </li>
-                    <li class="{{ $request->segment(1) == 'expenses' && $request->segment(2) == 'create' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'expenses' && $request->segment(2) == 'create' ? 'active' : '' }}">
                         <a href="{{action('ExpenseController@create')}}"><i class="fa fa-plus-circle"></i>@lang('messages.add') @lang('expense.expenses')</a>
                     </li>
-                    <li class="{{ $request->segment(1) == 'expense-categories' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'expense-categories' ? 'active' : '' }}">
                         <a href="{{action('ExpenseCategoryController@index')}}"><i class="fa fa-circle-o"></i>@lang('expense.expense_categories')</a>
                     </li>
                 </ul>
@@ -683,34 +683,34 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="{{ $request->segment(1) == 'accounting-module' && $request->segment(2) == 'account' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'accounting-module' && $request->segment(2) == 'account' ? 'active' : '' }}">
                         <a href="{{action('AccountController@index')}}"><i class="fa fa-list"></i>@lang('account.list_accounts')</a>
                     </li>
-                    <li class="{{ $request->segment(1) == 'accounting-module' && $request->segment(2) == 'disabled-account' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'accounting-module' && $request->segment(2) == 'disabled-account' ? 'active' : '' }}">
                         <a href="{{action('AccountController@disabledAccount')}}"><i class="fa fa-times"></i>@lang('account.disabled_account')</a>
                     </li>
-                    <li class="{{ $request->segment(1) == 'accounting-module' && $request->segment(2) == 'journals' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'accounting-module' && $request->segment(2) == 'journals' ? 'active' : '' }}">
                         <a href="{{action('JournalController@index')}}"><i class="fa fa-book"></i>@lang('account.list_journals')</a>
                     </li>
-                    <li class="{{ $request->segment(1) == 'accounting-module' && $request->segment(2) == 'get-profit-loss-report' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'accounting-module' && $request->segment(2) == 'get-profit-loss-report' ? 'active' : '' }}">
                         <a href="{{action('AccountController@getProfitLossReport')}}"><i class="fa fa-file-text"></i>@lang('lang_v1.profit_loss_report')</a>
                     </li>
-                    <li class="{{ $request->segment(1) == 'accounting-module' && $request->segment(2) == 'income-statement' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'accounting-module' && $request->segment(2) == 'income-statement' ? 'active' : '' }}">
                         <a href="{{action('AccountReportsController@incomeStatement')}}"><i class="fa fa-book"></i>@lang('account.income_statement')</a>
                     </li>
-                    <li class="{{ $request->segment(1) == 'accounting-module' && $request->segment(2) == 'balance-sheet' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'accounting-module' && $request->segment(2) == 'balance-sheet' ? 'active' : '' }}">
                         <a href="{{action('AccountReportsController@balanceSheet')}}"><i class="fa fa-book"></i>@lang('account.balance_sheet')</a>
                     </li>
-                    <li class="{{ $request->segment(1) == 'accounting-module' && $request->segment(2) == 'trial-balance' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'accounting-module' && $request->segment(2) == 'trial-balance' ? 'active' : '' }}">
                         <a href="{{action('AccountReportsController@trialBalance')}}"><i class="fa fa-balance-scale"></i>@lang('account.trial_balance')</a>
                     </li>
-                    <li class="{{ $request->segment(1) == 'accounting-module' && $request->segment(2) == 'cash-flow' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'accounting-module' && $request->segment(2) == 'cash-flow' ? 'active' : '' }}">
                         <a href="{{action('AccountController@cashFlow')}}"><i class="fa fa-exchange"></i>@lang('lang_v1.cash_flow')</a>
                     </li>
-                    <li class="{{ $request->segment(1) == 'accounting-module' && $request->segment(2) == 'payment-account-report' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'accounting-module' && $request->segment(2) == 'payment-account-report' ? 'active' : '' }}">
                         <a href="{{action('AccountReportsController@paymentAccountReport')}}"><i class="fa fa-file-text-o"></i>@lang('account.payment_account_report')</a>
                     </li>
-                    <li class="{{ $request->segment(1) == 'accounting-module' && $request->segment(2) == 'import' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'accounting-module' && $request->segment(2) == 'import' ? 'active' : '' }}">
                         <a href="{{action('AccountController@getImportAccounts')}}"><i class="fa fa-download"></i>@lang('lang_v1.import_accounts')</a>
                     </li>
                 </ul>
@@ -733,45 +733,45 @@
                 <ul class="treeview-menu">
                     @if($product_report) @if(auth()->user()->can('stock_report.view') || auth()->user()->can('stock_adjustment_report.view') || auth()->user()->can('item_report.view') || auth()->user()->can('product_purchase_report.view')
                     || auth()->user()->can('product_sell_report.view') || auth()->user()->can('product_transaction_report.view') )
-                    <li class="{{ $request->segment(2) == 'product' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(2) == 'product' ? 'active' : '' }}">
                         <a href="{{action('ReportController@getProductReport')}}"><i class="fa fa-hourglass-half"></i>@lang('report.product_report')</a>
                     </li>
                     @endif @endif @if($payment_status_report) @if(auth()->user()->can('purchase_payment_report.view') || auth()->user()->can('sell_payment_report.view') || auth()->user()->can('outstanding_received_report.view') ||
                     auth()->user()->can('aging_report.view') )
-                    <li class="{{ $request->segment(2) == 'payment-status' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(2) == 'payment-status' ? 'active' : '' }}">
                         <a href="{{action('ReportController@getPaymentStatusReport')}}"><i class="fa fa-money"></i>@lang('report.payment_status_report')</a>
                     </li>
                     @endif @endif @if(auth()->user()->can('daily_report.view') || auth()->user()->can('daily_summary_report.view') || auth()->user()->can('register_report.view') || auth()->user()->can('profit_loss_report.view') )
-                    <li class="{{ $request->segment(2) == 'management' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(2) == 'management' ? 'active' : '' }}">
                         <a href="{{action('ReportController@getManagementReport')}}"><i class="fa fa-briefcase"></i>@lang('report.management_report')</a>
                     </li>
                     @endif @if($verification_report || $report_verification)
-                    <li class="{{ $request->segment(2) == 'verification' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(2) == 'verification' ? 'active' : '' }}">
                         <a href="{{action('ReportController@getVerificationReport')}}"><i class="fa fa-check-circle"></i>@lang('report.verification_reports')</a>
                     </li>
                     @endif @if($activity_report) @if(auth()->user()->can('sales_report.view') || auth()->user()->can('purchase_and_slae_report.view') || auth()->user()->can('expense_report.view') ||
                     auth()->user()->can('sales_representative.view') || auth()->user()->can('tax_report.view') )
-                    <li class="{{ $request->segment(2) == 'activity' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(2) == 'activity' ? 'active' : '' }}">
                         <a href="{{action('ReportController@getActivityReport')}}"><i class="fa fa-user-secret"></i>@lang('report.activity_report')</a>
                     </li>
                     @endif @endif @if($contact_report) @can('contact_report.view')
-                    <li class="{{ $request->segment(2) == 'contact' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(2) == 'contact' ? 'active' : '' }}">
                         <a href="{{action('ReportController@getContactReport')}}"><i class="fa fa-address-book"></i>@lang('report.contact_report')</a>
                     </li>
                     @endcan @endif @can('stock_report.view') @if(session('business.enable_product_expiry') == 1)
-                    <li class="{{ $request->segment(2) == 'stock-expiry' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(2) == 'stock-expiry' ? 'active' : '' }}">
                         <a href="{{action('ReportController@getStockExpiryReport')}}"><i class="fa fa-calendar-times-o"></i>@lang('report.stock_expiry_report')</a>
                     </li>
                     @endif @endcan @can('stock_report.view') @if(session('business.enable_lot_number') == 1)
-                    <li class="{{ $request->segment(2) == 'lot-report' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(2) == 'lot-report' ? 'active' : '' }}">
                         <a href="{{action('ReportController@getLotReport')}}"><i class="fa fa-hourglass-half" aria-hidden="true"></i>@lang('lang_v1.lot_report')</a>
                     </li>
                     @endif @endcan @if($trending_product) @can('trending_products.view')
-                    <li class="{{ $request->segment(2) == 'trending-products' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(2) == 'trending-products' ? 'active' : '' }}">
                         <a href="{{action('ReportController@getTrendingProducts')}}"><i class="fa fa-line-chart" aria-hidden="true"></i>@lang('report.trending_products')</a>
                     </li>
                     @endcan @endif @if($user_activity) @can('user_activity.view')
-                    <li class="{{ $request->segment(2) == 'user_activity' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(2) == 'user_activity' ? 'active' : '' }}">
                         <a href="{{action('ReportController@getUserActivityReport')}}">
 							<i class="fa fa-eercast" aria-hidden="true"></i>
 							<span class="title">@lang('report.user_activity')</span>
@@ -779,21 +779,21 @@
                     </li>
 
                      @endcan @endif @if($report_table) @can('report_table.view')
-                    <li class="{{ $request->segment(2) == 'table-report' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(2) == 'table-report' ? 'active' : '' }}">
                         <a href="{{action('ReportController@getTableReport')}}"><i class="fa fa-table"></i>@lang('restaurant.table_report')</a>
                     </li>
                    @endcan @endif @if($report_staff_service) @can('sales_representative.view')
-                    <li class="{{ $request->segment(2) == 'service-staff-report' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(2) == 'service-staff-report' ? 'active' : '' }}">
                         <a href="{{action('ReportController@getServiceStaffReport')}}"><i class="fa fa-user-secret"></i>@lang('restaurant.service_staff_report')</a>
                     </li>
 
                     @endcan @endif
                     <!--@if($tables) @if(in_array('tables', $enabled_modules)) @can('purchase_n_sell_report.view')-->
-                    <!--<li class="{{ $request->segment(2) == 'table-report' ? 'active' : '' }}">-->
+                    <!--<li class="nav-item  {{ $request->segment(2) == 'table-report' ? 'active' : '' }}">-->
                     <!--    <a href="{{action('ReportController@getTableReport')}}"><i class="fa fa-table"></i>@lang('restaurant.table_report')</a>-->
                     <!--</li>-->
                     <!--@endcan @endif @endif @if($service_staff) @if(in_array('service_staff', $enabled_modules)) @can('sales_representative.view')-->
-                    <!--<li class="{{ $request->segment(2) == 'service-staff-report' ? 'active' : '' }}">-->
+                    <!--<li class="nav-item  {{ $request->segment(2) == 'service-staff-report' ? 'active' : '' }}">-->
                     <!--    <a href="{{action('ReportController@getServiceStaffReport')}}"><i class="fa fa-user-secret"></i>@lang('restaurant.service_staff_report')</a>-->
                     <!--</li>-->
                     <!--@endcan @endif @endif-->
@@ -843,11 +843,11 @@
                 </a>
                 <!-- <ul class="treeview-menu">
                     @if($enable_sms) @can('sms.view')
-                    <li class="{{ $request->segment(2) == 'sms-template' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(2) == 'sms-template' ? 'active' : '' }}">
                         <a href="{{ url('notification-templates/sms-template')}}"><i class="fa fa-commenting-o"></i> @lang('lang_v1.sms_template')</a>
                     </li>
                     @endcan @endif
-                    <li class="{{ $request->segment(2) == 'email-template' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(2) == 'email-template' ? 'active' : '' }}">
                         <a href="{{ url('notification-templates/email-template')}}"><i class="fa fa-envelope-o"></i> @lang('lang_v1.email_template')</a>
                     </li>
                 </ul> -->
@@ -864,21 +864,21 @@
                 </a>
                 <ul class="treeview-menu" id="tour_step3">
                     @if($settings_module) @can('business_settings.access') @if($business_settings)
-                    <li class="{{ $request->segment(1) == 'business' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'business' ? 'active' : '' }}">
                         <a href="{{action('BusinessController@getBusinessSettings')}}" id="tour_step2">
                             <i class="fa fa-cogs"></i> @if($business_or_entity == 'business'){{ __('business.business_settings') }} @elseif($business_or_entity == 'entity'){{ __('lang_v1.entity_settings') }} @else {{
                             __('business.business_settings') }} @endif
                         </a>
                     </li>
                     @endif @if($business_location)
-                    <li class="{{ $request->segment(1) == 'business-location' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'business-location' ? 'active' : '' }}">
                         <a href="{{action('BusinessLocationController@index')}}">
                             <i class="fa fa-map-marker"></i> @if($business_or_entity == 'business'){{ __('business.business_locations') }} @elseif($business_or_entity == 'entity'){{ __('lang_v1.entity_locations') }} @else {{
                             __('business.business_locations') }} @endif
                         </a>
                     </li>
                     @endif @if(!$property_module)
-                    <li class="{{ $request->segment(1) == 'stores' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'stores' ? 'active' : '' }}">
                         <a href="{{action('StoreController@index')}}"><i class="fa fa-stack-exchange"></i> @lang('business.stores_settings')</a>
                     </li>
                     @endif @endcan @can('invoice_settings.access') @if($invoice_settings)
@@ -886,38 +886,38 @@
                         <a href="{{action('InvoiceSchemeController@index')}}"><i class="fa fa-file"></i> <span>@lang('invoice.invoice_settings')</span></a>
                     </li>
                     @endif @endcan @if(!$property_module) @can('barcode_settings.access')
-                    <li class="{{ $request->segment(1) == 'barcodes' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'barcodes' ? 'active' : '' }}">
                         <a href="{{action('BarcodeController@index')}}"><i class="fa fa-barcode"></i> <span>@lang('barcode.barcode_settings')</span></a>
                     </li>
                     @endcan
-                    <li class="{{ $request->segment(1) == 'printers' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'printers' ? 'active' : '' }}">
                         <a href="{{action('PrinterController@index')}}"><i class="fa fa-share-alt"></i> <span>@lang('printer.receipt_printers')</span></a>
                     </li>
                     @endif @if(auth()->user()->can('tax_rate.view') || auth()->user()->can('tax_rate.create')) @if($tax_rates)
-                    <li class="{{ $request->segment(1) == 'tax-rates' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'tax-rates' ? 'active' : '' }}">
                         <a href="{{action('TaxRateController@index')}}"><i class="fa fa-bolt"></i> <span>@lang('tax_rate.tax_rates')</span></a>
                     </li>
                     @endif @endif @if(!$property_module) @if($customer_settings) @if(auth()->user()->can('customer_settings.access'))
-                    <li class="{{ $request->segment(1) == 'customer-settings' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'customer-settings' ? 'active' : '' }}">
                         <a href="{{action('CustomerSettingsController@index')}}"><i class="fa fa-bolt"></i> <span>@lang('lang_v1.customer_settings')</span></a>
                     </li>
                     @endif @endif @if(in_array('tables', $enabled_modules)) @can('business_settings.access')
-                    <li class="{{ $request->segment(1) == 'modules' && $request->segment(2) == 'tables' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'modules' && $request->segment(2) == 'tables' ? 'active' : '' }}">
                         <a href="{{action('Restaurant\TableController@index')}}"><i class="fa fa-table"></i> @lang('restaurant.tables')</a>
                     </li>
                     @endcan @endif @if($expenses) @if(in_array('modifiers', $enabled_modules)) @if(auth()->user()->can('product.view') || auth()->user()->can('product.create') )
-                    <li class="{{ $request->segment(1) == 'modules' && $request->segment(2) == 'modifiers' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'modules' && $request->segment(2) == 'modifiers' ? 'active' : '' }}">
                         <a href="{{action('Restaurant\ModifierSetsController@index')}}"><i class="fa fa-delicious"></i> @lang('restaurant.modifiers')</a>
                     </li>
                     @endif @endif @endif @endif @if(in_array('type_of_service', $enabled_modules) && !$property_module)
-                    <li class="{{  $request->segment(1) == 'types-of-service' ? 'active active-sub' : '' }}">
+                    <li class="nav-item  {{  $request->segment(1) == 'types-of-service' ? 'active active-sub' : '' }}">
                         <a href="{{action('TypesOfServiceController@index')}}">
                             <i class="fa fa-user-circle-o"></i>
                             <span>@lang('lang_v1.types_of_service')</span>
                         </a>
                     </li>
                     @endif @endif @if(Module::has('Superadmin')) @includeIf('superadmin::layouts.partials.subscription') @endif
-                    <li class="{{ $request->segment(1) == 'pay-online' && $request->segment(2) == 'create' ? 'active active-sub' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'pay-online' && $request->segment(2) == 'create' ? 'active active-sub' : '' }}">
                         <a href="{{action('\Modules\Superadmin\Http\Controllers\PayOnlineController@create')}}">
                             <i class="fa fa-money"></i>
                             <span class="title">
@@ -938,7 +938,7 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="{{ $request->segment(2) == 'visitors' ? 'active active-sub' : '' }}">
+                    <li class="nav-item  {{ $request->segment(2) == 'visitors' ? 'active active-sub' : '' }}">
                         <a href="{{action('SuperManagerVisitorController@index')}}">
                             <i class="fa fa-users"></i>
                             <span class="title">
@@ -960,7 +960,7 @@
                 </a>
                 <ul class="treeview-menu">
                     @can( 'user.view' )
-                    <li class="{{ $request->segment(1) == 'users' ? 'active active-sub' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'users' ? 'active active-sub' : '' }}">
                         <a href="{{action('ManageUserController@index')}}">
                             <i class="fa fa-user"></i>
                             <span class="title">
@@ -969,7 +969,7 @@
                         </a>
                     </li>
                     @endcan @can('roles.view')
-                    <li class="{{ $request->segment(1) == 'roles' ? 'active active-sub' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'roles' ? 'active active-sub' : '' }}">
                         <a href="{{action('RoleController@index')}}">
                             <i class="fa fa-briefcase"></i>
                             <span class="title">
@@ -978,7 +978,7 @@
                         </a>
                     </li>
                     @endcan @if($enable_sale_cmsn_agent == 1) @can('user.create')
-                    <li class="{{ $request->segment(1) == 'sales-commission-agents' ? 'active active-sub' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'sales-commission-agents' ? 'active active-sub' : '' }}">
                         <a href="{{action('SalesCommissionAgentController@index')}}">
                             <i class="fa fa-handshake-o"></i>
                             <span class="title">
@@ -1005,16 +1005,16 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="{{ $request->segment(1) == 'customer-sales' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'customer-sales' ? 'active' : '' }}">
                         <a href="{{action('CustomerSellController@index')}}"><i class="fa fa-list"></i>@lang('lang_v1.all_sales')</a>
                     </li>
-                    <li class="{{ $request->segment(1) == 'customer-sell-return'  ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'customer-sell-return'  ? 'active' : '' }}">
                         <a href="{{action('CustomerSellReturnController@index')}}"><i class="fa fa-undo"></i>@lang('lang_v1.list_sell_return')</a>
                     </li>
-                    <li class="{{ $request->segment(1) == 'customer-order' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'customer-order' ? 'active' : '' }}">
                         <a href="{{action('CustomerOrderController@create')}}"><i class="fa fa-bullseye"></i>@lang('lang_v1.order')</a>
                     </li>
-                    <li class="{{ $request->segment(1) == 'customer-order-list' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'customer-order-list' ? 'active' : '' }}">
                         <a href="{{action('CustomerOrderController@getOrders')}}"><i class="fa fa-list-ol"></i>@lang('lang_v1.list_order')</a>
                     </li>
                 </ul>
@@ -1033,45 +1033,45 @@
                 </a>
                 <ul class="treeview-menu">
                     @if($cheque_templates)
-                    <li class="{{ $request->segment(1) == 'cheque-templates'  && $request->segment(2) == '' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'cheque-templates'  && $request->segment(2) == '' ? 'active' : '' }}">
                         <a href="{{action('Chequer\ChequeTemplateController@index')}}"><i class="fa fa-book"></i>@lang('cheque.templates')</a>
                     </li>
-                    <li class="{{ $request->segment(1) == 'cheque-templates' && $request->segment(2) == 'create' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'cheque-templates' && $request->segment(2) == 'create' ? 'active' : '' }}">
                         <a href="{{action('Chequer\ChequeTemplateController@create')}}"><i class="fa fa-plus"></i>@lang('cheque.add_new_templates')</a>
                     </li>
                     @endif
                     @if($write_cheque)
-                    <li class="{{ $request->segment(1) == 'cheque-write' && $request->segment(2) == 'create' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'cheque-write' && $request->segment(2) == 'create' ? 'active' : '' }}">
                         <a href="{{action('Chequer\ChequeWriteController@create')}}"><i class="fa fa-pencil-square-o"></i>@lang('cheque.write_cheque')</a>
                     </li>
                     @endif
                     @if($manage_stamps)
-                    <li class="{{ $request->segment(1) == 'stamps' && $request->segment(2) == '' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'stamps' && $request->segment(2) == '' ? 'active' : '' }}">
                         <a href="{{action('Chequer\ChequerStampController@index')}}"><i class="fa fa-gavel"></i>@lang('cheque.manage_stamps')</a>
                     </li>
                     @endif
                     @if($manage_payee)
-                   <li class="{{ $request->segment(1) == 'payees' && $request->segment(2) == '' ? 'active' : '' }}">
+                   <li class="nav-item  {{ $request->segment(1) == 'payees' && $request->segment(2) == '' ? 'active' : '' }}">
                         <a href="{{url('payees')}}"><i class="fa fa-money"></i>Manage Payee</a>
                     </li>
                     @endif
                     @if($cheque_number_list)
-                    <li class="{{ $request->segment(1) == 'cheque-numbers' && $request->segment(2) == '' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'cheque-numbers' && $request->segment(2) == '' ? 'active' : '' }}">
                         <a href="{{action('Chequer\ChequeNumberController@index')}}"><i class="fa fa-list-ol"></i>@lang('cheque.cheque_number_list')</a>
                     </li>
                     @endif
                     @if($deleted_cheque_details)
-                    <li class="{{ $request->segment(1) == 'deleted_cheque_details' && $request->segment(2) == '' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'deleted_cheque_details' && $request->segment(2) == '' ? 'active' : '' }}">
                         <a href="{{url('deleted_cheque_details')}}"><i class="fa fa-trash"></i>Delete Cheque Numbers</a>
                     </li>
                     @endif
                     @if($printed_cheque_details)
-                    <li class="{{ $request->segment(1) == 'printed_cheque_details' && $request->segment(2) == '' ? 'active' : '' }}">
+                    <li class="nav-item  {{ $request->segment(1) == 'printed_cheque_details' && $request->segment(2) == '' ? 'active' : '' }}">
                         <a href="{{url('printed_cheque_details')}}"><i class="fa fa-print"></i>Printed Cheque Details</a>
                     </li>
                     @endif
                     @if($default_setting)
-                     <li class="{{ $request->segment(1) == 'default_setting' && $request->segment(2) == '' ? 'active' : '' }}">
+                     <li class="nav-item  {{ $request->segment(1) == 'default_setting' && $request->segment(2) == '' ? 'active' : '' }}">
                         <a href="{{url('default_setting')}}"><i class="fa fa-cog"></i>Default Settings</a>
                     </li>
                     @endif
