@@ -304,7 +304,7 @@
 							<ul class="treeview-menu">
 								@can('crm.view')
 								<li class="{{ $request->segment(1) == 'crm' && $request->input('type') == 'customer' ? 'active' : '' }}">
-									<a href="{{action('CRMController@index')}}"><i class="fa fa-star"></i> @lang('lang_v1.crm')</a>
+									<a href="{{action('CRMController@index')}}"><i class="fa fa-star"></i>2 @lang('lang_v1.crm')</a>
 								</li>
 								<li class="{{ $request->segment(1) == 'crmgroups' ? 'active' : '' }}">
 									<a href="{{action('CrmGroupController@index')}}"><i class="fa fa-object-group"></i> @lang('lang_v1.crm_group')</a>
@@ -336,11 +336,11 @@
 						<ul class="treeview-menu">
 							@if($contact_supplier) @can('supplier.view')
 							<li class="{{ $request->input('type') == 'supplier' ? 'active' : '' }}">
-								<a href="{{action('ContactController@index', ['type' => 'supplier'])}}"><i class="fa fa-star"></i> @lang('report.supplier')</a>
+								<a href="{{action('ContactController@index', ['type' => 'supplier'])}}"><i class="fa fa-star"></i>1 @lang('report.supplier')</a>
 							</li>
 							@endcan @endif @can('customer.view') @if($contact_customer) {{-- @if(!$property_module)--}}
 							<li class="{{ $request->input('type') == 'customer' ? 'active' : '' }}">
-								<a href="{{action('ContactController@index', ['type' => 'customer'])}}"><i class="fa fa-star"></i> @lang('report.customer')</a>
+								<a href="{{action('ContactController@index', ['type' => 'customer'])}}"><i class="fa fa-star"></i>1 @lang('report.customer')</a>
 							</li>
 							{{-- @endif--}} @endif @if($contact_group_customer)
 							<li class="{{ $request->segment(1) == 'contact-group' ? 'active' : '' }}">
