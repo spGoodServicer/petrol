@@ -30,12 +30,16 @@
 
     <title>@yield('title') - {{ Session::get('business.name') }}</title>
     <link rel="shortcut icon" type="image/x-icon" href="{{url($settings->uploadFileFicon)}}" />
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/fontawesome-free/css/all.min.css?v='.$asset_v) }}">
     <!--salvap overlayScrollbars -->
     <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.min.css?v='.$asset_v) }}">
     <!--salvap Theme style -->
     <link rel="stylesheet" href="{{ asset('AdminLTE/css/adminlte.min.css?v='.$asset_v) }}">
     @include('layouts.partials.css')
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    {{-- <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     @yield('css')
 </head>
