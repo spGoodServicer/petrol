@@ -1,7 +1,7 @@
 <li class="treeview {{ in_array($request->segment(1), ['property']) ? 'active active-sub' : '' }}" id="tour_step5">
   <a href="#"><i class="fa fa-building"></i> <span>@lang('property::lang.property')</span>
     <span class="pull-right-container">
-      <i class="fa fa-angle-left pull-right"></i>
+      <i class="right fas fa-angle-left"></i>
     </span>
   </a>
   <ul class="treeview-menu">

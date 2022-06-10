@@ -1,7 +1,7 @@
 <li class="treeview {{ in_array($request->segment(1), ['agents']) ? 'active active-sub' : '' }}">
     <a href="#"><i class="fa fa-user-secret"></i> <span>@lang('agent::lang.agent')</span>
         <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
+            <i class="right fas fa-angle-left"></i>
         </span>
     </a>
     <ul class="treeview-menu">

@@ -5,7 +5,7 @@
         <i class="fa fa-handshake-o"></i>
         <span class="title">@lang('hr::lang.hr_module')</span>
         <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
+            <i class="right fas fa-angle-left"></i>
         </span>
     </a>
     <ul class="treeview-menu">

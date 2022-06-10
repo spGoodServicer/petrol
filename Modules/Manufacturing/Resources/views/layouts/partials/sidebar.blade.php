@@ -4,7 +4,7 @@
 	        <i class="fa fa-industry"></i>
 	        <span class="title">@lang('manufacturing::lang.manufacturing')</span>
 	        <span class="pull-right-container">
-	            <i class="fa fa-angle-left pull-right"></i>
+	            <i class="right fas fa-angle-left"></i>
 	        </span>
 	    </a>
 

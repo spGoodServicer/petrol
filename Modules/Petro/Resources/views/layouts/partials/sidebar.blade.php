@@ -8,7 +8,7 @@ id="tour_step5">
 
   <span class="pull-right-container">
 
-    <i class="fa fa-angle-left pull-right"></i>
+    <i class="right fas fa-angle-left"></i>
 
   </span>
 
@@ -91,7 +91,7 @@ id="tour_step5">
 
     <span class="pull-right-container">
 
-      <i class="fa fa-angle-left pull-right"></i>
+      <i class="right fas fa-angle-left"></i>
 
     </span>
 

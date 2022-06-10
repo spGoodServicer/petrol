@@ -2,7 +2,7 @@
 <li class="treeview {{ in_array($request->segment(1), ['visitor-module', 'visitor']) ? 'active active-sub' : '' }}">
     <a href="#"><i class="fa fa-user-circle"></i> <span>@lang('visitor::lang.visitor_module')</span>
         <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
+            <i class="right fas fa-angle-left"></i>
         </span>
     </a>
     <ul class="treeview-menu">

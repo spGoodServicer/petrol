@@ -2,7 +2,7 @@
 <li class="nav-item menu-open bg-red {{ in_array($request->segment(1), ['superadmin', 'sample-medical-product-import', 'site-settings', 'pay-online']) ? 'active active-sub' : '' }}">
 	<a href="#" class="nav-link">
 		<i class="fa fa-university nav-icon"></i>
-		<p class="title">@lang('superadmin::lang.superadmin') <i class="fa fa-angle-left pull-right"></i></p>
+		<p class="title">@lang('superadmin::lang.superadmin') <i class="right fas fa-angle-left"></i></p>
 		
 	</a>
 	<ul class="nav nav-treeview">

@@ -51,7 +51,7 @@
         id="">
         <a href="#" id=""><i class="fa fa-arrow-circle-up"></i> <span>@lang('sale.sale')</span>
           <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
+            <i class="right fas fa-angle-left"></i>
           </span>
         </a>
         <ul class="treeview-menu">

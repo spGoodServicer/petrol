@@ -247,7 +247,7 @@
                 <a href="#" id="tour_step2_menu">
                     <i class="fa fa-cog"></i> <span>@lang('business.settings')</span>
                     <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
+                        <i class="right fas fa-angle-left"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
@@ -296,7 +296,7 @@
 						<li class="treeview {{ in_array($request->segment(1), ['crm']) ? 'active active-sub' : '' }}">
 							<a href="#" class="nav-link">
 								<i class="fab fa-connectdevelop nav-icon"></i>
-								<span class="title">@lang('lang_v1.crm') <i class="fa fa-angle-left pull-right"></i></span>
+								<span class="title">@lang('lang_v1.crm') <i class="right fas fa-angle-left"></i></span>
 							</a>
 							<ul class="nav nav-treeview">
 								@can('crm.view')
@@ -327,7 +327,7 @@
 						<a href="#" id="tour_step4_menu">
 							<i class="fa fa-address-book"></i> <span>@lang('contact.contacts')</span>
 							<span class="pull-right-container">
-								<i class="fa fa-angle-left pull-right"></i>
+								<i class="right fas fa-angle-left"></i>
 							</span>
 						</a>
 						<ul class="treeview-menu">
@@ -382,7 +382,7 @@
 						<a href="#" id="tour_step5_menu">
 							<i class="fa fa-cubes"></i> <span>@lang('sale.products')</span>
 							<span class="pull-right-container">
-								<i class="fa fa-angle-left pull-right"></i>
+								<i class="right fas fa-angle-left"></i>
 							</span>
 						</a>
 						<ul class="treeview-menu">
@@ -475,7 +475,7 @@
                                 <i class="fa fa-arrow-circle-down"></i>
                                 <span>@lang('purchase.purchases')</span>
                                 <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
+                                    <i class="right fas fa-angle-left"></i>
                                 </span>
                             </a>
                             <ul class="treeview-menu">
@@ -515,7 +515,7 @@
                 <a href="#" id="tour_step7_menu">
                     <i class="fa fa-arrow-circle-up"></i> <span>@lang('sale.sale')</span>
                     <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
+                        <i class="right fas fa-angle-left"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
@@ -593,7 +593,7 @@
                 <a href="#">
                     <i class="fa fa-truck" aria-hidden="true"></i> <span>@lang('lang_v1.stock_transfers')</span>
                     <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
+                        <i class="right fas fa-angle-left"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
@@ -622,7 +622,7 @@
                     <i class="fa fa-database" aria-hidden="true"></i>
                     <span>@lang('stock_adjustment.stock_adjustment')</span>
                     <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
+                        <i class="right fas fa-angle-left"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
@@ -642,7 +642,7 @@
                 <a href="#">
                     <i class="fa fa-minus-circle"></i> <span>@lang('expense.expenses')</span>
                     <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
+                        <i class="right fas fa-angle-left"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
@@ -682,7 +682,7 @@
                 <a href="#">
                     <i class="fa fa-money" aria-hidden="true"></i> <span>@if($access_account) @lang('account.accounting_module') @else @lang('account.banking_module') @endif</span>
                     <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
+                        <i class="right fas fa-angle-left"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
@@ -730,7 +730,7 @@
                 <a href="#" id="tour_step8_menu">
                     <i class="fa fa-bar-chart-o"></i> <span>@lang('report.reports')</span>
                     <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
+                        <i class="right fas fa-angle-left"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
@@ -841,7 +841,7 @@
                 <a href="{{ url('notification-templates')}}">
                     <i class="fa fa-envelope"></i> <span>@lang('lang_v1.notification_templates')</span>
                     <!-- <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
+                        <i class="right fas fa-angle-left"></i>
                     </span> -->
                 </a>
                 <!-- <ul class="treeview-menu">
@@ -862,7 +862,7 @@
                 <a href="#" id="tour_step2_menu">
                     <i class="fa fa-cog"></i> <span>@lang('business.settings')</span>
                     <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
+                        <i class="right fas fa-angle-left"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu" id="tour_step3">
@@ -937,7 +937,7 @@
                     <i class="fa fa-user-secret"></i>
                     <span class="title">@lang('lang_v1.super_manager')</span>
                     <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
+                        <i class="right fas fa-angle-left"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
@@ -958,7 +958,7 @@
                     <i class="fa fa-users"></i>
                     <span class="title">@lang('user.user_management')</span>
                     <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
+                        <i class="right fas fa-angle-left"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
@@ -1004,7 +1004,7 @@
                 <a href="#" id="">
                     <i class="fa fa-arrow-circle-up"></i> <span>@lang('sale.sale')</span>
                     <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
+                        <i class="right fas fa-angle-left"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
@@ -1031,7 +1031,7 @@
                 <a href="#" id="">
                     <i class="fa fa-book"></i> <span>@lang('cheque.cheque_writing_module')</span>
                     <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
+                        <i class="right fas fa-angle-left"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">

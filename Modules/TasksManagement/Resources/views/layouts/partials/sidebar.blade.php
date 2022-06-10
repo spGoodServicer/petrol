@@ -1,7 +1,7 @@
 <li class="treeview {{ in_array($request->segment(1), ['tasks-management']) ? 'active active-sub' : '' }}">
     <a href="#"><i class="fa fa-list-alt"></i> <span>@lang('tasksmanagement::lang.tasks_management')</span>
         <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
+            <i class="right fas fa-angle-left"></i>
         </span>
     </a>
     <ul class="treeview-menu">
