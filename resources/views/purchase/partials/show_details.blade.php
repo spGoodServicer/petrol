@@ -307,7 +307,7 @@ $enable_free_qty = App\Business::where('id', $business_id)->select('enable_free_
           <tr>
             <th>@lang('purchase.purchase_total'):</th>
             <td></td>
-            <td><span class="display_currency pull-right dddd"
+            <td><span class="display_currency pull-right "
                 data-currency_symbol="true">{{ $purchase->payment_lines->sum('amount') }}</span></td>
           </tr>
         </table>

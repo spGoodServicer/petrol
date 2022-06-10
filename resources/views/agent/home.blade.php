@@ -10,7 +10,7 @@
 
 <!-- Content Header (Page header) -->
 
-<section class="content-header">eeeeeee
+<section class="content-header">
      <h1>{{ __('home.welcome_message', ['name' => 'hey']) }}
 
     </h1>
