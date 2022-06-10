@@ -44,7 +44,7 @@
     @include('layouts.partials.lock_screen')
     <div class="wrapper">
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__wobble" src="{{ url( 'public/uploads/business_logos/' . Session::get('business.logo') ) }}" alt="Logo" height="60" width="60">
+            <img class="animation__wobble" src="{{url('public/uploads/business_logos/' . $business->logo)}}" alt="Logo" height="60" width="60">
         </div>
         <script type="text/javascript">
             if(localStorage.getItem("upos_sidebar_collapse") == 'true'){
