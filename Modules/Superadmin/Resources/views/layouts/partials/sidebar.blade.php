@@ -2,10 +2,8 @@
 <li class="nav-item menu-open bg-red treeview {{ in_array($request->segment(1), ['superadmin', 'sample-medical-product-import', 'site-settings', 'pay-online']) ? 'active active-sub' : '' }}">
 	<a href="#" class="nav-link">
 		<i class="fa fa-university nav-icon"></i>
-		<p class="title">@lang('superadmin::lang.superadmin')</p>
-		<p class="pull-right-container">
-			<i class="fa fa-angle-left pull-right"></i>
-		</p>
+		<p class="title">@lang('superadmin::lang.superadmin') <i class="fa fa-angle-left pull-right"></i></p>
+		
 	</a>
 	<ul class="nav nav-treeview">
 		<li class="nav-item {{ empty($request->segment(2)) && $request->segment(1) != 'site-settings' ? 'active active-sub' : '' }}">
