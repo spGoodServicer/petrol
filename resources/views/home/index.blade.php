@@ -4,7 +4,7 @@
 @section('content')
 
 <!-- Content Header (Page header) -->
-<section class="content-header">
+<section class="content-header">ddddddddddddddddddddd
   <h1>{{ __('home.welcome_message', ['name' => Session::get('user.first_name')]) }}
   </h1>
   @if(is_null($subscription) && !auth()->user()->can('superadmin'))
