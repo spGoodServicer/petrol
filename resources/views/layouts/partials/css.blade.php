@@ -19,7 +19,7 @@
  <!-- Select2 -->
 <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/select2/select2.min.css?v='.$asset_v) }}">
 <!-- Theme style -->
-<link rel="stylesheet" href="{{ asset('AdminLTE/css/AdminLTE.min.css?v='.$asset_v) }}">
+<link rel="stylesheet" href="{{ asset('AdminLTE/css/adminlte.min.css?v='.$asset_v) }}">
 <!-- iCheck -->
  <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/iCheck/square/blue.css?v='.$asset_v) }}"> 
 <!-- bootstrap toggle -->

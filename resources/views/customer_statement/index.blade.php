@@ -448,7 +448,7 @@ $(document).on('click', '#edit_statement_settings', function(){
                         <div class="col-md-6 text-center" style="wdith: 50%;"><h3 style="margin-top: -60px; padding: 0px;">Invoice Due Amount:<span id="print_footer_due_total" class="pull-right" >${due_total}</span></h3> </div>
                     </div> `;
                     var w = window.open('', '_blank');
-                    $(w.document.head).html(`<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css?v='.$asset_v) }}"> <link rel="stylesheet" href="{{ asset('AdminLTE/css/AdminLTE.min.css?v='.$asset_v) }}"> <style> .dt-buttons, .dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_paginate, .notexport{display: none !important;} </style>`);
+                    $(w.document.head).html(`<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css?v='.$asset_v) }}"> <link rel="stylesheet" href="{{ asset('AdminLTE/css/adminlte.min.css?v='.$asset_v) }}"> <style> .dt-buttons, .dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_paginate, .notexport{display: none !important;} </style>`);
                     $(w.document.body).html(html);
 
                     $(w.document).ready(function(){
