@@ -1,5 +1,5 @@
 <li class="nav-item treeview {{ in_array($request->segment(1), ['leads']) ? 'active active-sub' : '' }}">
-    <a href="#"><i class="fa fa-lg fa-lightbulb-o nav-icon"></i> <p>@lang('leads::lang.leads') <i class="right fas fa-angle-left"></i></p>
+    <a href="#" class="nav-link"><i class="fa fa-lg fa-lightbulb-o nav-icon"></i> <p>@lang('leads::lang.leads') <i class="right fas fa-angle-left"></i></p>
         
     </a>
     <ul class="nav nav-treeview">
