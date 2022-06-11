@@ -2,7 +2,7 @@
 <li class="nav-item treeview {{ in_array($request->segment(1), ['hr']) ? 'active active-sub' : '' }}"
     style="background: #00C0EF;">
     <a href="#" class="nav-link">
-        <i class="fa fa-handshake-o nav-icon"></i>
+        <i class="fa fa-handshake nav-icon"></i>
         <p class="title">@lang('hr::lang.hr_module') <i class="right fas fa-angle-left"></i></p>
     </a>
     <ul class="nav nav-treeview">

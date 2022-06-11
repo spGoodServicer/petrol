@@ -205,11 +205,11 @@
     	color: @if( !empty($sidebar_setting->ls_side_menu_font_color)) {{$sidebar_setting->ls_side_menu_font_color}}
     	@endif;
     }
-    .skin-blue .treeview-menu>li>a {
+    .skin-blue .nav-item treeview>li>a {
     	color: @if( !empty($sidebar_setting->sub_module_color)) {{$sidebar_setting->sub_module_color}}
     	@endif;
     }
-    .skin-blue .sidebar-menu>li>.treeview-menu {
+    .skin-blue .sidebar-menu>li>.nav-item treeview {
     	background: @if( !empty($sidebar_setting->sub_module_bg_color)) {{$sidebar_setting->sub_module_bg_color}}
     	@endif;
     } */
@@ -244,7 +244,7 @@
             </li>
             @if ($is_admin) @if(Module::has('Superadmin')) @includeIf('superadmin::layouts.partials.subscription') @endif @if(request()->session()->get('business.is_patient'))
             <li class="nav-item treeview @if( in_array($request->segment(1), ['family-members', 'superadmin', 'pay-online'])) {{'active active-sub'}} @endif">
-                <a href="#" id="tour_step2_menu">
+                <a class="nav-link" href="#" id="tour_step2_menu">
                     <i class="fa fa-cog nav-icon"></i> <p>@lang('business.settings')<i class="right fas fa-angle-left"></i></p>
                     
                 </a>
@@ -625,7 +625,7 @@
                 </ul>
             </li>
             {{-- @endif--}} {{-- @endif--}} {{-- @endif--}} @if($expenses) @if(in_array('expenses', $enabled_modules)) @if(auth()->user()->can('expense.access'))
-            <li class="nav-item treeview {{  in_array( $request->segment(1), ['expense-categories', 'expenses']) ? 'active active-sub' : '' }}">
+            <li class="nav-item {{  in_array( $request->segment(1), ['expense-categories', 'expenses']) ? 'active active-sub' : '' }}">
                 <a href="#" class="nav-link">
                     <i class="fa fa-minus-circle nav-icon"></i> <p>@lang('expense.expenses')<i class="right fas fa-angle-left"></i></p>
                     
@@ -648,8 +648,8 @@
             <!-- End hr Module -->
             <!-- Start PayRoll Module -->
             @if($payday) @if(auth()->user()->can('payday') && !auth()->user()->is_pump_operator && !auth()->user()->is_property_user)
-            <li>
-                <a href="javascript:void(0);" id="login_payroll"> <i class="fa fa-briefcase nav-icon"></i> <p> PayRoll</p> </a>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0);" id="login_payroll"> <i class="fa fa-briefcase nav-icon"></i> <p> PayRoll</p> </a>
             </li>
             @endif @endif
             <!-- End PayRoll Module -->
@@ -709,9 +709,9 @@
 
 
             @if($report_module) @if(auth()->user()->can('report.access'))
-            <li class="nav-item treeview {{  in_array( $request->segment(1), ['reports']) ? 'active active-sub' : '' }}" id="tour_step8">
-                <a href="#" id="tour_step8_menu">
-                    <i class="fa fa-bar-chart-o nav-icon"></i> <p>@lang('report.reports') <i class="right fas fa-angle-left"></i></p>
+            <li class="nav-item {{  in_array( $request->segment(1), ['reports']) ? 'active active-sub' : '' }}" id="tour_step8">
+                <a class="nav-link" href="#" id="tour_step8_menu">
+                    <i class="fa fa-chart-bar nav-icon"></i> <p>@lang('report.reports') <i class="right fas fa-angle-left"></i></p>
                     
                 </a>
                 <ul class="nav nav-treeview">
@@ -838,68 +838,68 @@
             <li
                 class="treeview @if( in_array($request->segment(1), ['pay-online', 'stores', 'business', 'tax-rates', 'barcodes', 'invoice-schemes', 'business-location', 'invoice-layouts', 'printers', 'subscription', 'types-of-service']) || in_array($request->segment(2), ['tables', 'modifiers']) ) {{'active active-sub'}} @endif"
             >
-                <a href="#" id="tour_step2_menu">
+                <a class="nav-link" href="#" id="tour_step2_menu">
                     <i class="fa fa-cog nav-icon"></i> <p>@lang('business.settings')<i class="right fas fa-angle-left"></i></p>
                     
                 </a>
-                <ul class="treeview-menu" id="tour_step3">
+                <ul class="nav-item treeview" id="tour_step3">
                     @if($settings_module) @can('business_settings.access') @if($business_settings)
                     <li class="nav-item  {{ $request->segment(1) == 'business' ? 'active' : '' }}">
                         <a class="nav-link" href="{{action('BusinessController@getBusinessSettings')}}" id="tour_step2">
-                            <i class="fa fa-cogs"></i> @if($business_or_entity == 'business'){{ __('business.business_settings') }} @elseif($business_or_entity == 'entity'){{ __('lang_v1.entity_settings') }} @else {{
+                            <i class="fa fa-cogs nav-icon"></i> @if($business_or_entity == 'business'){{ __('business.business_settings') }} @elseif($business_or_entity == 'entity'){{ __('lang_v1.entity_settings') }} @else {{
                             __('business.business_settings') }} @endif
                         </a>
                     </li>
                     @endif @if($business_location)
                     <li class="nav-item  {{ $request->segment(1) == 'business-location' ? 'active' : '' }}">
                         <a class="nav-link" href="{{action('BusinessLocationController@index')}}">
-                            <i class="fa fa-map-marker"></i> @if($business_or_entity == 'business'){{ __('business.business_locations') }} @elseif($business_or_entity == 'entity'){{ __('lang_v1.entity_locations') }} @else {{
+                            <i class="fa fa-map-marker nav-icon"></i> @if($business_or_entity == 'business'){{ __('business.business_locations') }} @elseif($business_or_entity == 'entity'){{ __('lang_v1.entity_locations') }} @else {{
                             __('business.business_locations') }} @endif
                         </a>
                     </li>
                     @endif @if(!$property_module)
                     <li class="nav-item  {{ $request->segment(1) == 'stores' ? 'active' : '' }}">
-                        <a class="nav-link" href="{{action('StoreController@index')}}"><i class="fa fa-stack-exchange"></i> @lang('business.stores_settings')</p></a>
+                        <a class="nav-link" href="{{action('StoreController@index')}}"><i class="fa fa-stack-exchange nav-icon"></i> @lang('business.stores_settings')</p></a>
                     </li>
                     @endif @endcan @can('invoice_settings.access') @if($invoice_settings)
                     <li class="@if( in_array($request->segment(1), ['invoice-schemes', 'invoice-layouts']) ) {{'active'}} @endif">
-                        <a class="nav-link" href="{{action('InvoiceSchemeController@index')}}"><i class="fa fa-file"></i> <p>@lang('invoice.invoice_settings')</p></a>
+                        <a class="nav-link" href="{{action('InvoiceSchemeController@index')}}"><i class="fa fa-file nav-icon"></i> <p>@lang('invoice.invoice_settings')</p></a>
                     </li>
                     @endif @endcan @if(!$property_module) @can('barcode_settings.access')
                     <li class="nav-item  {{ $request->segment(1) == 'barcodes' ? 'active' : '' }}">
-                        <a class="nav-link" href="{{action('BarcodeController@index')}}"><i class="fa fa-barcode"></i> <p>@lang('barcode.barcode_settings')</p></a>
+                        <a class="nav-link" href="{{action('BarcodeController@index')}}"><i class="fa fa-barcode nav-icon"></i> <p>@lang('barcode.barcode_settings')</p></a>
                     </li>
                     @endcan
                     <li class="nav-item  {{ $request->segment(1) == 'printers' ? 'active' : '' }}">
-                        <a class="nav-link" href="{{action('PrinterController@index')}}"><i class="fa fa-share-alt"></i> <p>@lang('printer.receipt_printers')</p></a>
+                        <a class="nav-link" href="{{action('PrinterController@index')}}"><i class="fa fa-share-alt nav-icon"></i> <p>@lang('printer.receipt_printers')</p></a>
                     </li>
                     @endif @if(auth()->user()->can('tax_rate.view') || auth()->user()->can('tax_rate.create')) @if($tax_rates)
                     <li class="nav-item  {{ $request->segment(1) == 'tax-rates' ? 'active' : '' }}">
-                        <a class="nav-link" href="{{action('TaxRateController@index')}}"><i class="fa fa-bolt"></i> <p>@lang('tax_rate.tax_rates')</p></a>
+                        <a class="nav-link" href="{{action('TaxRateController@index')}}"><i class="fa fa-bolt nav-icon"></i> <p>@lang('tax_rate.tax_rates')</p></a>
                     </li>
                     @endif @endif @if(!$property_module) @if($customer_settings) @if(auth()->user()->can('customer_settings.access'))
                     <li class="nav-item  {{ $request->segment(1) == 'customer-settings' ? 'active' : '' }}">
-                        <a class="nav-link" href="{{action('CustomerSettingsController@index')}}"><i class="fa fa-bolt"></i> <p>@lang('lang_v1.customer_settings')</p></a>
+                        <a class="nav-link" href="{{action('CustomerSettingsController@index')}}"><i class="fa fa-bolt nav-icon"></i> <p>@lang('lang_v1.customer_settings')</p></a>
                     </li>
                     @endif @endif @if(in_array('tables', $enabled_modules)) @can('business_settings.access')
                     <li class="nav-item  {{ $request->segment(1) == 'modules' && $request->segment(2) == 'tables' ? 'active' : '' }}">
-                        <a class="nav-link" href="{{action('Restaurant\TableController@index')}}"><i class="fa fa-table"></i> @lang('restaurant.tables')</p></a>
+                        <a class="nav-link" href="{{action('Restaurant\TableController@index')}}"><i class="fa fa-table nav-icon"></i> @lang('restaurant.tables')</p></a>
                     </li>
                     @endcan @endif @if($expenses) @if(in_array('modifiers', $enabled_modules)) @if(auth()->user()->can('product.view') || auth()->user()->can('product.create') )
                     <li class="nav-item  {{ $request->segment(1) == 'modules' && $request->segment(2) == 'modifiers' ? 'active' : '' }}">
-                        <a class="nav-link" href="{{action('Restaurant\ModifierSetsController@index')}}"><i class="fa fa-delicious"></i> @lang('restaurant.modifiers')</p></a>
+                        <a class="nav-link" href="{{action('Restaurant\ModifierSetsController@index')}}"><i class="fa fa-delicious nav-icon"></i> @lang('restaurant.modifiers')</p></a>
                     </li>
                     @endif @endif @endif @endif @if(in_array('type_of_service', $enabled_modules) && !$property_module)
                     <li class="nav-item  {{  $request->segment(1) == 'types-of-service' ? 'active active-sub' : '' }}">
                         <a class="nav-link" href="{{action('TypesOfServiceController@index')}}">
-                            <i class="fa fa-user-circle-o"></i>
+                            <i class="fa fa-user-circle-o nav-icon"></i>
                             <p>@lang('lang_v1.types_of_service')</p>
                         </a>
                     </li>
                     @endif @endif @if(Module::has('Superadmin')) @includeIf('superadmin::layouts.partials.subscription') @endif
                     <li class="nav-item  {{ $request->segment(1) == 'pay-online' && $request->segment(2) == 'create' ? 'active active-sub' : '' }}">
                         <a class="nav-link" href="{{action('\Modules\Superadmin\Http\Controllers\PayOnlineController@create')}}">
-                            <i class="fa fa-money-bill"></i>
+                            <i class="fa fa-money-bill nav-icon"></i>
                             <p>
                                 @lang('superadmin::lang.pay_online')
                             </p>
