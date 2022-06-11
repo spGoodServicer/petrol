@@ -2,19 +2,19 @@
 	<li class="treeview bg-manufacturing {{ in_array($request->segment(1), ['manufacturing']) ? 'active active-sub' : '' }}">
 	    <a href="#">
 	        <i class="fa fa-industry"></i>
-	        <span class="title">@lang('manufacturing::lang.manufacturing')</span>
-	        <span class="pull-right-container">
+	        <p class="title">@lang('manufacturing::lang.manufacturing')</p>
+	        <p class="pull-right-container">
 	            <i class="right fas fa-angle-left"></i>
-	        </span>
+			</p>
 	    </a>
 
 	    <ul class="nav nav-treeview">
 		    	<li class="{{ $request->segment(1) == 'manufacturing'? 'active active-sub' : '' }}">
 					<a href="{{action('\Modules\Manufacturing\Http\Controllers\ManufacturingController@index')}}">
 						<i class="fa fa-industry"></i>
-						<span class="title">
+						<p class="title">
 							@lang('manufacturing::lang.manufacturing')
-						</span>
+						</p>
 				  	</a>
 				</li>
         </ul>

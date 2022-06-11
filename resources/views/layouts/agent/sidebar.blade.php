@@ -50,7 +50,7 @@
         <li class="{{ $request->segment(1) == 'pay-online' && $request->segment(2) == 'create' ? 'active active-sub' : '' }}">
           <a href="{{action('\Modules\Superadmin\Http\Controllers\PayOnlineController@create')}}">
             <i class="fa fa-money"></i>
-            <span class="title">
+            <p>
               @lang('superadmin::lang.pay_online')
             </span>
           </a>

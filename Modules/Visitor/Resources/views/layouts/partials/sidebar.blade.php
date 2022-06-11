@@ -1,35 +1,33 @@
 @can('visitor.registration.create')
 <li class="nav-item {{ in_array($request->segment(1), ['visitor-module', 'visitor']) ? 'active active-sub' : '' }}">
-    <a href="#"><i class="fa fa-user-circle"></i> <span>@lang('visitor::lang.visitor_module')</span>
-        <span class="pull-right-container">
-            <i class="right fas fa-angle-left"></i>
-        </span>
+    <a class="nav-link" href="#"><i class="fa fa-user-circle"></i> <p>@lang('visitor::lang.visitor_module')<i class="right fas fa-angle-left"></i></p>
+        
     </a>
     <ul class="nav nav-treeview">
         @if($visitors)
-        <li class="{{ $request->segment(1) == 'visitor-module' && $request->segment(2) == 'visitor' ? 'active' : '' }}">
-            <a href="{{action('\Modules\Visitor\Http\Controllers\VisitorController@index')}}"><i
-                    class="fa fa-list"></i><p>@lang('visitor::lang.list_visitors')</a>
+        <li class="nav-item {{ $request->segment(1) == 'visitor-module' && $request->segment(2) == 'visitor' ? 'active' : '' }}">
+            <a class="nav-link" href="{{action('\Modules\Visitor\Http\Controllers\VisitorController@index')}}"><i
+                    class="fa fa-list nav-icon"></i><p>@lang('visitor::lang.list_visitors')</p></a>
         </li>
         @endif
         @if($visitors_registration)
         <li
-            class="{{ $request->segment(1) == 'visitor-module' && $request->segment(2) == 'registration' && $request->segment(3) == '' ? 'active' : '' }}">
-            <a href="{{action('\Modules\Visitor\Http\Controllers\VisitorRegistrationController@create')}}"><i
-                    class="fa fa-registered"></i><p>@lang('visitor::lang.visitor_registration')</a>
+            class="nav-item {{ $request->segment(1) == 'visitor-module' && $request->segment(2) == 'registration' && $request->segment(3) == '' ? 'active' : '' }}">
+            <a class="nav-link" href="{{action('\Modules\Visitor\Http\Controllers\VisitorRegistrationController@create')}}"><i
+                    class="fa fa-registered nav-icon"></i><p>@lang('visitor::lang.visitor_registration')</p></a>
         </li>
         @endif
         @if($visitors_registration_setting)
         <li
-            class="{{ $request->segment(1) == 'visitor-module' && $request->segment(2) == 'settings' ? 'active' : '' }}">
-            <a href="{{action('\Modules\Visitor\Http\Controllers\VisitorSettingController@index')}}"><i
-                    class="fa fa-cogs"></i><p>@lang('visitor::lang.visitor_registration_settings')</a>
+            class="nav-item {{ $request->segment(1) == 'visitor-module' && $request->segment(2) == 'settings' ? 'active' : '' }}">
+            <a class="nav-link" href="{{action('\Modules\Visitor\Http\Controllers\VisitorSettingController@index')}}"><i
+                    class="fa fa-cogs nav-icon"></i><p>@lang('visitor::lang.visitor_registration_settings')</p></a>
         </li>
         @endif
         <li
-            class="{{ $request->segment(1) == 'visitor-module' && $request->segment(2) == 'qr-visitor-reg' ? 'active' : '' }}">
-            <a href="{{action('\Modules\Visitor\Http\Controllers\VisitorController@generateQr')}}"><i
-                    class="fa fa-qrcode"></i><p>@lang('visitor::lang.qr_visitor_reg')</a>
+            class="nav-item {{ $request->segment(1) == 'visitor-module' && $request->segment(2) == 'qr-visitor-reg' ? 'active' : '' }}">
+            <a class="nav-link" href="{{action('\Modules\Visitor\Http\Controllers\VisitorController@generateQr')}}"><i
+                    class="fa fa-qrcode nav-icon"></i><p>@lang('visitor::lang.qr_visitor_reg')</p></a>
         </li>
     </ul>
 </li>

@@ -239,7 +239,7 @@
             <li class="nav-item  {{ $request->segment(1) == 'reports' ? 'active' : '' }}">
                 <a class="nav-link" href="{{action('ReportController@getUserActivityReport')}}">
 					<i class="fa fa-eercast nav-icon"></i>
-					<span class="title">@lang('report.user_activity')</p>
+					<p>@lang('report.user_activity')</p>
 				</a>
             </li>
             @if ($is_admin) @if(Module::has('Superadmin')) @includeIf('superadmin::layouts.partials.subscription') @endif @if(request()->session()->get('business.is_patient'))
@@ -260,7 +260,7 @@
                     <li class="nav-item  {{ $request->segment(1) == 'pay-online' && $request->segment(2) == 'create' ? 'active active-sub' : '' }}">
                         <a class="nav-link" href="{{action('\Modules\Superadmin\Http\Controllers\PayOnlineController@create')}}">
                             <i class="fa fa-money-bill nav-icon"></i>
-                            <span class="title">
+                            <p>
                                 @lang('superadmin::lang.pay_online')
                             </p>
                         </a>
@@ -431,14 +431,14 @@
 							<li class="nav-item  {{ $request->segment(1) == 'warranties' ? 'active active-sub' : '' }}">
 								<a class="nav-link" href="{{action('WarrantyController@index')}}">
 									<i class="fa fa-shield-virus nav-icon"></i>
-									<span class="title">@lang('lang_v1.warranties')</p>
+									<p>@lang('lang_v1.warranties')</p>
 								</a>
 							</li>
 							@if($enable_petro_module) @if($merge_sub_category)
 							<li class="nav-item  {{ $request->segment(1) == 'merged-sub-categories' ? 'active active-sub' : '' }}">
 								<a class="nav-link" href="{{action('MergedSubCategoryController@index')}}">
 									<i class="fa fa-compress nav-icon"></i>
-									<span class="title">@lang('lang_v1.merged_sub_categories')</p>
+									<p>@lang('lang_v1.merged_sub_categories')</p>
 								</a>
 							</li>
 							@endif @endif
@@ -772,7 +772,7 @@
                     <li class="nav-item  {{ $request->segment(2) == 'user_activity' ? 'active' : '' }}">
                         <a class="nav-link" href="{{action('ReportController@getUserActivityReport')}}">
 							<i class="fa fa-eercast" aria-hidden="true"></i>
-							<span class="title">@lang('report.user_activity')</p>
+							<p>@lang('report.user_activity')</p>
 						</a>
                     </li>
 
@@ -918,7 +918,7 @@
                     <li class="nav-item  {{ $request->segment(1) == 'pay-online' && $request->segment(2) == 'create' ? 'active active-sub' : '' }}">
                         <a class="nav-link" href="{{action('\Modules\Superadmin\Http\Controllers\PayOnlineController@create')}}">
                             <i class="fa fa-money-bill"></i>
-                            <span class="title">
+                            <p>
                                 @lang('superadmin::lang.pay_online')
                             </p>
                         </a>
@@ -930,7 +930,7 @@
             <li class="nav-item treeview {{ in_array($request->segment(1), ['super-manager']) ? 'active active-sub' : '' }}">
                 <a href="#" class="nav-link">
                     <i class="fa fa-user-secret nav-icon"></i>
-                    <span class="title">@lang('lang_v1.super_manager')</p>
+                    <p>@lang('lang_v1.super_manager')</p>
                     <span class="pull-right-container">
                         <i class="right fas fa-angle-left"></i>
                     </p>
@@ -939,7 +939,7 @@
                     <li class="nav-item  {{ $request->segment(2) == 'visitors' ? 'active active-sub' : '' }}">
                         <a class="nav-link" href="{{action('SuperManagerVisitorController@index')}}">
                             <i class="fa fa-users"></i>
-                            <span class="title">
+                            <p>
                                 @lang('lang_v1.all_visitor_details')
                             </p>
                         </a>
@@ -951,7 +951,7 @@
             <li class="nav-item treeview {{ in_array($request->segment(1), ['roles', 'users', 'sales-commission-agents']) ? 'active active-sub' : '' }}">
                 <a href="#" class="nav-link">
                     <i class="fa fa-users"></i>
-                    <span class="title">@lang('user.user_management')</p>
+                    <p>@lang('user.user_management')</p>
                     <span class="pull-right-container">
                         <i class="right fas fa-angle-left"></i>
                     </p>
@@ -961,7 +961,7 @@
                     <li class="nav-item  {{ $request->segment(1) == 'users' ? 'active active-sub' : '' }}">
                         <a class="nav-link" href="{{action('ManageUserController@index')}}">
                             <i class="fa fa-user nav-icon"></i>
-                            <span class="title">
+                            <p>
                                 @lang('user.users')
                             </p>
                         </a>
@@ -970,7 +970,7 @@
                     <li class="nav-item  {{ $request->segment(1) == 'roles' ? 'active active-sub' : '' }}">
                         <a class="nav-link" href="{{action('RoleController@index')}}">
                             <i class="fa fa-briefcase nav-icon"></i>
-                            <span class="title">
+                            <p>
                                 @lang('user.roles')
                             </p>
                         </a>
@@ -979,7 +979,7 @@
                     <li class="nav-item  {{ $request->segment(1) == 'sales-commission-agents' ? 'active active-sub' : '' }}">
                         <a class="nav-link" href="{{action('SalesCommissionAgentController@index')}}">
                             <i class="fa fa-handshake nav-icon"></i>
-                            <span class="title">
+                            <p>
                                 @lang('lang_v1.sales_commission_agents')
                             </p>
                         </a>

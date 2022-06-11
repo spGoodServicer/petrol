@@ -15,8 +15,8 @@
     @can('property.customer.view')
     <li class="nav-item {{ $request->segment(2) == 'contacts' && $request->input('type') == 'customer' ? 'active' : '' }}"><a
         href="{{action('\Modules\Property\Http\Controllers\ContactController@index', ['type' => 'customer'])}}" class="nav-link"><i
-          class="fa fa-star nav-icon"></i>
-        @lang('property::lang.property_customer')</a></li>
+          class="fa fa-star nav-icon"></i><p>
+        @lang('property::lang.property_customer')</p></a></li>
     @endcan
     @can('property.list.view')
     <li class="nav-item {{ $request->segment(2) == 'properties' ? 'active' : '' }}">
