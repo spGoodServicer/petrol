@@ -8,21 +8,21 @@
         <div class="col-md-12">
             <div class="settlement_tabs">
                 <ul class="nav nav-tabs">
-                    <li class="@if(empty(session('status.tab'))) active @endif">
-                        <a href="#notes_settings" class="notes_settings" data-toggle="tab">
-                            <i class="fa fa-file-alt-o"></i>
+                    <li class="nav-item @if(empty(session('status.tab'))) active @endif">
+                        <a class="nav-link" href="#notes_settings" class="notes_settings" data-toggle="tab">
+                            <i class="fa fa-file-alt nav-icon"></i>
                             <strong>@lang('tasksmanagement::lang.notes_settings')</strong>
                         </a>
                     </li>
-                    <li class="@if(session('status.tab') =='task') active @endif">
-                        <a href="#tasks_settings" class="tasks_settings" data-toggle="tab">
-                            <i class="fa fa-file-alt-o"></i>
+                    <li class="nav-item @if(session('status.tab') =='task') active @endif">
+                        <a class="nav-link" href="#tasks_settings" class="tasks_settings" data-toggle="tab">
+                            <i class="fa fa-file-alt nav-icon"></i>
                             <strong>@lang('tasksmanagement::lang.tasks_settings')</strong>
                         </a>
                     </li>
-                    <li class="@if(session('status.tab') =='priority') active @endif">
+                    <li class="nav-item @if(session('status.tab') =='priority') active @endif">
                         <a href="#priorities_settings" class="priorities_settings" data-toggle="tab">
-                            <i class="fa fa-file-alt-o"></i>
+                            <i class="fa fa-file-alt nav-icon"></i>
                             <strong>@lang('tasksmanagement::lang.priority')</strong>
                         </a>
                     </li>

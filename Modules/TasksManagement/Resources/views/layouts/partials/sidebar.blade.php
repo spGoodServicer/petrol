@@ -5,7 +5,7 @@
         @if($notes_page)
         <li class="nav-item {{ $request->segment(1) == 'tasks-management' && $request->segment(2) == 'notes' ? 'active' : '' }}">
             <a class="nav-link" href="{{action('\Modules\TasksManagement\Http\Controllers\NoteController@index')}}"><i
-                    class="fa fa-file-alt-o"></i><p>@lang('tasksmanagement::lang.notes')</p></a>
+                    class="fa fa-file-alt nav-icon"></i><p>@lang('tasksmanagement::lang.notes')</p></a>
         </li>
         @endif
         @if($tasks_page)
