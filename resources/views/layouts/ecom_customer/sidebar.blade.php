@@ -37,9 +37,9 @@
     <section class="sidebar">
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
-        <li class="{{ $request->segment(1) == 'customer-home' ? 'active' : '' }}">
-          <a href="{{action('CustomerController@index')}}">
-            <i class="fa fa-chart-line"></i> <span>
+        <li class="nav-item {{ $request->segment(1) == 'customer-home' ? 'active' : '' }}">
+          <a class="nav-link" href="{{action('CustomerController@index')}}">
+            <i class="fa fa-chart-line nav-icon"></i> <span>
               @lang('home.home')</span>
           </a>
         </li>
@@ -48,26 +48,23 @@
 
         <li class="nav-item {{  in_array( $request->segment(1), ['customer-sales', 'customer', 'customer-order', 'customer-order-list']) && $request->segment(2) != 'home' ? 'active active-sub' : '' }}"
         id="">
-        <a href="#" id=""><i class="fa fa-arrow-circle-up"></i> <span>@lang('sale.sale')</span>
-          <span class="pull-right-container">
-            <i class="right fas fa-angle-left"></i>
-          </span>
+        <a class="nav-link" href="#" id=""><i class="fa fa-arrow-circle-up nav-icon"></i> <p>@lang('sale.sale')<i class="right fas fa-angle-left"></i></p>
         </a>
         <ul class="nav nav-treeview">
-          <li class="{{ $request->segment(1) == 'customer' && $request->segment(2) == 'order' && $request->segment(3) == '' ? 'active' : '' }}"><a
-              href="{{action('Ecom\EcomCustomerOrderController@index')}}"><i class="fa fa-plus"></i>@lang('customer.add_order')</a>
+          <li class="nav-item {{ $request->segment(1) == 'customer' && $request->segment(2) == 'order' && $request->segment(3) == '' ? 'active' : '' }}">
+            <a class="nav-link" href="{{action('Ecom\EcomCustomerOrderController@index')}}"><i class="fa fa-plus nav-icon"></i><p>@lang('customer.add_order')</p></a>
           </li>
-          <li class="{{ $request->segment(1) == 'customer' && $request->segment(2) == 'order' && $request->segment(3) == 'lists' ? 'active' : '' }}"><a
-              href="{{action('Ecom\EcomCustomerOrderController@getOrders')}}"><i class="fa fa-list-ol"></i>@lang('lang_v1.list_order')</a>
+          <li class="nav-item {{ $request->segment(1) == 'customer' && $request->segment(2) == 'order' && $request->segment(3) == 'lists' ? 'active' : '' }}">
+            <a class="nav-link" href="{{action('Ecom\EcomCustomerOrderController@getOrders')}}"><i class="fa fa-list-ol nav-icon"></i><p>@lang('lang_v1.list_order')</p></a>
           </li>
-          <li class="{{$request->segment(1) == 'customer' && $request->segment(2) == 'order' && $request->segment(3) == 'uploaded' ? 'active' : '' }}"><a
-              href="{{action('Ecom\EcomCustomerOrderController@getUploadedOrders')}}"><i class="fa fa-upload"></i>@lang('customer.uploaded_order')</a>
+          <li class="nav-item {{$request->segment(1) == 'customer' && $request->segment(2) == 'order' && $request->segment(3) == 'uploaded' ? 'active' : '' }}">
+            <a class="nav-link" href="{{action('Ecom\EcomCustomerOrderController@getUploadedOrders')}}"><i class="fa fa-upload nav-icon"></i><p>@lang('customer.uploaded_order')</p></a>
           </li>
-          <li class="{{$request->segment(1) == 'customer' && $request->segment(2) == 'order' && $request->segment(3) == 'uploaded' ? 'active' : '' }}"><a
-              href="{{action('Ecom\EcomCustomerOrderController@getUploadedOrders')}}"><i class="fa fa-upload"></i>@lang('customer.uploaded_order')</a>
+          <li class="nav-item {{$request->segment(1) == 'customer' && $request->segment(2) == 'order' && $request->segment(3) == 'uploaded' ? 'active' : '' }}">
+            <a class="nav-link" href="{{action('Ecom\EcomCustomerOrderController@getUploadedOrders')}}"><i class="fa fa-upload nav-icon"></i><p>@lang('customer.uploaded_order')</p></a>
           </li>
-          <li class="{{$request->segment(1) == 'customer' && $request->segment(2) == 'details'? 'active' : '' }}"><a
-              href="{{action('Ecom\ContactController@index')}}"><i class="fa fa-address-book"></i>@lang('customer.contacts')</a>
+          <li class="nav-item {{$request->segment(1) == 'customer' && $request->segment(2) == 'details'? 'active' : '' }}">
+            <a class="nav-link"href="{{action('Ecom\ContactController@index')}}"><i class="fa fa-address-book nav-icon"></i><p>@lang('customer.contacts')</p></a>
           </li>
 
         </ul>
