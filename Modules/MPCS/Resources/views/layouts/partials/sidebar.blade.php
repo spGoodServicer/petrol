@@ -1,5 +1,5 @@
 <li
-class="treeview {{ in_array($request->segment(1), ['mpcs']) ? 'active active-sub' : '' }}"
+class="nav-item {{ in_array($request->segment(1), ['mpcs']) ? 'active active-sub' : '' }}"
 id="tour_step5">
 <a href="#" id="tour_step5_menu"><i class="fa fa-calculator"></i> <span>@lang('mpcs::lang.mpcs')</span>
   <span class="pull-right-container">

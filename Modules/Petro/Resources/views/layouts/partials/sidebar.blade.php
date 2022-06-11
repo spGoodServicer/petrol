@@ -1,6 +1,6 @@
 <li
 
-class="treeview {{ in_array($request->segment(1), ['petro']) && $request->segment(2) != 'issue-customer-bill'? 'active active-sub' : '' }}"
+class="nav-item {{ in_array($request->segment(1), ['petro']) && $request->segment(2) != 'issue-customer-bill'? 'active active-sub' : '' }}"
 
 id="tour_step5">
 
@@ -83,7 +83,7 @@ id="tour_step5">
 
 <li
 
-  class="treeview {{in_array($request->segment(2), ['issue-customer-bill']) ? 'active active-sub' : '' }}">
+  class="nav-item {{in_array($request->segment(2), ['issue-customer-bill']) ? 'active active-sub' : '' }}">
 
   <a href="#" id="tour_step6_menu"><i class="fa fa-file-text"></i>
 

@@ -250,7 +250,7 @@
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
-                <ul class="treeview-menu">
+                <ul class="nav nav-treeview">
                     <li class="nav-item  {{ $request->segment(1) == 'family-member' ? 'active' : '' }}">
                         <a class="nav-link" href="{{action('FamilyController@index')}}"><i class="fa fa-users nav-icon"></i> @lang('patient.family_member')</p></a>
                     </li>
@@ -382,7 +382,7 @@
 								
 							
 						</a>
-						<ul class="treeview-menu">
+						<ul class="nav nav-treeview">
 							@can('product.view')
 							<li class="nav-item  {{ $request->segment(1) == 'products' && $request->segment(2) == '' ? 'active' : '' }}">
 								<a class="nav-link" href="{{action('ProductController@index')}}"><i class="fa fa-list nav-icon"></i><p>@lang('lang_v1.list_products')</p></a>
@@ -475,7 +475,7 @@
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
-                            <ul class="treeview-menu">
+                            <ul class="nav nav-treeview">
                                 @if($all_purchase)
                                 <li class="nav-item  {{ $request->segment(1) == 'purchases' && $request->segment(2) == null ? 'active' : '' }}">
                                     <a href="{{action('PurchaseController@index')}}" class="nav-link"><i class="fa fa-list nav-icon"></i><p>@lang('purchase.list_purchase')</p></a>
@@ -515,7 +515,7 @@
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
-                <ul class="treeview-menu">
+                <ul class="nav nav-treeview">
                     @if($all_sales) @if(auth()->user()->can('direct_sell.access') || auth()->user()->can('view_own_sell_only'))
                     <li class="nav-item  {{ $request->segment(1) == 'sales' && $request->segment(2) == null ? 'active' : '' }}">
                         <a href="{{action('SellController@index')}}" class="nav-link"><i class="fa fa-list nav-icon"></i><p>@lang('lang_v1.all_sales')</p></a>
@@ -593,7 +593,7 @@
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
-                <ul class="treeview-menu">
+                <ul class="nav nav-treeview">
                     @can('purchase.view')
                     <li class="nav-item  {{ $request->segment(1) == 'stock-transfers' && $request->segment(2) == null ? 'active' : '' }}">
                         <a href="{{action('StockTransferController@index')}}"><i class="fa fa-list nav-icon"></i><p>@lang('lang_v1.list_stock_transfers')</p></a>
@@ -622,7 +622,7 @@
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
-                <ul class="treeview-menu">
+                <ul class="nav nav-treeview">
                     @can('purchase.view')
                     <li class="nav-item  {{ $request->segment(1) == 'stock-adjustments' && $request->segment(2) == null ? 'active' : '' }}">
                         <a href="{{action('StockAdjustmentController@index')}}"><i class="fa fa-list nav-icon"></i><p>@lang('stock_adjustment.list')</p></a>
@@ -642,7 +642,7 @@
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
-                <ul class="treeview-menu">
+                <ul class="nav nav-treeview">
                     <li class="nav-item  {{ $request->segment(1) == 'expenses' && empty($request->segment(2)) ? 'active' : '' }}">
                         <a href="{{action('ExpenseController@index')}}"><i class="fa fa-list nav-icon"></i><p>@lang('lang_v1.list_expenses')</p></a>
                     </li>
@@ -682,7 +682,7 @@
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
-                <ul class="treeview-menu">
+                <ul class="nav nav-treeview">
                     <li class="nav-item  {{ $request->segment(1) == 'accounting-module' && $request->segment(2) == 'account' ? 'active' : '' }}">
                         <a href="{{action('AccountController@index')}}"><i class="fa fa-list nav-icon"></i><p>@lang('account.list_accounts')</p></a>
                     </li>
@@ -728,7 +728,7 @@
                     <i class="fa fa-bar-chart-o nav-icon"></i> <p>@lang('report.reports') <i class="right fas fa-angle-left"></i></p>
                     
                 </a>
-                <ul class="treeview-menu">
+                <ul class="nav nav-treeview">
                     @if($product_report) @if(auth()->user()->can('stock_report.view') || auth()->user()->can('stock_adjustment_report.view') || auth()->user()->can('item_report.view') || auth()->user()->can('product_purchase_report.view')
                     || auth()->user()->can('product_sell_report.view') || auth()->user()->can('product_transaction_report.view') )
                     <li class="nav-item  {{ $request->segment(2) == 'product' ? 'active' : '' }}">
@@ -839,7 +839,7 @@
                         <i class="right fas fa-angle-left"></i>
                     </p> -->
                 </a>
-                <!-- <ul class="treeview-menu">
+                <!-- <ul class="nav nav-treeview">
                     @if($enable_sms) @can('sms.view')
                     <li class="nav-item  {{ $request->segment(2) == 'sms-template' ? 'active' : '' }}">
                         <a href="{{ url('notification-templates/sms-template')}}"><i class="fa fa-commenting-o"></i> @lang('lang_v1.sms_template')</p></a>
@@ -935,7 +935,7 @@
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
-                <ul class="treeview-menu">
+                <ul class="nav nav-treeview">
                     <li class="nav-item  {{ $request->segment(2) == 'visitors' ? 'active active-sub' : '' }}">
                         <a class="nav-link" href="{{action('SuperManagerVisitorController@index')}}">
                             <i class="fa fa-users"></i>
@@ -956,7 +956,7 @@
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
-                <ul class="treeview-menu">
+                <ul class="nav nav-treeview">
                     @can( 'user.view' )
                     <li class="nav-item  {{ $request->segment(1) == 'users' ? 'active active-sub' : '' }}">
                         <a class="nav-link" href="{{action('ManageUserController@index')}}">
@@ -1002,7 +1002,7 @@
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
-                <ul class="treeview-menu">
+                <ul class="nav nav-treeview">
                     <li class="nav-item  {{ $request->segment(1) == 'customer-sales' ? 'active' : '' }}">
                         <a class="nav-link" href="{{action('CustomerSellController@index')}}"><i class="fa fa-list nav-icon"></i><p>@lang('lang_v1.all_sales')</p></a>
                     </li>
@@ -1029,7 +1029,7 @@
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
-                <ul class="treeview-menu">
+                <ul class="nav nav-treeview">
                     @if($cheque_templates)
                     <li class="nav-item  {{ $request->segment(1) == 'cheque-templates'  && $request->segment(2) == '' ? 'active' : '' }}">
                         <a class="nav-link" href="{{action('Chequer\ChequeTemplateController@index')}}"><i class="fa fa-book nav-icon"></i><p>@lang('cheque.templates')</p></a>

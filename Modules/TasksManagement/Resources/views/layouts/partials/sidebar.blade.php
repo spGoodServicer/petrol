@@ -1,4 +1,4 @@
-<li class="treeview {{ in_array($request->segment(1), ['tasks-management']) ? 'active active-sub' : '' }}">
+<li class="nav-item {{ in_array($request->segment(1), ['tasks-management']) ? 'active active-sub' : '' }}">
     <a href="#"><i class="fa fa-list-alt"></i> <span>@lang('tasksmanagement::lang.tasks_management')</span>
         <span class="pull-right-container">
             <i class="right fas fa-angle-left"></i>

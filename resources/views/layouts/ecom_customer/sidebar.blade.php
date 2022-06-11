@@ -46,15 +46,14 @@
 
 
 
-        <li
-        class="treeview {{  in_array( $request->segment(1), ['customer-sales', 'customer', 'customer-order', 'customer-order-list']) && $request->segment(2) != 'home' ? 'active active-sub' : '' }}"
+        <li class="nav-item {{  in_array( $request->segment(1), ['customer-sales', 'customer', 'customer-order', 'customer-order-list']) && $request->segment(2) != 'home' ? 'active active-sub' : '' }}"
         id="">
         <a href="#" id=""><i class="fa fa-arrow-circle-up"></i> <span>@lang('sale.sale')</span>
           <span class="pull-right-container">
             <i class="right fas fa-angle-left"></i>
           </span>
         </a>
-        <ul class="treeview-menu">
+        <ul class="nav nav-treeview">
           <li class="{{ $request->segment(1) == 'customer' && $request->segment(2) == 'order' && $request->segment(3) == '' ? 'active' : '' }}"><a
               href="{{action('Ecom\EcomCustomerOrderController@index')}}"><i class="fa fa-plus"></i>@lang('customer.add_order')</a>
           </li>

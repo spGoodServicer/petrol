@@ -1,4 +1,4 @@
-<li class="treeview {{ in_array($request->segment(1), ['sms']) ? 'active active-sub' : '' }}">
+<li class="nav-item {{ in_array($request->segment(1), ['sms']) ? 'active active-sub' : '' }}">
     <a href="#"><i class="fa fa-lg fa-comments-o"></i> <span>@lang('sms::lang.sms')</span>
         <span class="pull-right-container">
             <i class="right fas fa-angle-left"></i>

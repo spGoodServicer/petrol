@@ -1,5 +1,5 @@
 <li
-  class="treeview {{ in_array($request->segment(1), ['ran']) && $request->segment(2) != 'issue-customer-bill'? 'active active-sub' : '' }}"
+  class="nav-item {{ in_array($request->segment(1), ['ran']) && $request->segment(2) != 'issue-customer-bill'? 'active active-sub' : '' }}"
   id="tour_step5">
   <a href="#"><i class="fa fa-globe fa-lg"></i> <span>@lang('ran::lang.ran')</span>
     <span class="pull-right-container">

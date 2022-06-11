@@ -1,4 +1,4 @@
-<li class="treeview {{ in_array($request->segment(1), ['member-module', 'member']) ? 'active active-sub' : '' }}">
+<li class="nav-item {{ in_array($request->segment(1), ['member-module', 'member']) ? 'active active-sub' : '' }}">
     <a href="#"><i class="fa fa-user-circle"></i> <span>@lang('member::lang.member_module')</span>
         <span class="pull-right-container">
             <i class="right fas fa-angle-left"></i>

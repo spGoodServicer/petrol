@@ -1,4 +1,4 @@
-<li class="treeview {{ in_array($request->segment(1), ['ezyboat']) ? 'active active-sub' : '' }}" id="tour_step5">
+<li class="nav-item {{ in_array($request->segment(1), ['ezyboat']) ? 'active active-sub' : '' }}" id="tour_step5">
     <a href="#"><i class="fa fa-ship"></i> <span>@lang('ezyboat::lang.ezyboat')</span>
         <span class="pull-right-container">
             <i class="right fas fa-angle-left"></i>

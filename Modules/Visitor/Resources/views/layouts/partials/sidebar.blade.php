@@ -1,5 +1,5 @@
 @can('visitor.registration.create')
-<li class="treeview {{ in_array($request->segment(1), ['visitor-module', 'visitor']) ? 'active active-sub' : '' }}">
+<li class="nav-item {{ in_array($request->segment(1), ['visitor-module', 'visitor']) ? 'active active-sub' : '' }}">
     <a href="#"><i class="fa fa-user-circle"></i> <span>@lang('visitor::lang.visitor_module')</span>
         <span class="pull-right-container">
             <i class="right fas fa-angle-left"></i>
