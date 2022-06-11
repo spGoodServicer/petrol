@@ -16,23 +16,21 @@
 		</li>
 
 		<li class="nav-item {{ $request->segment(2) == 'business' ? 'active active-sub' : '' }}">
-			<a href="{{action('\Modules\Superadmin\Http\Controllers\BusinessController@index')}}">
+			<a href="{{action('\Modules\Superadmin\Http\Controllers\BusinessController@index')}}" class="nav-link">
 				<i class="fa fa-university nav-icon"></i>
-				<p class="title">
-					@lang('superadmin::lang.all_business')
-				</p>
+				<p class="title">@lang('superadmin::lang.all_business')</p>
 			</a>
 		</li>
 		<!-- superadmin subscription -->
 		<li class="nav-item {{ $request->segment(2) == 'superadmin-subscription' ? 'active active-sub' : '' }}">
-			<a href="{{action('\Modules\Superadmin\Http\Controllers\SuperadminSubscriptionsController@index')}}"><i
+			<a href="{{action('\Modules\Superadmin\Http\Controllers\SuperadminSubscriptionsController@index')}}" class="nav-link"><i
 					class="fa fa-retweet nav-icon"></i>
 				<p class="title">@lang('superadmin::lang.subscription')</p>
 			</a>
 		</li>
 
 		<li class="nav-item {{ $request->segment(2) == 'packages' ? 'active active-sub' : '' }}">
-			<a href="{{action('\Modules\Superadmin\Http\Controllers\PackagesController@index')}}">
+			<a href="{{action('\Modules\Superadmin\Http\Controllers\PackagesController@index')}}" class="nav-link">
 				<i class="fa fa-credit-card"></i>
 				<p class="title">
 					@lang('superadmin::lang.subscription_packages')
@@ -41,7 +39,7 @@
 		</li>
 
 		<li class="nav-item {{ $request->segment(2) == 'tenant-management' ? 'active active-sub' : '' }}">
-			<a href="{{action('\Modules\Superadmin\Http\Controllers\TenantManagementController@index')}}">
+			<a href="{{action('\Modules\Superadmin\Http\Controllers\TenantManagementController@index')}}" class="nav-link">
 				<i class="fa fa-sitemap"></i>
 				<p class="title">
 					@lang('superadmin::lang.tenant_management')
@@ -50,7 +48,7 @@
 		</li>
 
 		<li class="nav-item {{ $request->segment(2) == 'agent' ? 'active active-sub' : '' }}">
-			<a href="{{action('\Modules\Superadmin\Http\Controllers\AgentController@index')}}">
+			<a href="{{action('\Modules\Superadmin\Http\Controllers\AgentController@index')}}" class="nav-link">
 				<i class="fa fa-user"></i>
 				<p class="title">
 					@lang('superadmin::lang.list_agents')
@@ -59,7 +57,7 @@
 		</li>
 
 		<li class="nav-item {{ $request->segment(2) == 'referrals' ? 'active active-sub' : '' }}">
-			<a href="{{action('\Modules\Superadmin\Http\Controllers\ReferralController@index')}}">
+			<a href="{{action('\Modules\Superadmin\Http\Controllers\ReferralController@index')}}" class="nav-link">
 				<i class="fa fa-link"></i>
 				<p class="title">
 					@lang('superadmin::lang.referrals')
@@ -68,7 +66,7 @@
 		</li>
 
 		<li class="nav-item {{ $request->segment(2) == 'settings' ? 'active active-sub' : '' }}">
-			<a href="{{action('\Modules\Superadmin\Http\Controllers\SuperadminSettingsController@edit')}}">
+			<a href="{{action('\Modules\Superadmin\Http\Controllers\SuperadminSettingsController@edit')}}" class="nav-link">
 				<i class="fa fa-cogs"></i>
 				<p class="title">
 					@lang('superadmin::lang.super_admin_settings')
@@ -77,7 +75,7 @@
 		</li>
 
 		<li class="nav-item {{ $request->segment(2) == 'imports-exports' ? 'active active-sub' : '' }}">
-			<a href="{{action('\Modules\Superadmin\Http\Controllers\ImportExportController@index')}}">
+			<a href="{{action('\Modules\Superadmin\Http\Controllers\ImportExportController@index')}}" class="nav-link">
 				<i class="fa fa-arrows-alt"></i>
 				<p class="title">
 					@lang('superadmin::lang.import_export')
@@ -86,7 +84,7 @@
 		</li>
 
 		<li class="nav-item {{ $request->segment(1) == 'pay-online' ? 'active active-sub' : '' }}">
-			<a href="{{action('\Modules\Superadmin\Http\Controllers\PayOnlineController@index')}}">
+			<a href="{{action('\Modules\Superadmin\Http\Controllers\PayOnlineController@index')}}" class="nav-link">
 				<i class="fa fa-list"></i>
 				<p class="title">
 					@lang('superadmin::lang.pay_online_list')
@@ -94,7 +92,7 @@
 			</a>
 		</li>
 		<li class="nav-item {{ $request->segment(2) == 'help-explanation' ? 'active active-sub' : '' }}">
-			<a href="{{action('\Modules\Superadmin\Http\Controllers\HelpExplanationController@index')}}">
+			<a href="{{action('\Modules\Superadmin\Http\Controllers\HelpExplanationController@index')}}" class="nav-link">
 				<i class="fa fa-info-circle"></i>
 				<p class="title">
 					@lang('superadmin::lang.help_explanation')
@@ -103,7 +101,7 @@
 		</li>
 
 		<li class="nav-item {{ $request->segment(2) == 'communicator' ? 'active active-sub' : '' }}">
-			<a href="{{action('\Modules\Superadmin\Http\Controllers\CommunicatorController@index')}}">
+			<a href="{{action('\Modules\Superadmin\Http\Controllers\CommunicatorController@index')}}" class="nav-link">
 				<i class="fa fa-envelope"></i>
 				<p class="title">
 					@lang('superadmin::lang.communicator')
@@ -112,16 +110,16 @@
 		</li>
 
 		<li class="nav-item {{ $request->segment(1) == 'site-settings'? 'active' : '' }}">
-			<a href="{{route('site_settings.view')}}">
+			<a href="{{route('site_settings.view')}}" class="nav-link">
 				<i class="fa fa-gears"></i> <p>@lang('site_settings.settings')</p></a>
 		</li>
 		<li class="nav-item {{ $request->segment(1) == 'system_administration'? 'active' : '' }}">
-			<a href="{{route('site_settings.help_view')}}">
+			<a href="{{route('site_settings.help_view')}}" class="nav-link">
 				<i class="fa fa-question-circle"></i> <p>@lang('site_settings.help')</p></a>
 		</li>
 
 		<li class="nav-item {{ $request->segment(1) == 'sample-medical-product-import' ? 'active' : '' }}">
-			<a href="{{action('ImportMedicalProductController@index')}}">
+			<a href="{{action('ImportMedicalProductController@index')}}" class="nav-link">
 				<i class="fa fa-download"></i><p>@lang('lang_v1.sample_medical_product_import')</p></a>
 		</li>
 </ul>
