@@ -6,7 +6,7 @@ id="tour_step5">
     <i class="right fas fa-angle-left"></i>
   </span>
 </a>
-<ul class="treeview-menu">
+<ul class="nav nav-treeview">
   @if(auth()->user()->can('f9c_form') || auth()->user()->can('f15a9abc_form') || auth()->user()->can('f16a_form') || auth()->user()->can('f21c_form'))
   <li class="{{ $request->segment(1) == 'mpcs' && $request->segment(2) == 'form-set-1' ? 'active' : '' }}"><a
       href="{{action('\Modules\MPCS\Http\Controllers\MPCSController@FromSet1')}}"><i class="fa fa-file-text-o"></i>@lang('mpcs::lang.form_set_1')</a>

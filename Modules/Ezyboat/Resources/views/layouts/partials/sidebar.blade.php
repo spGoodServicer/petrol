@@ -4,7 +4,7 @@
             <i class="right fas fa-angle-left"></i>
         </span>
     </a>
-    <ul class="treeview-menu">
+    <ul class="nav nav-treeview">
         <li class="{{ $request->segment(2) == 'list' ? 'active' : '' }}"><a
                 href="{{action('\Modules\Ezyboat\Http\Controllers\EzyboatController@index')}}"><i class="fa fa-list"></i>
                 @lang('ezyboat::lang.list_boats')</a>

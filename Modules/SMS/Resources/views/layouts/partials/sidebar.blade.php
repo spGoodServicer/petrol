@@ -4,7 +4,7 @@
             <i class="right fas fa-angle-left"></i>
         </span>
     </a>
-   <ul class="treeview-menu">
+   <ul class="nav nav-treeview">
         {{--  @if($sms)
         @if(auth()->user()->can('sms.view') || auth()->user()->can('sms.edit') ||
         auth()->user()->can('sms.destory')|| auth()->user()->can('sms.create')) --}}

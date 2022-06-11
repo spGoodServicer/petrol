@@ -5,7 +5,7 @@
             <i class="right fas fa-angle-left"></i>
         </span>
     </a>
-    <ul class="treeview-menu">
+    <ul class="nav nav-treeview">
         @if($visitors)
         <li class="{{ $request->segment(1) == 'visitor-module' && $request->segment(2) == 'visitor' ? 'active' : '' }}">
             <a href="{{action('\Modules\Visitor\Http\Controllers\VisitorController@index')}}"><i

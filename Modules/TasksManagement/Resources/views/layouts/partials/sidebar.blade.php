@@ -4,7 +4,7 @@
             <i class="right fas fa-angle-left"></i>
         </span>
     </a>
-    <ul class="treeview-menu">
+    <ul class="nav nav-treeview">
         @if($notes_page)
         <li class="{{ $request->segment(1) == 'tasks-management' && $request->segment(2) == 'notes' ? 'active' : '' }}">
             <a href="{{action('\Modules\TasksManagement\Http\Controllers\NoteController@index')}}"><i

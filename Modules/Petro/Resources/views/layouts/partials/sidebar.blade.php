@@ -13,7 +13,7 @@ id="tour_step5">
   </span>
 
 </a>
-<ul class="treeview-menu">
+<ul class="nav nav-treeview">
 @if($enable_petro_dashboard)
   <li class="{{ $request->segment(1) == 'petro' && $request->segment(2) == 'dashboard' ? 'active' : '' }}"><a
 
@@ -97,7 +97,7 @@ id="tour_step5">
 
   </a>
 
-  <ul class="treeview-menu">
+  <ul class="nav nav-treeview">
 
     <li class="{{ $request->segment(2) == 'issue-customer-bill'? 'active' : '' }}"><a href="{{action('\Modules\Petro\Http\Controllers\IssueCustomerBillController@index')}}"><i class="fa fa-list"></i>@lang('petro::lang.issue_bills_customer')</a></li>
 

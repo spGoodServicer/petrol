@@ -4,7 +4,7 @@
             <i class="right fas fa-angle-left"></i>
         </span>
     </a>
-    <ul class="treeview-menu">
+    <ul class="nav nav-treeview">
         <li class="{{ $request->segment(2) == 'fleet' ? 'active' : '' }}"><a
                 href="{{action('\Modules\Fleet\Http\Controllers\FleetController@index')}}"><i class="fa fa-list"></i>
                 @lang('fleet::lang.list_fleet')</a>

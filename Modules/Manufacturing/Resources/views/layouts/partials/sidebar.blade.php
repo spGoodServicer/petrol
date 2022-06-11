@@ -8,7 +8,7 @@
 	        </span>
 	    </a>
 
-	    <ul class="treeview-menu">
+	    <ul class="nav nav-treeview">
 		    	<li class="{{ $request->segment(1) == 'manufacturing'? 'active active-sub' : '' }}">
 					<a href="{{action('\Modules\Manufacturing\Http\Controllers\ManufacturingController@index')}}">
 						<i class="fa fa-industry"></i>

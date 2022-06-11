@@ -4,7 +4,7 @@
             <i class="right fas fa-angle-left"></i>
         </span>
     </a>
-    <ul class="treeview-menu">
+    <ul class="nav nav-treeview">
         <li class="{{ $request->segment(1) == 'member-module' && $request->segment(2) == 'members' ? 'active' : '' }}">
             <a href="{{action('\Modules\Member\Http\Controllers\MemberController@index')}}"><i
                     class="fa fa-list"></i>@lang('member::lang.list_member')</a>

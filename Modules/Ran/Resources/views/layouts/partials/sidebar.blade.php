@@ -6,7 +6,7 @@
       <i class="right fas fa-angle-left"></i>
     </span>
   </a>
-  <ul class="treeview-menu">
+  <ul class="nav nav-treeview">
     <li class="{{ $request->segment(2) == 'gold' ? 'active' : '' }}"><a
         href="{{action('\Modules\Ran\Http\Controllers\GoldController@index')}}"><i class="fa fa-globe"></i>
         @lang('ran::lang.gold')</a>
