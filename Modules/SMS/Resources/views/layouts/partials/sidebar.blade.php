@@ -10,7 +10,7 @@
         auth()->user()->can('sms.destory')|| auth()->user()->can('sms.create')) --}}
         <li class="{{ $request->segment(1) == 'sms' && $request->segment(2) == ''? 'active' : '' }}">
             <a href="{{action('\Modules\SMS\Http\Controllers\SMSController@index')}}"><i
-                    class="fa fa-commenting-o"></i>@lang('sms::lang.list_sms')</a>
+                    class="fa fa-commenting-o"></i><p>@lang('sms::lang.list_sms')</a>
         </li>
         {{-- @endcan
         @endif --}}

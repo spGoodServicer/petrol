@@ -39,7 +39,7 @@
       <ul class="sidebar-menu">
         <li class="{{ $request->segment(1) == 'customer-home' ? 'active' : '' }}">
           <a href="{{action('AgentController@home')}}">
-            <i class="fa fa-dashboard"></i> <span>
+            <i class="fa fa-chart-line"></i> <span>
               @lang('home.home')</span>
           </a>
         </li>

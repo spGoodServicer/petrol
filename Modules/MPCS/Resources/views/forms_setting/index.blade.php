@@ -11,7 +11,7 @@
                     @can('mpcs_form_settings')
                     <li class="active">
                         <a href="#mpcs_forms_setting" class="mpcs_forms_setting" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('mpcs::lang.mpcs_forms_setting')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('mpcs::lang.mpcs_forms_setting')</strong>
                         </a>
                     </li>
                     @endcan
@@ -20,7 +20,7 @@
                     @can('list_opening_values')
                     <li class="">
                         <a href="#list_opening_values" class="list_opening_values" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('mpcs::lang.list_opening_values')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('mpcs::lang.list_opening_values')</strong>
                         </a>
                     </li>
                     @endcan

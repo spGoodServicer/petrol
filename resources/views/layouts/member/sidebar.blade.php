@@ -39,7 +39,7 @@
       <ul class="sidebar-menu">
         <li class="{{ $request->segment(1) == 'member' && $request->segment(2) == 'home' ? 'active' : '' }}">
           <a href="{{action('\Modules\Member\Http\Controllers\MemberController@home')}}">
-            <i class="fa fa-dashboard"></i> <span>
+            <i class="fa fa-chart-line"></i> <span>
               @lang('home.home')</span>
           </a>
         </li>

@@ -12,7 +12,7 @@
                         @if($report_daily)
                             <li class="active">
                                 <a href="#daily_report" class="daily_report" data-toggle="tab">
-                                    <i class="fa fa-file-text-o"></i> <strong>@lang('report.daily_report')</strong>
+                                    <i class="fa fa-file-alt-o"></i> <strong>@lang('report.daily_report')</strong>
                                 </a>
                             </li>
                         @endif

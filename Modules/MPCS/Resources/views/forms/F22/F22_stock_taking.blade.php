@@ -19,7 +19,7 @@
                 <ul class="nav nav-tabs">
                     <li class="active">
                         <a href="#f22_form_tab" class="f22_form_tab" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('mpcs::lang.f22_form')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('mpcs::lang.f22_form')</strong>
                         </a>
                     </li>
 

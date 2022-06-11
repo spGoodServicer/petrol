@@ -9,27 +9,27 @@
         @if($visitors)
         <li class="{{ $request->segment(1) == 'visitor-module' && $request->segment(2) == 'visitor' ? 'active' : '' }}">
             <a href="{{action('\Modules\Visitor\Http\Controllers\VisitorController@index')}}"><i
-                    class="fa fa-list"></i>@lang('visitor::lang.list_visitors')</a>
+                    class="fa fa-list"></i><p>@lang('visitor::lang.list_visitors')</a>
         </li>
         @endif
         @if($visitors_registration)
         <li
             class="{{ $request->segment(1) == 'visitor-module' && $request->segment(2) == 'registration' && $request->segment(3) == '' ? 'active' : '' }}">
             <a href="{{action('\Modules\Visitor\Http\Controllers\VisitorRegistrationController@create')}}"><i
-                    class="fa fa-registered"></i>@lang('visitor::lang.visitor_registration')</a>
+                    class="fa fa-registered"></i><p>@lang('visitor::lang.visitor_registration')</a>
         </li>
         @endif
         @if($visitors_registration_setting)
         <li
             class="{{ $request->segment(1) == 'visitor-module' && $request->segment(2) == 'settings' ? 'active' : '' }}">
             <a href="{{action('\Modules\Visitor\Http\Controllers\VisitorSettingController@index')}}"><i
-                    class="fa fa-cogs"></i>@lang('visitor::lang.visitor_registration_settings')</a>
+                    class="fa fa-cogs"></i><p>@lang('visitor::lang.visitor_registration_settings')</a>
         </li>
         @endif
         <li
             class="{{ $request->segment(1) == 'visitor-module' && $request->segment(2) == 'qr-visitor-reg' ? 'active' : '' }}">
             <a href="{{action('\Modules\Visitor\Http\Controllers\VisitorController@generateQr')}}"><i
-                    class="fa fa-qrcode"></i>@lang('visitor::lang.qr_visitor_reg')</a>
+                    class="fa fa-qrcode"></i><p>@lang('visitor::lang.qr_visitor_reg')</a>
         </li>
     </ul>
 </li>

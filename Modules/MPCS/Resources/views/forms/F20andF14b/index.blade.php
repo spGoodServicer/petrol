@@ -12,14 +12,14 @@
                     @if(auth()->user()->can('f14b_form'))
                     <li class="active">
                         <a href="#14b_form" class="14b_form" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('mpcs::lang.f14b_form')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('mpcs::lang.f14b_form')</strong>
                         </a>
                     </li>
                     @endif
                     @if(auth()->user()->can('f20_form'))
                     <li class="">
                         <a href="#20_form" class="20_form" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('mpcs::lang.f20_form')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('mpcs::lang.f20_form')</strong>
                         </a>
                     </li>
                     @endif

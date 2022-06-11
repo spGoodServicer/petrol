@@ -39,7 +39,7 @@
       <ul class="sidebar-menu">
         <li class="{{ $request->segment(1) == 'visitor' ? 'active' : '' }}">
           <a href="{{action('\Modules\Visitor\Http\Controllers\VisitorController@index')}}">
-            <i class="fa fa-dashboard"></i> <span>
+            <i class="fa fa-chart-line"></i> <span>
               @lang('home.home')</span>
           </a>
         </li>

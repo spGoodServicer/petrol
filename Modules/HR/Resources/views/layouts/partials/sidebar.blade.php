@@ -58,7 +58,7 @@
         @if($hr_reports)
         <li class="nav-item {{ $request->segment(2) == 'report' ? 'active' : '' }}">
             <a href="{{action('\Modules\HR\Http\Controllers\ReportController@index')}}" class="nav-link">
-                <i class="fa fa-file-text"></i>
+                <i class="fa fa-file-alt"></i>
                 <p>
                     @lang('hr::lang.reports')
                 </p>
@@ -86,7 +86,7 @@
         @if($hr_settings)
         <li class="nav-item {{ $request->segment(2) == 'settings' ? 'active active-sub' : '' }}">
             <a href="{{action('\Modules\HR\Http\Controllers\HrSettingsController@index')}}" class="nav-link">
-                <i class="fa fa-gears nav-icon"></i>
+                <i class="fa fa-cogs nav-icon"></i>
                 <p>
                     @lang('hr::lang.hr_settings')
                 </p>

@@ -8,14 +8,14 @@
         @if($notes_page)
         <li class="{{ $request->segment(1) == 'tasks-management' && $request->segment(2) == 'notes' ? 'active' : '' }}">
             <a href="{{action('\Modules\TasksManagement\Http\Controllers\NoteController@index')}}"><i
-                    class="fa fa-file-text-o"></i>@lang('tasksmanagement::lang.notes')</a>
+                    class="fa fa-file-alt-o"></i><p>@lang('tasksmanagement::lang.notes')</a>
         </li>
         @endif
         @if($tasks_page)
             @can('tasks_management.tasks')
             <li class="{{ $request->segment(1) == 'tasks-management' && $request->segment(2) == 'tasks' ? 'active' : '' }}">
                 <a href="{{action('\Modules\TasksManagement\Http\Controllers\TaskController@index')}}"><i
-                        class="fa fa-check"></i>@lang('tasksmanagement::lang.list_tasks')</a>
+                        class="fa fa-check"></i><p>@lang('tasksmanagement::lang.list_tasks')</a>
             </li>
             @endcan
         @endif
@@ -24,14 +24,14 @@
                 <li
                 class="{{ $request->segment(1) == 'tasks-management' && $request->segment(2) == 'reminders' ? 'active' : '' }}">
                 <a href="{{action('\Modules\TasksManagement\Http\Controllers\ReminderController@index')}}"><i
-                    class="fa fa-bell-o"></i>@lang('tasksmanagement::lang.reminders')</a>
+                    class="fa fa-bell-o"></i><p>@lang('tasksmanagement::lang.reminders')</a>
                 </li>
             @endcan
         @endif
         <li
             class="{{ $request->segment(1) == 'tasks-management' && $request->segment(2) == 'settings' ? 'active' : '' }}">
             <a href="{{action('\Modules\TasksManagement\Http\Controllers\SettingsController@index')}}"><i
-                    class="fa fa-cogs"></i>@lang('tasksmanagement::lang.settings')</a>
+                    class="fa fa-cogs"></i><p>@lang('tasksmanagement::lang.settings')</a>
         </li>
 
     </ul>

@@ -111,7 +111,7 @@
 
 		<li class="nav-item {{ $request->segment(1) == 'site-settings'? 'active' : '' }}">
 			<a href="{{route('site_settings.view')}}" class="nav-link">
-				<i class="fa fa-gears"></i> <p>@lang('site_settings.settings')</p></a>
+				<i class="fa fa-cogs"></i> <p>@lang('site_settings.settings')</p></a>
 		</li>
 		<li class="nav-item {{ $request->segment(1) == 'system_administration'? 'active' : '' }}">
 			<a href="{{route('site_settings.help_view')}}" class="nav-link">

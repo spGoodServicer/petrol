@@ -229,11 +229,11 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             @if(session()->get('business.is_patient'))
             <li class="nav-item  {{ $request->segment(1) == 'patient' ? 'active' : '' }}">
-                <a class="nav-link" href="{{action('PatientController@index')}}"> <i class="fa fa-dashboard nav-icon"></i> <p> @lang('home.home')</p> </a>
+                <a class="nav-link" href="{{action('PatientController@index')}}"> <i class="fa fa-chart-line nav-icon"></i> <p> @lang('home.home')</p> </a>
             </li>
             @endif @if(session()->get('business.is_hospital'))
             <li class="nav-item  {{ $request->segment(1) == 'patient' ? 'active' : '' }}">
-                <a class="nav-link" href="{{action('HospitalController@index')}}"> <i class="fa fa-dashboard nav-icon"></i> <p> @lang('home.home')</p> </a>
+                <a class="nav-link" href="{{action('HospitalController@index')}}"> <i class="fa fa-chart-line nav-icon"></i> <p> @lang('home.home')</p> </a>
             </li>
             @endif
             <li class="nav-item  {{ $request->segment(1) == 'reports' ? 'active' : '' }}">
@@ -279,7 +279,7 @@
             <!-- <li class="header">HEADER</li> -->
             @if($home_dashboard) @if(auth()->user()->can('dashboard.data') && !auth()->user()->is_pump_operator && !auth()->user()->is_property_user)
             <li class="nav-item  {{ $request->segment(1) == 'home' ? 'active' : '' }}">
-                <a class="nav-link" href="{{action('HomeController@index')}}"> <i class="fa fa-dashboard nav-icon"></i> <p> @lang('home.home')</p> </a>
+                <a class="nav-link" href="{{action('HomeController@index')}}"> <i class="fa fa-chart-line nav-icon"></i> <p> @lang('home.home')</p> </a>
             </li>
             @endif @endif @if(auth()->user()->is_pump_operator) @if(auth()->user()->can('pump_operator.dashboard'))
             <li class="nav-item  {{ $request->segment(1) == 'petro' && $request->segment(2) == 'pump-operators' && $request->segment(3) == 'dashboard' ? 'active' : '' }}">

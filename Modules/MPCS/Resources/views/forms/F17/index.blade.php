@@ -11,7 +11,7 @@
                 <ul class="nav nav-tabs">
                     <li class="active">
                         <a href="#f17_from_tab" class="f17_from_tab" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('mpcs::lang.f17_from')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('mpcs::lang.f17_from')</strong>
                         </a>
                     </li>
 

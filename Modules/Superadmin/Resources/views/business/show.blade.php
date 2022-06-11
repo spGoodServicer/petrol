@@ -45,7 +45,7 @@
                             {{ $business->currency->currency }}
                         </p>
 
-                        <strong><i class="fa fa-file-text-o margin-r-5"></i>
+                        <strong><i class="fa fa-file-alt-o margin-r-5"></i>
                             @lang('business.tax_number1')</strong>
                         <p class="text-muted">
                             @if(!empty($business->tax_number_1))
@@ -58,7 +58,7 @@
 
                 <div class="col-sm-3">
                     <div class="well well-sm">
-                        <strong><i class="fa fa-file-text-o margin-r-5"></i>
+                        <strong><i class="fa fa-file-alt-o margin-r-5"></i>
                             @lang('business.tax_number2')</strong>
                         <p class="text-muted">
                             @if(!empty($business->tax_number_2))

@@ -167,7 +167,7 @@ class ExpenseController extends Controller
                         <li><a href="{{ url(\'uploads/documents/\' . $document)}}" 
                         download=""><i class="fa fa-download" aria-hidden="true"></i> @lang("purchase.download_document")</a></li>
                         @if(isFileImage($document))
-                            <li><a href="#" data-href="{{ url(\'uploads/documents/\' . $document)}}" class="view_uploaded_document"><i class="fa fa-picture-o" aria-hidden="true"></i>@lang("lang_v1.view_document")</a></li>
+                            <li><a href="#" data-href="{{ url(\'uploads/documents/\' . $document)}}" class="view_uploaded_document"><i class="fa fa-picture-o" aria-hidden="true"></i><p>@lang("lang_v1.view_document")</a></li>
                         @endif
                     @endif
                     @can("expense.delete")

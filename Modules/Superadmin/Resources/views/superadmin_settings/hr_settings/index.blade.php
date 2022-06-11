@@ -17,62 +17,62 @@
                 <ul class="nav nav-tabs">
                     <li class="active">
                         <a href="#department" class="department" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('hr::lang.department')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('hr::lang.department')</strong>
                         </a>
                     </li>
                     <li class="">
                         <a href="#job_title" class="job_title" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('hr::lang.job_title')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('hr::lang.job_title')</strong>
                         </a>
                     </li>
                     <li class="">
                         <a href="#job_category" class="job_category" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('hr::lang.job_category')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('hr::lang.job_category')</strong>
                         </a>
                     </li>
                     <li class="">
                         <a href="#working_days" class="working_days" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('hr::lang.working_days')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('hr::lang.working_days')</strong>
                         </a>
                     </li>
                     <li class="">
                         <a href="#work_shift" class="work_shift" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('hr::lang.work_shift')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('hr::lang.work_shift')</strong>
                         </a>
                     </li>
                     <li class="">
                         <a href="#holidays" class="holidays" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('hr::lang.holidays')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('hr::lang.holidays')</strong>
                         </a>
                     </li>
                     <li class="">
                         <a href="#leave_application_type" class="leave_application_type" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('hr::lang.leave_application_type')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('hr::lang.leave_application_type')</strong>
                         </a>
                     </li>
                     <li class="">
                         <a href="#salary_grade" class="salary_grade" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('hr::lang.salary_grade')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('hr::lang.salary_grade')</strong>
                         </a>
                     </li>
                     <li class="">
                         <a href="#employment_status" class="employment_status" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('hr::lang.employment_status')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('hr::lang.employment_status')</strong>
                         </a>
                     </li>
                     <li class="">
                         <a href="#prefix" class="prefix" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('hr::lang.prefix')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('hr::lang.prefix')</strong>
                         </a>
                     </li>
                     <li class="">
                         <a href="#tax" class="tax" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('hr::lang.tax')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('hr::lang.tax')</strong>
                         </a>
                     </li>
                     <li class="">
                         <a href="#religion" class="religion" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('hr::lang.religion')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('hr::lang.religion')</strong>
                         </a>
                     </li>
 

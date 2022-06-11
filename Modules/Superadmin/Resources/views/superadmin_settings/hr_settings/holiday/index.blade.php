@@ -9,7 +9,7 @@
                 <button type="button" class="btn btn-primary btn-modal pull-right" id="add_holiday_btn"
                     data-href="{{action('\Modules\HR\Http\Controllers\HolidayController@create')}}"
                     data-container=".holiday_model">
-                    <i class="fa fa-plus"></i>@lang( 'hr::lang.add_holiday' )</button>
+                    <i class="fa fa-plus"></i><p>@lang( 'hr::lang.add_holiday' )</button>
             </div>
             @endslot
             <div class="row">

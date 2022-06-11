@@ -33,7 +33,7 @@
                     @if($permissions['leave_request'])
                     <li class="@if(!empty(session('status.tab')) && session('status.tab')=='leave_request') active @endif" style="margin-left: 20px;">
                         <a style="font-size:13px;" href="#leave_request" class="" data-toggle="tab">
-                            <i class="fa fa-file-text"></i> <strong>@lang('hr::lang.leave_request')</strong>
+                            <i class="fa fa-file-alt"></i> <strong>@lang('hr::lang.leave_request')</strong>
                         </a>
                     </li>
                     @endif

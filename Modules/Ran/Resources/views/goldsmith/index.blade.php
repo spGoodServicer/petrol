@@ -20,7 +20,7 @@
                     </li>
                     <li class="@if(session('status.tab') =='details') active @endif">
                         <a style="font-size:13px;" href="#goldsmith_wastage_details" data-toggle="tab">
-                            <i class="fa fa-file-text"></i>
+                            <i class="fa fa-file-alt"></i>
                             <strong>@lang('ran::lang.goldsmith_wastage_details')</strong>
                         </a>
                     </li>

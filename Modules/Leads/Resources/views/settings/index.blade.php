@@ -10,19 +10,19 @@
                 <ul class="nav nav-tabs">
                     <li class="@if(empty(session('status.tab'))) active @endif">
                         <a href="#district" class="district" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i>
+                            <i class="fa fa-file-alt-o"></i>
                             <strong>@lang('leads::lang.district')</strong>
                         </a>
                     </li>
                     <li class="@if(session('status.tab') =='town') active @endif">
                         <a href="#town" class="town" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i>
+                            <i class="fa fa-file-alt-o"></i>
                             <strong>@lang('leads::lang.town')</strong>
                         </a>
                     </li>
                     <li class="@if(session('status.tab') =='category') active @endif">
                         <a href="#category" class="category" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i>
+                            <i class="fa fa-file-alt-o"></i>
                             <strong>@lang('leads::lang.category')</strong>
                         </a>
                     </li>

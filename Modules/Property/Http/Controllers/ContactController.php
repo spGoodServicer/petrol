@@ -142,15 +142,15 @@ class ContactController extends Controller
                     </button>
                     <ul class="dropdown-menu dropdown-menu-left" role="menu">
                 @if(($total_purchase + $opening_balance - $purchase_paid - $opening_balance_paid)  > 0)
-                    <li><a href="{{action(\'TransactionPaymentController@getPayContactDue\', [$id])}}?type=purchase" class="pay_purchase_due"><i class="fa fa-credit-card" aria-hidden="true"></i>@lang("contact.pay_due_amount")</a></li>
+                    <li><a href="{{action(\'TransactionPaymentController@getPayContactDue\', [$id])}}?type=purchase" class="pay_purchase_due"><i class="fa fa-credit-card" aria-hidden="true"></i><p>@lang("contact.pay_due_amount")</a></li>
                 @endif
                 @if(($total_purchase_return - $purchase_return_paid)  > 0)
-                    <li><a href="{{action(\'TransactionPaymentController@getPayContactDue\', [$id])}}?type=purchase_return" class="pay_purchase_due"><i class="fa fa-credit-card" aria-hidden="true"></i>@lang("lang_v1.receive_purchase_return_due")</a></li>
+                    <li><a href="{{action(\'TransactionPaymentController@getPayContactDue\', [$id])}}?type=purchase_return" class="pay_purchase_due"><i class="fa fa-credit-card" aria-hidden="true"></i><p>@lang("lang_v1.receive_purchase_return_due")</a></li>
                 @endif
                 @if(($total_purchase + $opening_balance - $purchase_paid - $opening_balance_paid)  <= 0)
-                    <li><a href="{{action(\'TransactionPaymentController@getAdvancePayment\', [$id])}}?type=advance_payment" class="pay_purchase_due"><i class="fa fa-money-bill" aria-hidden="true"></i>@lang("lang_v1.advance_payment")</a></li>
+                    <li><a href="{{action(\'TransactionPaymentController@getAdvancePayment\', [$id])}}?type=advance_payment" class="pay_purchase_due"><i class="fa fa-money-bill" aria-hidden="true"></i><p>@lang("lang_v1.advance_payment")</a></li>
                 @endif
-                <li><a href="{{action(\'TransactionPaymentController@getSecurityDeposit\', [$id])}}?type=security_deposit" class="pay_purchase_due"><i class="fa fa-shield" aria-hidden="true"></i>@lang("lang_v1.security_deposit")</a></li>
+                <li><a href="{{action(\'TransactionPaymentController@getSecurityDeposit\', [$id])}}?type=security_deposit" class="pay_purchase_due"><i class="fa fa-shield" aria-hidden="true"></i><p>@lang("lang_v1.security_deposit")</a></li>
                 @can("supplier.view")
                     <li><a href="{{action(\'\Modules\Property\Http\Controllers\ContactController@show\', [$id])}}"><i class="fa fa-eye" aria-hidden="true"></i> @lang("messages.view")</a></li>
                 @endcan
@@ -297,16 +297,16 @@ class ContactController extends Controller
                     </button>
                     <ul class="dropdown-menu dropdown-menu-left" role="menu">
                 @if(($total_invoice + $opening_balance - $invoice_received - $opening_balance_paid)  > 0)
-                    <li><a href="{{action(\'TransactionPaymentController@getPayContactDue\', [$id])}}?type=sell" class="pay_sale_due"><i class="fa fa-credit-card" aria-hidden="true"></i>@lang("contact.pay_due_amount")</a></li>
+                    <li><a href="{{action(\'TransactionPaymentController@getPayContactDue\', [$id])}}?type=sell" class="pay_sale_due"><i class="fa fa-credit-card" aria-hidden="true"></i><p>@lang("contact.pay_due_amount")</a></li>
                 @endif
                 @if(($total_sell_return - $sell_return_paid)  > 0)
-                    <li><a href="{{action(\'TransactionPaymentController@getPayContactDue\', [$id])}}?type=sell_return" class="pay_purchase_due"><i class="fa fa-credit-card" aria-hidden="true"></i>@lang("lang_v1.pay_sell_return_due")</a></li>
+                    <li><a href="{{action(\'TransactionPaymentController@getPayContactDue\', [$id])}}?type=sell_return" class="pay_purchase_due"><i class="fa fa-credit-card" aria-hidden="true"></i><p>@lang("lang_v1.pay_sell_return_due")</a></li>
                 @endif
                 @if(($total_invoice + $opening_balance - $invoice_received - $opening_balance_paid)  <= 0)
-                <li><a href="{{action(\'TransactionPaymentController@getAdvancePayment\', [$id])}}?type=advance_payment" class="pay_purchase_due"><i class="fa fa-money-bill" aria-hidden="true"></i>@lang("lang_v1.advance_payment")</a></li>
+                <li><a href="{{action(\'TransactionPaymentController@getAdvancePayment\', [$id])}}?type=advance_payment" class="pay_purchase_due"><i class="fa fa-money-bill" aria-hidden="true"></i><p>@lang("lang_v1.advance_payment")</a></li>
                 @endif
-                <li><a href="{{action(\'TransactionPaymentController@getSecurityDeposit\', [$id])}}?type=security_deposit" class="pay_purchase_due"><i class="fa fa-shield" aria-hidden="true"></i>@lang("lang_v1.security_deposit")</a></li>
-                <li><a href="{{action(\'TransactionPaymentController@getRefundPayment\', [$id])}}?type=refund_payment" class="pay_purchase_due"><i class="fa fa-recycle" aria-hidden="true"></i>@lang("lang_v1.refund_cheque_return")</a></li>
+                <li><a href="{{action(\'TransactionPaymentController@getSecurityDeposit\', [$id])}}?type=security_deposit" class="pay_purchase_due"><i class="fa fa-shield" aria-hidden="true"></i><p>@lang("lang_v1.security_deposit")</a></li>
+                <li><a href="{{action(\'TransactionPaymentController@getRefundPayment\', [$id])}}?type=refund_payment" class="pay_purchase_due"><i class="fa fa-recycle" aria-hidden="true"></i><p>@lang("lang_v1.refund_cheque_return")</a></li>
               
                 @can("property.customer.view")
                     <li><a href="{{action(\'\Modules\Property\Http\Controllers\ContactController@show\', [$id])}}"><i class="fa fa-eye" aria-hidden="true"></i> @lang("messages.view")</a></li>

@@ -11,12 +11,12 @@
                 <ul class="nav nav-tabs">
                     <li class="active">
                         <a href="#f14b_form_tab" class="f14b_form_tab" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('mpcs::lang.f14b_form')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('mpcs::lang.f14b_form')</strong>
                         </a>
                     </li>
                     <li class="">
                         <a href="#f20_form_tab" class="f20_form_tab" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('mpcs::lang.f20_form')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('mpcs::lang.f20_form')</strong>
                         </a>
                     </li>
                 </ul>

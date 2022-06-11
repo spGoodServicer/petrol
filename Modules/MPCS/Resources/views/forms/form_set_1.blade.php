@@ -12,28 +12,28 @@
                     @if(auth()->user()->can('f9c_form'))
                     <li class="active">
                         <a href="#9c_form_tab" class="9c_form_tab" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('mpcs::lang.9c_form')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('mpcs::lang.9c_form')</strong>
                         </a>
                     </li>
                     @endif
                     @if(auth()->user()->can('f15a9abc_form'))
                     <li class="">
                         <a href="#15a9ab_form_tab" class="15a9ab_form_tab" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('mpcs::lang.15a9ab_form')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('mpcs::lang.15a9ab_form')</strong>
                         </a>
                     </li>
                     @endif
                     @if(auth()->user()->can('f16a_form'))
                     <li class="">
                         <a href="#16A_form_tab" class="16A_form_tab" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('mpcs::lang.16A_form')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('mpcs::lang.16A_form')</strong>
                         </a>
                     </li>
                     @endif
                     @if(auth()->user()->can('f21c_form'))
                     <li class="">
                         <a href="#21c_form_tab" class="21c_form_tab" data-toggle="tab">
-                            <i class="fa fa-file-text-o"></i> <strong>@lang('mpcs::lang.21c_form')</strong>
+                            <i class="fa fa-file-alt-o"></i> <strong>@lang('mpcs::lang.21c_form')</strong>
                         </a>
                     </li>
                     @endif

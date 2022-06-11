@@ -86,7 +86,7 @@ $currency_precision = !empty($business_details->currency_precision) ? $business_
                 <ul class="nav nav-tabs">
                     <li class="active">
                         <a href="#meter_sale_tab" class="meter_sale_tab" data-toggle="tab">
-                            <i class="fa fa-tachometer"></i> <strong>@lang('petro::lang.meter_sale')</strong>
+                            <i class="fa fa-tachometer-alt"></i> <strong>@lang('petro::lang.meter_sale')</strong>
                         </a>
                     </li>
 
