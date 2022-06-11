@@ -397,7 +397,7 @@
 							</li>
 							@endcan @can('product.create')
 							<li class="nav-item  {{ $request->segment(1) == 'variation-templates' ? 'active' : '' }}">
-								<a class="nav-link" href="{{action('VariationTemplateController@index')}}"><i class="fa fa-circle-o nav-icon"></i><p>@lang('product.variations')</p></a>
+								<a class="nav-link" href="{{action('VariationTemplateController@index')}}"><i class="fa fa-circle-notch nav-icon"></i><p>@lang('product.variations')</p></a>
 							</li>
 							@endcan @can('product.create')
 							<li class="nav-item  {{ $request->segment(1) == 'import-products' ? 'active' : '' }}">
@@ -413,7 +413,7 @@
 							</li>
 							@endcan @can('product.create')
 							<li class="nav-item  {{ $request->segment(1) == 'selling-price-group' ? 'active' : '' }}">
-								<a class="nav-link" href="{{action('SellingPriceGroupController@index')}}"><i class="fa fa-circle-o nav-icon"></i><p>@lang('lang_v1.selling_price_group')</p></a>
+								<a class="nav-link" href="{{action('SellingPriceGroupController@index')}}"><i class="fa fa-circle-notch nav-icon"></i><p>@lang('lang_v1.selling_price_group')</p></a>
 							</li>
 							@endcan @if(auth()->user()->can('unit.view') || auth()->user()->can('unit.create'))
 							<li class="nav-item  {{ $request->segment(1) == 'units' ? 'active' : '' }}">
@@ -425,12 +425,12 @@
 							</li>
 							@endif @if(auth()->user()->can('brand.view') || auth()->user()->can('brand.create'))
 							<li class="nav-item  {{ $request->segment(1) == 'brands' ? 'active' : '' }}">
-								<a class="nav-link" href="{{action('BrandController@index')}}"><i class="fa fa-diamond nav-icon"></i> <p>@lang('brand.brands')</p></a>
+								<a class="nav-link" href="{{action('BrandController@index')}}"><i class="fa fa-gem nav-icon"></i> <p>@lang('brand.brands')</p></a>
 							</li>
 							@endif
 							<li class="nav-item  {{ $request->segment(1) == 'warranties' ? 'active active-sub' : '' }}">
 								<a class="nav-link" href="{{action('WarrantyController@index')}}">
-									<i class="fa fa-shield nav-icon"></i>
+									<i class="fa fa-shield-virus nav-icon"></i>
 									<span class="title">@lang('lang_v1.warranties')</p>
 								</a>
 							</li>
@@ -650,7 +650,7 @@
                         <a href="{{action('ExpenseController@create')}}"><i class="fa fa-plus-circle nav-icon"></i><p>@lang('messages.add') @lang('expense.expenses')</p></a>
                     </li>
                     <li class="nav-item  {{ $request->segment(1) == 'expense-categories' ? 'active' : '' }}">
-                        <a href="{{action('ExpenseCategoryController@index')}}"><i class="fa fa-circle-o nav-icon"></i><p>@lang('expense.expense_categories')</p></a>
+                        <a href="{{action('ExpenseCategoryController@index')}}"><i class="fa fa-circle-notch nav-icon"></i><p>@lang('expense.expense_categories')</p></a>
                     </li>
                 </ul>
             </li>
@@ -978,7 +978,7 @@
                     @endcan @if($enable_sale_cmsn_agent == 1) @can('user.create')
                     <li class="nav-item  {{ $request->segment(1) == 'sales-commission-agents' ? 'active active-sub' : '' }}">
                         <a class="nav-link" href="{{action('SalesCommissionAgentController@index')}}">
-                            <i class="fa fa-handshake-o nav-icon"></i>
+                            <i class="fa fa-handshake nav-icon"></i>
                             <span class="title">
                                 @lang('lang_v1.sales_commission_agents')
                             </p>

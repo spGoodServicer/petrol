@@ -148,7 +148,7 @@
 
                     <li>
 
-                        <a href="#profit_by_brands" data-toggle="tab" aria-expanded="true"><i class="fa fa-diamond" aria-hidden="true"></i> @lang('lang_v1.profit_by_brands')</a>
+                        <a href="#profit_by_brands" data-toggle="tab" aria-expanded="true"><i class="fa fa-gem" aria-hidden="true"></i> @lang('lang_v1.profit_by_brands')</a>
 
                     </li>
 

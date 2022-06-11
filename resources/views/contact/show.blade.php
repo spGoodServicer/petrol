@@ -119,7 +119,7 @@
                             @else
                                 ''
                             @endif">
-                        <a href="#security_deposit_tab" data-toggle="tab" aria-expanded="true"><i class="fa fa-shield"
+                        <a href="#security_deposit_tab" data-toggle="tab" aria-expanded="true"><i class="fa fa-shield-virus"
                                 aria-hidden="true"></i> @lang( 'lang_v1.security_deposit')</a>
                     </li>
                     <li class="
