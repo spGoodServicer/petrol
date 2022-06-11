@@ -37,7 +37,7 @@
               {!! Form::label("payment_ref_no" , __('petro::lang.payment_ref_no') . ':*') !!}
               <div class="input-group">
                 <span class="input-group-addon">
-                  <i class="fa fa-money"></i>
+                  <i class="fa fa-money-bill"></i>
                 </span>
                 {!! Form::text("payment_ref_no", !empty($payment_ref_no) ? $payment_ref_no : null, ['class' =>
                 'form-control input_number', 'required', 'readonly', 'placeholder' => __('petro::lang.payment_ref_no')]);
@@ -50,7 +50,7 @@
               {!! Form::label("amount" , __('sale.amount') . ':*') !!}
               <div class="input-group">
                 <span class="input-group-addon">
-                  <i class="fa fa-money"></i>
+                  <i class="fa fa-money-bill"></i>
                 </span>
                 {!! Form::text("amount", !empty($total_shortage) ? $total_shortage :null, ['class' => 'form-control
                 input_number', 'required', 'placeholder' => 'Amount']); !!}
@@ -73,7 +73,7 @@
               {!! Form::label("method" , __('purchase.payment_method') . ':*') !!}
               <div class="input-group">
                 <span class="input-group-addon">
-                  <i class="fa fa-money"></i>
+                  <i class="fa fa-money-bill"></i>
                 </span>
                 {!! Form::select("method", $payment_types, null, ['class' => 'form-control select2
                 payment_types_dropdown', 'required', 'style' => 'width:100%;']); !!}
@@ -85,7 +85,7 @@
               {!! Form::label("account_id" , __('petro::lang.accounts') . ':') !!}
               <div class="input-group">
                 <span class="input-group-addon">
-                  <i class="fa fa-money"></i>
+                  <i class="fa fa-money-bill"></i>
                 </span>
                 {!! Form::select("account_id", $accounts, null , ['class' => 'form-control select2', 'id' => "account_id", 'style' => 'width:100%;']); !!}
               </div>
@@ -104,7 +104,7 @@
               {!! Form::label("account_receivable_id" , __('petro::lang.receivable_account') . ':') !!}
               <div class="input-group">
                 <span class="input-group-addon">
-                  <i class="fa fa-money"></i>
+                  <i class="fa fa-money-bill"></i>
                 </span>
                 {!! Form::select("account_receivable_id", $accounts, !empty($shortage_recover_account_id) ?
                 $shortage_recover_account_id->id : null , ['class' => 'form-control select2', 'id' =>

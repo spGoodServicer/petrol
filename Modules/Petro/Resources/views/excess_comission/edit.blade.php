@@ -37,7 +37,7 @@
               {!! Form::label("payment_ref_no" , __('petro::lang.payment_ref_no') . ':*') !!}
               <div class="input-group">
                 <span class="input-group-addon">
-                  <i class="fa fa-money"></i>
+                  <i class="fa fa-money-bill"></i>
                 </span>
                 {!! Form::text("payment_ref_no", !empty($transaction_payment) ? $transaction_payment->payment_ref_no : null, ['class' => 'form-control input_number', 'required', 'readonly', 'placeholder' => __('petro::lang.payment_ref_no')]); !!}
               </div>
@@ -48,7 +48,7 @@
               {!! Form::label("amount" , __('sale.amount') . ':*') !!}
               <div class="input-group">
                 <span class="input-group-addon">
-                  <i class="fa fa-money"></i>
+                  <i class="fa fa-money-bill"></i>
                 </span>
                 {!! Form::text("amount", !empty($transaction_payment) ? $transaction_payment->amount : null, ['class' => 'form-control input_number', 'required', 'placeholder' => 'Amount']); !!}
               </div>
@@ -70,7 +70,7 @@
               {!! Form::label("method" , __('purchase.payment_method') . ':*') !!}
               <div class="input-group">
                 <span class="input-group-addon">
-                  <i class="fa fa-money"></i>
+                  <i class="fa fa-money-bill"></i>
                 </span>
                 {!! Form::select("method", $payment_types, !empty($transaction_payment) ?
                 $transaction_payment->method : null, ['class' => 'form-control select2 payment_types_dropdown', 'required', 'style' => 'width:100%;']); !!}
@@ -82,7 +82,7 @@
               {!! Form::label("account_id" , __('petro::lang.accounts') . ':') !!}
               <div class="input-group">
                 <span class="input-group-addon">
-                  <i class="fa fa-money"></i>
+                  <i class="fa fa-money-bill"></i>
                 </span>
                 {!! Form::select("account_id", $accounts, !empty($transaction_payment) ?
                 $transaction_payment->account_id : null , ['class' => 'form-control select2', 'id' => "account_id", 'style' => 'width:100%;']); !!}
@@ -95,7 +95,7 @@
               {!! Form::label("account_types" , __('petro::lang.account_types') . ':') !!}
               <div class="input-group">
                 <span class="input-group-addon">
-                  <i class="fa fa-money"></i>
+                  <i class="fa fa-money-bill"></i>
                 </span>
                 {!! Form::select("account_types", $account_types,  null , ['class' => 'form-control select2', 'id' => "account_types", 'style' => 'width:100%;']); !!}
               </div>
@@ -107,7 +107,7 @@
                 {!! Form::label("double_entry_account_id" , __('petro::lang.double_entry_account') . ':') !!}
                 <div class="input-group">
                   <span class="input-group-addon">
-                    <i class="fa fa-money"></i>
+                    <i class="fa fa-money-bill"></i>
                   </span>
                   {!! Form::select("double_entry_account_id", $accounts, !empty($transaction_payment) ?
                   $transaction_payment->double_entry_account : null , ['class' => 'form-control select2', 'id' => "double_entry_account_id", 'style' => 'width:100%;']); !!}

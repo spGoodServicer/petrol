@@ -4,7 +4,7 @@
             <ul class="nav nav-tabs">
                 <li class="active">
                     <a href="#cash_tab" class="tabs cash_tab" data-toggle="tab">
-                        <i class="fa fa-money"></i> 
+                        <i class="fa fa-money-bill"></i> 
                         <strong>@lang('petro::lang.cash')</strong>
                     </a>
                 </li>

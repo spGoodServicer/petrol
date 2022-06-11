@@ -389,7 +389,7 @@ class PropertyFinalizeController extends Controller
 
                     $html .= '<li class="divider"></li>';
 
-                    $html .= '<li><a href="' . action('TransactionPaymentController@show', [$row->id]) . '" class="view_payment_modal"><i class="fa fa-money"></i> ' . __("purchase.view_payments") . '</a></li>';
+                    $html .= '<li><a href="' . action('TransactionPaymentController@show', [$row->id]) . '" class="view_payment_modal"><i class="fa fa-money-bill"></i> ' . __("purchase.view_payments") . '</a></li>';
 
 
 

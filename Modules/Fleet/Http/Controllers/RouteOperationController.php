@@ -141,7 +141,7 @@ class RouteOperationController extends Controller
 
                         if ($row->payment_status != 'paid') {
                             $html .= '<li class="divider"></li>';
-                            $html .= '<li><a href="' . action('TransactionPaymentController@addPayment', [$row->t_id]) . '" class="add_payment_modal"><i class="fa fa-money" aria-hidden="true"></i>' . __("purchase.add_payment") . '</a></li>';
+                            $html .= '<li><a href="' . action('TransactionPaymentController@addPayment', [$row->t_id]) . '" class="add_payment_modal"><i class="fa fa-money-bill" aria-hidden="true"></i>' . __("purchase.add_payment") . '</a></li>';
                         }
                         return $html;
                     }

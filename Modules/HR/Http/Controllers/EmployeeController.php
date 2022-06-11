@@ -99,7 +99,7 @@ class EmployeeController extends Controller
                                 <li><a href="' . action("\Modules\HR\Http\Controllers\EmployeeController@show", [$row->id]) . '?view_type=view" class="" style="margin-right: 10px;"><i class="fa fa-eye"></i>' . __("messages.view") . '</a></li>   
                                 <li><a href="' . action("\Modules\HR\Http\Controllers\EmployeeController@show", [$row->id]) . '?view_type=loans" class="" style="margin-right: 10px;"><i class="fa fa-arrow-down"></i>' . __("hr::lang.loans") . '</a></li>   
                                 <li><a href="' . action("\Modules\HR\Http\Controllers\EmployeeController@show", [$row->id]) . '?view_type=advanes" class="" style="margin-right: 10px;"><i class="fa fa-arrow-up"></i>' . __("hr::lang.advances") . '</a></li>   
-                                <li><a href="' . action("\Modules\HR\Http\Controllers\EmployeeController@show", [$row->id]) . '?view_type=salaries" class="" style="margin-right: 10px;"><i class="fa fa-money"></i>' . __("hr::lang.salaries") . '</a></li>   
+                                <li><a href="' . action("\Modules\HR\Http\Controllers\EmployeeController@show", [$row->id]) . '?view_type=salaries" class="" style="margin-right: 10px;"><i class="fa fa-money-bill"></i>' . __("hr::lang.salaries") . '</a></li>   
                                 ';
                         }
                         $html .= '<li> <a data-href="' . action("\Modules\HR\Http\Controllers\EmployeeController@toggleActive", [$row->id]) . '" class="toggle_active_employee" style="cursor:pointer"><i class=""></i>' . __("hr::lang.active_inactive") . '</a></li>';

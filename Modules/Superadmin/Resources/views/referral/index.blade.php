@@ -27,7 +27,7 @@
                     </li>
                     <li class="@if(session('status.tab') == 'income_method') active @endif">
                         <a style="font-size:13px;" href="#income_method" data-toggle="tab">
-                            <i class="fa fa-money"></i>
+                            <i class="fa fa-money-bill"></i>
                             <strong>@lang('superadmin::lang.income_method')</strong>
                         </a>
                     </li>

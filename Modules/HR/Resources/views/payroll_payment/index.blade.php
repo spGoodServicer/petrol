@@ -17,7 +17,7 @@
                     @if($permissions['basic_salary'])
                     <li class="active" style="margin-left: 20px;">
                         <a style="font-size:13px;" href="#basic_salary" class="" data-toggle="tab">
-                            <i class="fa fa-money"></i> <strong>@lang('hr::lang.basic_salary')</strong>
+                            <i class="fa fa-money-bill"></i> <strong>@lang('hr::lang.basic_salary')</strong>
                         </a>
                     </li>
                     @endif
@@ -31,7 +31,7 @@
                     @if($permissions['payroll_payments'])
                     <li class="">
                         <a style="font-size:13px;" href="#payment" data-toggle="tab">
-                            <i class="fa fa-money"></i> <strong>@lang('hr::lang.payment')</strong>
+                            <i class="fa fa-money-bill"></i> <strong>@lang('hr::lang.payment')</strong>
                         </a>
                     </li>
                     @endif

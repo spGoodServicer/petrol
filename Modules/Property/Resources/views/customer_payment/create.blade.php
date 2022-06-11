@@ -219,7 +219,7 @@
                     {!! Form::label("account_id" , __('lang_v1.bank_account') . ':') !!}
                     <div class="input-group">
                     <span class="input-group-addon">
-                        <i class="fa fa-money"></i>
+                        <i class="fa fa-money-bill"></i>
                     </span>
                         {!! Form::select("account_id", $bank_group_accounts, null , ['class' =>
                         'form-control

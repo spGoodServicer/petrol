@@ -7,7 +7,7 @@
     <ul class="nav nav-treeview">
         <li class="{{ $request->segment(1) == 'agent' && $request->segment(2) == 'dashboard'? 'active' : '' }}">
             <a href="{{action('\Modules\Agent\Http\Controllers\AgentController@dashboard')}}"><i
-                    class="fa fa-dashboard"></i>@lang('agent::lang.dashboard')</a>
+                    class="fa fa-chart-line"></i>@lang('agent::lang.dashboard')</a>
         </li>
       
 

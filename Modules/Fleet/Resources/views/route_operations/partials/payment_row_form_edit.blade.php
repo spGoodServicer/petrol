@@ -17,7 +17,7 @@ $payment = json_encode([]);
 			{!! Form::label("amount_$row_index" ,__('sale.amount') . ':*') !!}
 			<div class="input-group">
 				<span class="input-group-addon">
-					<i class="fa fa-money"></i>
+					<i class="fa fa-money-bill"></i>
 				</span>
 				{!! Form::text("payment[$row_index][amount]", @num_format(!empty($payment->amount)?str_replace(',', ''
 				,$payment->amount):$payment_line['amount']), ['class' => 'form-control payment-amount input_number',
@@ -30,7 +30,7 @@ $payment = json_encode([]);
 			{!! Form::label("method_$row_index" , __('lang_v1.payment_method') . ':*') !!}
 			<div class="input-group">
 				<span class="input-group-addon">
-					<i class="fa fa-money"></i>
+					<i class="fa fa-money-bill"></i>
 				</span>
 				{!! Form::select("payment[$row_index][method]", $payment_types, $payment->method, ['class' => 'form-control
 				payment_types_dropdown select2', 'required', 'id' => "method_$row_index", 'style' => 'width:100%;',
@@ -44,7 +44,7 @@ $payment = json_encode([]);
 			{!! Form::label("account_$row_index" , __('lang_v1.bank_account') . ':') !!}
 			<div class="input-group">
 				<span class="input-group-addon">
-					<i class="fa fa-money"></i>
+					<i class="fa fa-money-bill"></i>
 				</span>
 				{!! Form::select("payment[$row_index][account_id]", $bank_group_accounts, !empty($payment->account_id)? $payment->account_id : $payment_line['account_id'] ?? null , ['class' =>
 				'form-control account_id

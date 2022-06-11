@@ -148,7 +148,7 @@ class ContactController extends Controller
                     <li><a href="{{action(\'TransactionPaymentController@getPayContactDue\', [$id])}}?type=purchase_return" class="pay_purchase_due"><i class="fa fa-credit-card" aria-hidden="true"></i>@lang("lang_v1.receive_purchase_return_due")</a></li>
                 @endif
                 @if(($total_purchase + $opening_balance - $purchase_paid - $opening_balance_paid)  <= 0)
-                    <li><a href="{{action(\'TransactionPaymentController@getAdvancePayment\', [$id])}}?type=advance_payment" class="pay_purchase_due"><i class="fa fa-money" aria-hidden="true"></i>@lang("lang_v1.advance_payment")</a></li>
+                    <li><a href="{{action(\'TransactionPaymentController@getAdvancePayment\', [$id])}}?type=advance_payment" class="pay_purchase_due"><i class="fa fa-money-bill" aria-hidden="true"></i>@lang("lang_v1.advance_payment")</a></li>
                 @endif
                 <li><a href="{{action(\'TransactionPaymentController@getSecurityDeposit\', [$id])}}?type=security_deposit" class="pay_purchase_due"><i class="fa fa-shield" aria-hidden="true"></i>@lang("lang_v1.security_deposit")</a></li>
                 @can("supplier.view")
@@ -303,7 +303,7 @@ class ContactController extends Controller
                     <li><a href="{{action(\'TransactionPaymentController@getPayContactDue\', [$id])}}?type=sell_return" class="pay_purchase_due"><i class="fa fa-credit-card" aria-hidden="true"></i>@lang("lang_v1.pay_sell_return_due")</a></li>
                 @endif
                 @if(($total_invoice + $opening_balance - $invoice_received - $opening_balance_paid)  <= 0)
-                <li><a href="{{action(\'TransactionPaymentController@getAdvancePayment\', [$id])}}?type=advance_payment" class="pay_purchase_due"><i class="fa fa-money" aria-hidden="true"></i>@lang("lang_v1.advance_payment")</a></li>
+                <li><a href="{{action(\'TransactionPaymentController@getAdvancePayment\', [$id])}}?type=advance_payment" class="pay_purchase_due"><i class="fa fa-money-bill" aria-hidden="true"></i>@lang("lang_v1.advance_payment")</a></li>
                 @endif
                 <li><a href="{{action(\'TransactionPaymentController@getSecurityDeposit\', [$id])}}?type=security_deposit" class="pay_purchase_due"><i class="fa fa-shield" aria-hidden="true"></i>@lang("lang_v1.security_deposit")</a></li>
                 <li><a href="{{action(\'TransactionPaymentController@getRefundPayment\', [$id])}}?type=refund_payment" class="pay_purchase_due"><i class="fa fa-recycle" aria-hidden="true"></i>@lang("lang_v1.refund_cheque_return")</a></li>

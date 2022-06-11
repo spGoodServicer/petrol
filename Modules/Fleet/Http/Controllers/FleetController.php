@@ -109,7 +109,7 @@ class FleetController extends Controller
 
                         $html .= '<li><a href="' . action('\Modules\Fleet\Http\Controllers\FleetController@show', [$row->id]) . '?tab=info" class="" ><i class="fa fa-info-circle"></i> ' . __("fleet::lang.info") . '</a></li>';
                         $html .= '<li><a href="' . action('\Modules\Fleet\Http\Controllers\FleetController@show', [$row->id]) . '?tab=ledger" class="" ><i class="fa fa-anchor"></i> ' . __("fleet::lang.ledger") . '</a></li>';
-                        $html .= '<li><a href="' . action('\Modules\Fleet\Http\Controllers\FleetController@show', [$row->id]) . '?tab=income" class="" ><i class="fa fa-money"></i> ' . __("fleet::lang.income") . '</a></li>';
+                        $html .= '<li><a href="' . action('\Modules\Fleet\Http\Controllers\FleetController@show', [$row->id]) . '?tab=income" class="" ><i class="fa fa-money-bill"></i> ' . __("fleet::lang.income") . '</a></li>';
                         $html .= '<li><a href="' . action('\Modules\Fleet\Http\Controllers\FleetController@show', [$row->id]) . '?tab=expenses" class="" ><i class="fa fa-minus"></i> ' . __("fleet::lang.expenses") . '</a></li>';
 
 

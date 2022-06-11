@@ -41,7 +41,7 @@
                     @if($enable_petro_pump_dashboard)
                     <li class="">
                         <a style="font-size:13px;" href="#dashboard_opening_meters" data-toggle="tab">
-                            <i class="fa fa-dashboard"></i>
+                            <i class="fa fa-chart-line"></i>
                             <strong>@lang('petro::lang.dashboard_opening_meters')</strong>
                         </a>
                     </li>

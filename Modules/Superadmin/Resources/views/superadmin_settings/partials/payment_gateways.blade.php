@@ -134,7 +134,7 @@
                 {!! Form::label('PAY_ONLINE_CURRENCY_TYPE', 'Currency Type:') !!}
                 <div class="input-group">
                     <span class="input-group-addon">
-                        <i class="fa fa-money"></i>
+                        <i class="fa fa-money-bill"></i>
                     </span>
                     {!! Form::select('PAY_ONLINE_CURRENCY_TYPE[]', $currencies, !empty($settings['PAY_ONLINE_CURRENCY_TYPE']) ? json_decode($settings['PAY_ONLINE_CURRENCY_TYPE'], true) : null, ['class' => 'form-control select2', 'style' => 'width: 100%;', 'required', 'multiple']); !!}
                 </div>

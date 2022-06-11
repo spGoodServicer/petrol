@@ -36,7 +36,7 @@
                                     <label for="currency_id" class="search_label">Currency:</label>
                                     <div class="input-group">
                                 <span class="input-group-addon">
-                                    <i class="fa fa-money"></i>
+                                    <i class="fa fa-money-bill"></i>
                                 </span>
                                         {!! Form::select('currency_id', $currencies, !empty($package_manage) ?
                                         $package_manage->currency_id : null, ['class' => 'form-control

@@ -25,7 +25,7 @@
                     @if($permissions['payroll_report'])
                     <li class="">
                         <a style="font-size:13px;" href="#payroll" data-toggle="tab">
-                            <i class="fa fa-money"></i> <strong>@lang('hr::lang.payroll')</strong>
+                            <i class="fa fa-money-bill"></i> <strong>@lang('hr::lang.payroll')</strong>
                         </a>
                     </li>
                     @endif

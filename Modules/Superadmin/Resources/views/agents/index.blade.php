@@ -15,7 +15,7 @@
                     </li>
                     <li class="@if(session('status.tab') == 'agent_dashboard') active @endif">
                         <a style="font-size:13px;" href="#agent_dashboard" data-toggle="tab">
-                            <i class="fa fa-dashboard"></i>
+                            <i class="fa fa-chart-line"></i>
                             <strong>@lang('superadmin::lang.agent_dashboard')</strong>
                         </a>
                     </li>

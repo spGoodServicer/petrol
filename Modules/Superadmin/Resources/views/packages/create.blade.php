@@ -5,7 +5,7 @@
     <section class="content-header">
         <h1>@lang('superadmin::lang.packages') <small>@lang('superadmin::lang.add_package')</small></h1>
         <!-- <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+            <li><a href="#"><i class="fa fa-chart-line"></i> Level</a></li>
             <li class="active">Here</li>
         </ol> -->
     </section>
@@ -1423,7 +1423,7 @@
                             <label for="currency_id">Currency:</label>
                             <div class="input-group">
 							<span class="input-group-addon">
-								<i class="fa fa-money"></i>
+								<i class="fa fa-money-bill"></i>
 							</span>
                                 {!! Form::select('currency_id', $currencies,'', ['class' => 'form-control
                                 select2_register','placeholder' => __('business.currency_placeholder'), 'required', 'id' =>

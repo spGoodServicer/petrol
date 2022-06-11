@@ -106,7 +106,7 @@ $currency_precision = !empty($business_details->currency_precision) ? $business_
 
                     <li>
                         <a href="#customer_payment_tab" class="customer_payment_tab" style="" data-toggle="tab">
-                            <i class="fa fa-money"></i> <strong>
+                            <i class="fa fa-money-bill"></i> <strong>
                                 @lang('petro::lang.customer_payment') </strong>
                         </a>
                     </li>

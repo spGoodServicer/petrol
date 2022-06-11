@@ -10,7 +10,7 @@
         <p>@lang('property::lang.list_price_changes')</p></a></li>
     <li class="nav-item {{ $request->segment(2) == 'sale-and-customer-payment' && $request->segment(3) == 'dashboard' ? 'active' : '' }}"><a
       href="{{action('\Modules\Property\Http\Controllers\SaleAndCustomerPaymentController@dashboard', ['type' => 'customer'])}}"><i
-        class="fa fa-dashboard nav-icon"></i>
+        class="fa fa-chart-line nav-icon"></i>
       <p>@lang('property::lang.sales_dashboard')</p></a></li>
     @can('property.customer.view')
     <li class="nav-item {{ $request->segment(2) == 'contacts' && $request->input('type') == 'customer' ? 'active' : '' }}"><a
@@ -49,7 +49,7 @@
 @if($list_easy_payment)
 @if(auth()->user()->can('list_easy_payments.access'))
 <li class="nav-item treeview {{  in_array( $request->segment(2), ['easy-payments']) ? 'active active-sub' : '' }}">
-  <a href="{{action('\Modules\Property\Http\Controllers\EasyPaymentController@index')}}" class="nav-link"><i class="fa fa-money nav-icon"></i>
+  <a href="{{action('\Modules\Property\Http\Controllers\EasyPaymentController@index')}}" class="nav-link"><i class="fa fa-money-bill nav-icon""></i>
     <p>@lang('property::lang.list_easy_payments')</p>
   </a>
 </li>

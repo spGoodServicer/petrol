@@ -38,7 +38,7 @@
                     </li>
                     <li class="@if(session('status.tab') == 'payment_summary') active @endif">
                         <a style="font-size:13px;" href="#payment_summary" data-toggle="tab">
-                            <i class="fa fa-money"></i>
+                            <i class="fa fa-money-bill"></i>
                             <strong>@lang('petro::lang.payment_summary')</strong>
                         </a>
                     </li>
