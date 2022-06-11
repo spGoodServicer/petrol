@@ -8,8 +8,8 @@
       <a href="{{action('\Modules\Property\Http\Controllers\PriceChangesController@index')}}" class="nav-link"><i
                 class="fa fa-building nav-icon"></i>
         <p>@lang('property::lang.list_price_changes')</p></a></li>
-    <li class="nav-item {{ $request->segment(2) == 'sale-and-customer-payment' && $request->segment(3) == 'dashboard' ? 'active' : '' }}"><a
-      href="{{action('\Modules\Property\Http\Controllers\SaleAndCustomerPaymentController@dashboard', ['type' => 'customer'])}}"><i
+    <li class="nav-item {{ $request->segment(2) == 'sale-and-customer-payment' && $request->segment(3) == 'dashboard' ? 'active' : '' }}">
+      <a class="nav-link" href="{{action('\Modules\Property\Http\Controllers\SaleAndCustomerPaymentController@dashboard', ['type' => 'customer'])}}"><i
         class="fa fa-chart-line nav-icon"></i>
       <p>@lang('property::lang.sales_dashboard')</p></a></li>
     @can('property.customer.view')
@@ -34,7 +34,7 @@
     @can('property.purchase.view')
       <li class="nav-item {{ $request->segment(2) == 'reports' ? 'active' : '' }}">
         <a href="{{action('\Modules\Property\Http\Controllers\ReportController@index')}}" class="nav-link"><i
-                  class="fa fa-file"></i>
+                  class="fa fa-file nav-icon"></i>
           <p>@lang('property::lang.reports')</p></a>
       </li>
     @endcan
